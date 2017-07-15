@@ -12,7 +12,7 @@ public class ExpenseValidator implements IValidator<Expense> {
         Rules rules = new Rules();
         //TODO only BS rules
         if (entity == null) {
-            return rules.broken("Expense is null");
+            return rules.broken(Rules.Messages.ENTITY_IS_NULL);
         }
         //FIXME these validation could be icked by hibernate manually
         if (entity.getAmount() == null) {

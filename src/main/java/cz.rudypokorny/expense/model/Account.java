@@ -54,4 +54,13 @@ public class Account extends Auditable implements Validable {
     void setExpenses(List<Expense> expenses) {
         this.expenses = expenses;
     }
+
+    @Transient
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", name='" + name +
+                '}';
+    }
 }

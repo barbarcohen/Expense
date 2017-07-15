@@ -11,6 +11,11 @@ public class AccountCreator {
 
     private static Random random = new Random();
 
+    public static Account createEmpty(){
+        Account account = new Account();
+        return account;
+    }
+
     public static Account create(){
         Account account = new Account();
         account.setName(String.valueOf(random.nextInt()));

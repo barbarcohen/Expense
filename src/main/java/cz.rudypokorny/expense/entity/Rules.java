@@ -8,6 +8,11 @@ import java.util.List;
  * Created by Rudolf on 11/07/2017.
  */
 public class Rules {
+    public interface Messages {
+        String ENTITY_IS_NULL = "entity.is.null";
+    }
+
+
     private List<String> errors = new ArrayList<>();
     private List<Throwable> exceptions = new ArrayList<>();
 

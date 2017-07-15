@@ -40,4 +40,12 @@ public class Result<T> {
         return !isCompromised();
     }
 
+    //FIMXE rewrite or remove
+    @Override
+    public String toString() {
+        return "Result{" +
+                "object=" + object +
+                ", rules=" + rules +
+                '}';
+    }
 }

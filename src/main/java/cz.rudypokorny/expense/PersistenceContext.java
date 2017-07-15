@@ -23,7 +23,7 @@ import java.util.GregorianCalendar;
 @PropertySource("classpath:application.properties")
 @EntityScan("cz.rudypokorny.expense.model")
 @EnableJpaAuditing(dateTimeProviderRef = "dateTimeProvider")
-public class PerisstenceContext {
+public class PersistenceContext {
 
     @Autowired
     private Environment environment;

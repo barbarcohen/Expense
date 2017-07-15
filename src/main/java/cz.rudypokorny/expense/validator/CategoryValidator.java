@@ -12,7 +12,7 @@ public class CategoryValidator implements IValidator<Category> {
         Rules rules = new Rules();
         //TODO only BS rules
         if(entity == null){
-            return rules.broken("Category is null");
+            return rules.broken(Rules.Messages.ENTITY_IS_NULL);
         }
         if(entity.getName() == null){
             rules.broken("name is null");

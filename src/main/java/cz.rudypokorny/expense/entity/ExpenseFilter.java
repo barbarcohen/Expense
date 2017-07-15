@@ -37,10 +37,6 @@ public class ExpenseFilter {
         return new ExpenseFilter(null, null, from, to, null, null, null);
     }
 
-    public static LocalDate getDefaultDateFrom() {
-        return DEFAULT_DATE_FROM;
-    }
-
     public Account getAccount() {
         return account;
     }

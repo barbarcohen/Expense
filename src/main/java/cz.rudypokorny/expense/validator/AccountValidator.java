@@ -12,7 +12,7 @@ public class AccountValidator implements IValidator<Account> {
         //TODO only BS rules
         Rules rules = new Rules();
         if(entity == null){
-            return rules.broken("account is null");
+            return rules.broken(Rules.Messages.ENTITY_IS_NULL);
         }
 
         //TODO implement

@@ -16,4 +16,11 @@ public class CategoryCreator {
         category.setName(String.valueOf(random.nextInt()));
         return category;
     }
+
+    public static Category create(Long id, String name){
+        Category category = new Category();
+        category.setId(id);
+        category.setName(name);
+        return category;
+    }
 }
