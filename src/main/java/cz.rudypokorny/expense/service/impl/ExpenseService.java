@@ -6,7 +6,6 @@ import cz.rudypokorny.expense.dao.ExpenseDao;
 import cz.rudypokorny.expense.entity.ExpenseFilter;
 import cz.rudypokorny.expense.entity.Result;
 import cz.rudypokorny.expense.entity.Rules;
-import cz.rudypokorny.expense.entity.Validable;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.Expense;
@@ -52,7 +51,7 @@ public class ExpenseService implements IExpenseService {
 
     @Override
     public Result<Expense> spend(Expense expense) {
-        Rules rules = expenseValidator.validate(expense);
+        Rules rules = expenseValidator.validateNew(expense);
         if (rules.areBroken()) {
             return Result.fail(rules);
         } else {
@@ -62,7 +61,7 @@ public class ExpenseService implements IExpenseService {
 
     @Override
     public Result<Category> categorize(Category category) {
-        Rules rules = categoryValidator.validate(category);
+        Rules rules = categoryValidator.validateNew(category);
         if (rules.areBroken()) {
             return Result.fail(rules);
         }
@@ -79,13 +78,14 @@ public class ExpenseService implements IExpenseService {
         throw new NotImplementedException();
     }
 
+    //TODO find for UNIT
     @Override
     public Result<Iterable<Account>> findAccounts() {
         return Result.create(accountDao.findAll());
     }
 
     @Override
-    public Result<Optional<Account>> getAccount(Long id) {
+    public Result<Optional<Account>> getAccountDetails(Long id) {
         return Result.create(Optional.ofNullable(accountDao.findOne(id)));
     }
 
@@ -96,7 +96,7 @@ public class ExpenseService implements IExpenseService {
 
     @Override
     public Result<Account> newAccount(Account account) {
-        Rules rules = accountValidator.validate(account);
+        Rules rules = accountValidator.validateNew(account);
         if (!rules.areBroken()) {
             return Result.create(accountDao.save(account));
         }
@@ -104,8 +104,14 @@ public class ExpenseService implements IExpenseService {
 
     }
 
-    private IValidator<?> findValidator(Validable validable) {
-        //TODO find out
-        return null;
+    @Override
+    public Result<Account> updateAccount(Account account) {
+
+        Rules rules = accountValidator.validateUpdate(account);
+        if (!rules.areBroken()) {
+
+            return Result.create(accountDao.save(account));
+        }
+        return Result.fail(rules);
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class AccountValidator implements IValidator<Account> {
 
     @Override
-    public Rules validate(Account entity) {
+    public Rules validateNew(Account entity) {
         //TODO only BS rules
         Rules rules = new Rules();
         if(entity == null){
@@ -17,5 +17,15 @@ public class AccountValidator implements IValidator<Account> {
 
         //TODO implement
         return rules;
+    }
+
+    @Override
+    public Rules validateUpdate(Account entity) {
+        return null;
+    }
+
+    @Override
+    public Rules validateDelete(Account entity) {
+        return null;
     }
 }

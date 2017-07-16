@@ -66,7 +66,7 @@ public class ExpenseServiceTest {
 
     @Test
     public void spendBrokingRules() {
-        when(expenseValidator.validate(any())).thenReturn(new Rules().broken("someError"));
+        when(expenseValidator.validateNew(any())).thenReturn(new Rules().broken("someError"));
 
         Expense givenExpense = Expense.newExpense(EXPECTED_AMOUNT).by(AccountCreator.create());
 
@@ -129,7 +129,7 @@ public class ExpenseServiceTest {
             Expense result = expenseService.spend(Expense.newExpense(EXPECTED_AMOUNT).by(expectedAccount).on(category));
             assertEquals(EXPECTED_AMOUNT, result.getAmount());
             assertEquals(EXPECTED_DATE_NOW, result.getWhen());
-            assertEquals(expectedAccount, result.getAccount());
+            assertEquals(expectedAccount, result.getAccountDetails());
             assertNull(result.getCategory());
         }
     */
@@ -141,7 +141,7 @@ public class ExpenseServiceTest {
         Account expectedAccount = AccountCreator.create();
         when(accountDao.findOne(eq(expectedAccount.getId()))).thenReturn(expectedAccount);
         when(categoryDao.findOne(eq(expectedCategory.getId()))).thenReturn(expectedCategory);
-        when(expenseValidator.validate(any())).thenReturn(new Rules());
+        when(expenseValidator.validateNew(any())).thenReturn(new Rules());
 
         Result<Expense> result = expenseService.spend(Expense.newExpense(EXPECTED_AMOUNT).
                 at(expectedWhen).
@@ -190,7 +190,7 @@ public class ExpenseServiceTest {
 
     @Test
     public void categorizeBreakingRules() {
-        when(categoryValidator.validate(any())).thenReturn(new Rules().broken("some broken"));
+        when(categoryValidator.validateNew(any())).thenReturn(new Rules().broken("some broken"));
 
         Result<Category> result = expenseService.categorize(null);
         assertTrue(result.isCompromised());
@@ -198,7 +198,7 @@ public class ExpenseServiceTest {
 
     @Test
     public void categorize() {
-        when(categoryValidator.validate(any())).thenReturn(new Rules());
+        when(categoryValidator.validateNew(any())).thenReturn(new Rules());
 
         expenseService.categorize(new Category());
     }

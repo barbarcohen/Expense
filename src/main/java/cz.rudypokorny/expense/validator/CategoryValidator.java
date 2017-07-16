@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class CategoryValidator implements IValidator<Category> {
 
     @Override
-    public Rules validate(Category entity) {
+    public Rules validateNew(Category entity) {
         Rules rules = new Rules();
         //TODO only BS rules
         if(entity == null){
@@ -18,5 +18,15 @@ public class CategoryValidator implements IValidator<Category> {
             rules.broken("name is null");
         }
         return rules;
+    }
+
+    @Override
+    public Rules validateUpdate(Category entity) {
+        return null;
+    }
+
+    @Override
+    public Rules validateDelete(Category entity) {
+        return null;
     }
 }

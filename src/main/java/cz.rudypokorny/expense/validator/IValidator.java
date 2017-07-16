@@ -8,5 +8,9 @@ import cz.rudypokorny.expense.entity.Validable;
  */
 public interface IValidator<T extends Validable> {
 
-    Rules validate(T entity);
+    Rules validateNew(T entity);
+
+    Rules validateUpdate(T entity);
+
+    Rules validateDelete(T entity);
 }

@@ -14,7 +14,7 @@ import java.util.Optional;
 @Transactional
 public interface IExpenseService {
 
-    Result<Expense> spend(@Valid  final Expense expense);
+    Result<Expense> spend(final Expense expense);
 
     Result<Optional<Expense>> getExpense(final Long id);
 
@@ -22,11 +22,13 @@ public interface IExpenseService {
 
     Result<Iterable<Account>> findAccounts();
 
-    Result<Optional<Account>> getAccount(Long id);
+    Result<Optional<Account>> getAccountDetails(Long id);
 
     Result<Iterable<Category>> getCategories();
 
-    Result<Category> categorize(@Valid Category category);
+    Result<Category> categorize(Category category);
 
-    Result<Account> newAccount(@Valid final Account account);
+    Result<Account> newAccount(final Account account);
+
+    Result<Account> updateAccount(final Account account);
 }
