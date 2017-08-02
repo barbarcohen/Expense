@@ -2,6 +2,7 @@ package cz.rudypokorny.expense.model;
 
 import cz.rudypokorny.expense.entity.Validable;
 import cz.rudypokorny.util.DateUtil;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -83,6 +84,7 @@ public class Expense extends Auditable implements Serializable, Validable {
         this.amount = amount;
     }
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     public ZonedDateTime getWhen() {
         return when;
     }
@@ -111,7 +113,7 @@ public class Expense extends Auditable implements Serializable, Validable {
         return account;
     }
 
-    public void setAccount(Account account) {
+    void setAccount(Account account) {
         this.account = account;
     }
 

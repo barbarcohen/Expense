@@ -10,6 +10,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -41,5 +44,29 @@ public class ExpenseDaoTest {
         assertEquals(expectedExpense.getAmount(), actualExpense.getAmount());
         assertNotNull(actualExpense.getCreatedDate());
         assertNotNull(actualExpense.getUpdatedDate());
+    }
+
+    @Test
+    public void testFindByWhenBetweenNanoInPast(){
+        Account account = Account.named("account");
+
+        ZonedDateTime now = ZonedDateTime.now();
+        ZonedDateTime expectedTime = now.minusNanos(1);
+
+        Expense expenseInPast = Expense.newExpense(1.0).by(account).at(expectedTime);
+
+        testEntityManager.persist(account);
+        testEntityManager.persistAndFlush(expenseInPast);
+
+        //from now to future + nano
+        assertFalse(expenseDao.findByWhenBetween(now, now.plusNanos(1)).iterator().hasNext());
+        //from past 2 days to now - 2 manos
+        assertFalse(expenseDao.findByWhenBetween(now.minusDays(2), now.minusNanos(2)).iterator().hasNext());
+
+        //in past from now
+        Expense actualExpense = expenseDao.findByWhenBetween(now.minusDays(1), now).iterator().next();
+        assertEquals(expenseInPast.getId(), actualExpense.getId());
+        assertEquals(expenseInPast.getAmount(), actualExpense.getAmount());
+
     }
 }

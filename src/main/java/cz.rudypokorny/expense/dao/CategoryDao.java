@@ -16,4 +16,5 @@ public interface CategoryDao extends CrudRepository<Category, Long> {
 
     Iterable<Category> findByParentName(String name);
 
+    Category findOneByName(String name);
 }

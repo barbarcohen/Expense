@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface ImportSource<T> {
 
-    List<T> loadDate();
+    List<T> loadData();
 }

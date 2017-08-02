@@ -1,4 +1,4 @@
-package cz.rudypokorny.expense.service;
+package cz.rudypokorny.expense;
 
 import cz.rudypokorny.expense.entity.Result;
 import cz.rudypokorny.expense.entity.Rules;

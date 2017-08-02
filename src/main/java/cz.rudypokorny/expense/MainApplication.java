@@ -1,18 +1,24 @@
 package cz.rudypokorny.expense;
 
 
+import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.service.IExpenseService;
-import org.springframework.beans.factory.annotation.Autowired;
+import cz.rudypokorny.expense.service.IImportService;
+import cz.rudypokorny.util.CategoryEnum;
+import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.context.annotation.*;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.shell.Bootstrap;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import java.io.IOException;
+import java.util.stream.Collectors;
+
 
 @SpringBootApplication
 @Configuration
@@ -24,6 +30,36 @@ public class MainApplication {
         SpringApplication app = new SpringApplication(MainApplication.class);
 
         app.run(args);
+    }
+
+    @Bean
+    public Mapper mapper() {
+        return new DozerBeanMapper();
+    }
+
+    @Bean
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+        return args -> {
+            ctx.getBean(IExpenseService.class).findExpenseByFilter(null);
+
+            //TODO run only if import args
+            if (args.length > 0) {
+                IImportService importService = ctx.getBean(IImportService.class);
+
+                //import all categories
+                importService.importCategories(() -> {
+                    return CategoryEnum.real.stream().
+                            map(e -> Category.named(e.getSubCategory()).withParent(e.getCategory())).
+                            collect(Collectors.toList());
+                });
+
+                //rudolf
+                //importService.importExpensesForAccount();
+
+                //katka
+            }
+
+        };
     }
 
 }

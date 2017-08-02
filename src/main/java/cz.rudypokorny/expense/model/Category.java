@@ -8,9 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by Rudolf on 10/07/2017.
- */
+//TODO Categoreis per Account. Account can be used by many users. Users are using GROUP
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
 public class Category implements Serializable, Validable {
@@ -23,11 +21,14 @@ public class Category implements Serializable, Validable {
     @Column(unique = true)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Category parent;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
     private List<Category> children;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+    private List<Expense> expenses;
 
     public static Category named(String name) {
         Category category = new Category();
@@ -40,6 +41,14 @@ public class Category implements Serializable, Validable {
         category.name = name;
         category.parent = parent;
         return category;
+    }
+
+    public Category withParent(String name) {
+        if (name != null) {
+            Category parent = Category.named(name);
+            this.parent = parent;
+        }
+        return this;
     }
 
     public Long getId() {
@@ -76,5 +85,37 @@ public class Category implements Serializable, Validable {
         return !StringUtils.isEmpty(name);
     }
 
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", parent=" + parent +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Category category = (Category) o;
+
+        if (id != null ? !id.equals(category.id) : category.id != null) return false;
+        if (!name.equals(category.name)) return false;
+        if (parent != null ? !parent.equals(category.parent) : category.parent != null) return false;
+        if (children != null ? !children.equals(category.children) : category.children != null) return false;
+        return expenses != null ? expenses.equals(category.expenses) : category.expenses == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + name.hashCode();
+        result = 31 * result + (parent != null ? parent.hashCode() : 0);
+        result = 31 * result + (children != null ? children.hashCode() : 0);
+        result = 31 * result + (expenses != null ? expenses.hashCode() : 0);
+        return result;
+    }
 }

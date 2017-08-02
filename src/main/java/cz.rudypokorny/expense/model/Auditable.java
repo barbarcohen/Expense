@@ -3,6 +3,7 @@ package cz.rudypokorny.expense.model;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
@@ -25,6 +26,7 @@ public abstract class Auditable implements Serializable {
     @LastModifiedDate
     protected ZonedDateTime updatedDate;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     public ZonedDateTime getCreatedDate() {
         return createdDate;
     }
@@ -33,6 +35,7 @@ public abstract class Auditable implements Serializable {
         this.createdDate = createdDate;
     }
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     public ZonedDateTime getUpdatedDate() {
         return updatedDate;
     }

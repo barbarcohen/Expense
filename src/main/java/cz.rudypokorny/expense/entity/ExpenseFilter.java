@@ -4,22 +4,20 @@ import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.util.DateUtil;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
-public class ExpenseFilter {
-
-    private static final LocalDate DEFAULT_DATE_FROM = DateUtil.getCurrentDate().minusDays(7);
+public final class ExpenseFilter {
 
     private final Account account;
     private final Category category;
-    private final LocalDate dateFrom;
-    private final LocalDate dateTo;
+    private final LocalDateTime dateFrom;
+    private final LocalDateTime dateTo;
     private final Double amountMax;
     private final Double amountMin;
     private final String note;
 
-
-    private ExpenseFilter(Account account, Category category, LocalDate dateFrom, LocalDate dateTo, Double amountMax, Double amountMin, String note) {
+    private ExpenseFilter(Account account, Category category, LocalDateTime dateFrom, LocalDateTime dateTo, Double amountMax, Double amountMin, String note) {
         this.account = account;
         this.category = category;
         this.dateFrom = dateFrom;
@@ -29,12 +27,36 @@ public class ExpenseFilter {
         this.note = note;
     }
 
-    public static ExpenseFilter forCategory(Category category) {
-        return new ExpenseFilter(null, category, DEFAULT_DATE_FROM, null, null, null, null);
+    public static final LocalDateTime getDefaultDateFrom() {
+        return DateUtil.getCurrentDate().minusDays(7).atStartOfDay();
     }
 
-    public static ExpenseFilter forDates(LocalDate from, LocalDate to) {
-        return new ExpenseFilter(null, null, from, to, null, null, null);
+    public static final LocalDateTime getDefaultDateTo() {
+        return DateUtil.getCurrentDate().atTime(LocalTime.MAX);
+    }
+
+    public static ExpenseFilter create(Account account) {
+        return new ExpenseFilter(account, null, getDefaultDateFrom(), getDefaultDateTo(), null, null, null);
+    }
+
+    public ExpenseFilter amountMBetween(Double amountMin, Double amountMax) {
+        return new ExpenseFilter(account, null, getDefaultDateFrom(), getDefaultDateTo(), amountMax, amountMin, null);
+    }
+
+    public ExpenseFilter forCategory(Category category) {
+        return new ExpenseFilter(account, category, dateFrom, dateTo, amountMax, amountMin, note);
+    }
+
+    public ExpenseFilter forDates(LocalDateTime dateFrom, LocalDateTime dateTo) {
+        return new ExpenseFilter(account, category, dateFrom, dateTo, amountMax, amountMin, note);
+    }
+
+    public ExpenseFilter today() {
+        return new ExpenseFilter(account, category, DateUtil.getCurrentDate().atStartOfDay(), getDefaultDateTo(), amountMax, amountMin, note);
+    }
+
+    public ExpenseFilter withNote(String note) {
+        return new ExpenseFilter(account, category, dateFrom, dateTo, amountMax, amountMin, note);
     }
 
     public Account getAccount() {
@@ -45,11 +67,11 @@ public class ExpenseFilter {
         return category;
     }
 
-    public LocalDate getDateFrom() {
+    public LocalDateTime getDateFrom() {
         return dateFrom;
     }
 
-    public LocalDate getDateTo() {
+    public LocalDateTime getDateTo() {
         return dateTo;
     }
 

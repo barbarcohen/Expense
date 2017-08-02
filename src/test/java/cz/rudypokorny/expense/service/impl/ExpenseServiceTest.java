@@ -162,7 +162,7 @@ public class ExpenseServiceTest {
 
     @Test
     public void getExpense() throws Exception {
-        when(expenseDao.findOne(any())).thenReturn(null);
+        when(expenseDao.findOne(anyLong())).thenReturn(null);
 
         Result<Optional<Expense>> result = expenseService.getExpense(1L);
         assertFalse(result.get().isPresent());

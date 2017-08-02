@@ -20,6 +20,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.validation.ConstraintViolationException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -130,28 +133,4 @@ public class ExpenseServiceIntegrationTest {
         assertEquals(DataIntegrityViolationException.class, secondAttempt.rules().getExceptions().get(0).getClass());
     }
 
-    //TODO uncomment when impemented
-    //@Test
-    public void testFindExpenseByFilterWithCategory() throws Exception {
-        Category expectedCategory = Category.named("whaterver");
-        Account expectedAccount = Account.named("accoutn");
-
-        testEntityManager.persistAndFlush(expectedAccount);
-        testEntityManager.persistAndFlush(expectedCategory);
-        testEntityManager.persistFlushFind(Expense.newExpense(30.0).on(expectedCategory).by(expectedAccount));
-
-        Result<Iterable<Expense>> result = expenseService.findExpenseByFilter(ExpenseFilter.forCategory(expectedCategory));
-
-        assertTrue(result.isOk());
-        Expense actualExpense = result.get().iterator().next();
-        assertEquals(expectedCategory.getName(), actualExpense.getCategory().getName());
-        assertEquals(expectedAccount.getName(), actualExpense.getAccount().getName());
-    }
-
-    @Test
-    public void findExpenseByFilterNullFiler() throws Exception {
-        Result<Iterable<Expense>> result = expenseService.findExpenseByFilter(null);
-
-        assertTrue(result.isCompromised());
-    }
 }

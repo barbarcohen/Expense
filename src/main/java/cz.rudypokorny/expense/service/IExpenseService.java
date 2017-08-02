@@ -1,5 +1,6 @@
 package cz.rudypokorny.expense.service;
 
+import cz.rudypokorny.expense.dto.CategoryDTO;
 import cz.rudypokorny.expense.entity.ExpenseFilter;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
@@ -24,7 +25,7 @@ public interface IExpenseService {
 
     Result<Optional<Account>> getAccountDetails(Long id);
 
-    Result<Iterable<Category>> getCategories();
+    Result<Iterable<CategoryDTO>> findAllCategories();
 
     Result<Category> categorize(Category category);
 

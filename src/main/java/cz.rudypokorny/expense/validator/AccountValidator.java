@@ -21,11 +21,13 @@ public class AccountValidator implements IValidator<Account> {
 
     @Override
     public Rules validateUpdate(Account entity) {
-        return null;
+        Rules rules = new Rules();
+        return rules;
     }
 
     @Override
     public Rules validateDelete(Account entity) {
-        return null;
+        Rules rules = new Rules();
+        return rules;
     }
 }
