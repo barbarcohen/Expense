@@ -140,7 +140,7 @@ public class ExpenseServiceTest {
         Category expectedCategory = CategoryCreator.create();
         Account expectedAccount = AccountCreator.create();
         when(accountDao.findOne(eq(expectedAccount.getId()))).thenReturn(expectedAccount);
-        when(categoryDao.findOne(eq(expectedCategory.getId()))).thenReturn(expectedCategory);
+        when(categoryDao.findOneByName(eq(expectedCategory.getName()))).thenReturn(expectedCategory);
         when(expenseValidator.validateNew(any())).thenReturn(new Rules());
 
         Result<Expense> result = expenseService.spend(Expense.newExpense(EXPECTED_AMOUNT).

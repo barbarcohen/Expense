@@ -4,6 +4,8 @@ import cz.rudypokorny.expense.model.Account;
 
 import static org.junit.Assert.*;
 
+import cz.rudypokorny.expense.model.User;
+import cz.rudypokorny.util.SecurityContextTestUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @javax.transaction.Transactional
-public class AccountDaoTest {
+public class AccountDaoAwareHelperTestUtil{
 
 
     @Autowired
@@ -36,7 +38,10 @@ public class AccountDaoTest {
 
     @Test
     public void testSave(){
-        String name = "name 123";
+        User user = SecurityContextTestUtil.addToSecurityContext(User.create("some","some"));
+        testEntityManager.persistAndFlush(user);
+
+        String name =   "name 123";
         Account expectedAccount = accountDao.save(Account.named(name));
 
         testEntityManager.flush();

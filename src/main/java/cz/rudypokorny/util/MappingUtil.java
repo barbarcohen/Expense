@@ -127,7 +127,7 @@ public class MappingUtil {
         if (result.isPresent()) {
             return result.get().getValue();
         }
-        logger.error("Mapping for category named '{}' was not found.", sourceCategoryName);
+        logger.error("Mapping for category create '{}' was not found.", sourceCategoryName);
         return NOT_DEFINED;
 
     }

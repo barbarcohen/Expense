@@ -1,5 +1,6 @@
 package cz.rudypokorny.expense.model;
 
+import cz.rudypokorny.expense.entity.AccountAware;
 import cz.rudypokorny.expense.entity.Validable;
 import cz.rudypokorny.util.DateUtil;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,7 +16,7 @@ import java.util.Objects;
  */
 @Entity
 @Table
-public class Expense extends Auditable implements Serializable, Validable {
+public class Expense extends Auditable implements Serializable, Validable, AccountAware {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -113,7 +114,8 @@ public class Expense extends Auditable implements Serializable, Validable {
         return account;
     }
 
-    void setAccount(Account account) {
+    @Override
+    public void setAccount(Account account) {
         this.account = account;
     }
 

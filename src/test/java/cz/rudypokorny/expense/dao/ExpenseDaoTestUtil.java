@@ -2,7 +2,10 @@ package cz.rudypokorny.expense.dao;
 
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Expense;
+import cz.rudypokorny.expense.model.User;
+import cz.rudypokorny.util.SecurityContextTestUtil;
 import org.assertj.core.util.IterableUtil;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 import static org.junit.Assert.*;
@@ -18,7 +20,8 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @javax.transaction.Transactional
-public class ExpenseDaoTest {
+public class ExpenseDaoTestUtil {
+
 
     @Autowired
     private TestEntityManager testEntityManager;
@@ -26,12 +29,25 @@ public class ExpenseDaoTest {
     @Autowired
     private ExpenseDao expenseDao;
 
+    private Account expectedAccount;
+    private User currentUser;
+
+    @Before
+    public void setup() {
+        expectedAccount = Account.named("testaccount");
+        currentUser = SecurityContextTestUtil.addToSecurityContext(User.create("testuser", "password")).account(expectedAccount);
+
+        testEntityManager.persist(currentUser);
+        expectedAccount.activeFor(currentUser);
+        testEntityManager.persist(expectedAccount);
+
+        testEntityManager.flush();
+        testEntityManager.clear();
+    }
+
     @Test
     public void testFindAll() {
-        Account account = Account.named("Sone name");
-        testEntityManager.persist(account);
-
-        Expense expectedExpense = Expense.newExpense(1d).by(account);
+        Expense expectedExpense = Expense.newExpense(1d).by(expectedAccount);
 
         testEntityManager.persist(expectedExpense);
 
@@ -48,14 +64,12 @@ public class ExpenseDaoTest {
 
     @Test
     public void testFindByWhenBetweenNanoInPast(){
-        Account account = Account.named("account");
 
         ZonedDateTime now = ZonedDateTime.now();
         ZonedDateTime expectedTime = now.minusNanos(1);
 
-        Expense expenseInPast = Expense.newExpense(1.0).by(account).at(expectedTime);
+        Expense expenseInPast = Expense.newExpense(1.0).by(expectedAccount).at(expectedTime);
 
-        testEntityManager.persist(account);
         testEntityManager.persistAndFlush(expenseInPast);
 
         //from now to future + nano

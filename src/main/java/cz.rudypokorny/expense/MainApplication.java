@@ -1,8 +1,11 @@
 package cz.rudypokorny.expense;
 
 
+import cz.rudypokorny.expense.dao.AccountDao;
+import cz.rudypokorny.expense.dao.UserDao;
+import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
-import cz.rudypokorny.expense.service.IExpenseService;
+import cz.rudypokorny.expense.model.User;
 import cz.rudypokorny.expense.service.IImportService;
 import cz.rudypokorny.util.CategoryEnum;
 import org.dozer.DozerBeanMapper;
@@ -40,15 +43,21 @@ public class MainApplication {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-            ctx.getBean(IExpenseService.class).findExpenseByFilter(null);
+
 
             //TODO run only if import args
             if (args.length > 0) {
+                User currentUser = User.create("user", "password");
+                Account account = Account.named("default").activeFor(currentUser);
+
+                ctx.getBean(AccountDao.class).save(account);
+                ctx.getBean(UserDao.class).save(currentUser);
+
                 IImportService importService = ctx.getBean(IImportService.class);
 
                 //import all categories
                 importService.importCategories(() -> {
-                    return CategoryEnum.real.stream().
+                    return CategoryEnum.categories.stream().
                             map(e -> Category.named(e.getSubCategory()).withParent(e.getCategory())).
                             collect(Collectors.toList());
                 });

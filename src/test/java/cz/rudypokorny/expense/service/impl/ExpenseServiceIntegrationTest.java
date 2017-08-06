@@ -1,27 +1,24 @@
 package cz.rudypokorny.expense.service.impl;
 
 
-import cz.rudypokorny.expense.entity.ExpenseFilter;
 import cz.rudypokorny.expense.entity.Result;
 import cz.rudypokorny.expense.entity.Rules;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.AccountCreator;
-import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.Expense;
+import cz.rudypokorny.expense.model.User;
 import cz.rudypokorny.expense.service.IExpenseService;
+import cz.rudypokorny.util.SecurityContextTestUtil;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.validation.ConstraintViolationException;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -37,11 +34,27 @@ public class ExpenseServiceIntegrationTest {
     @Autowired
     private IExpenseService expenseService;
 
+    private Account expectedAccount;
+    private User currentUser;
+
+    @Before
+    public void setup() {
+        expectedAccount = Account.named("testaccount");
+        currentUser = SecurityContextTestUtil.addToSecurityContext(User.create("testuser", "password")).account(expectedAccount);
+
+        testEntityManager.persist(currentUser);
+        expectedAccount.activeFor(currentUser);
+        testEntityManager.persist(expectedAccount);
+
+        testEntityManager.flush();
+        testEntityManager.clear();
+    }
+
+
     @Test
     public void spend() throws Exception {
-        Account expectedAccount = testEntityManager.persist(Account.named("account"));
         String expectedMessage = "message";
-        Expense expectedExpense = Expense.newExpense(33.0).by(expectedAccount).noted(expectedMessage);
+        Expense expectedExpense = Expense.newExpense(33.0).noted(expectedMessage);
 
         Result<Expense> result = expenseService.spend(expectedExpense);
 
@@ -76,7 +89,7 @@ public class ExpenseServiceIntegrationTest {
     }
 
     @Test
-    public void testNewAccountNull(){
+    public void testNewAccountNull() {
         Result<Account> result = expenseService.newAccount(null);
         assertTrue(result.isCompromised());
 
@@ -86,7 +99,7 @@ public class ExpenseServiceIntegrationTest {
     }
 
     @Test
-    public void testNewAccountEmpty(){
+    public void testNewAccountEmpty() {
         Result<Account> result = expenseService.newAccount(AccountCreator.createEmpty());
         assertTrue(result.isCompromised());
 
@@ -96,8 +109,8 @@ public class ExpenseServiceIntegrationTest {
     }
 
     @Test
-    public void testNewAccount(){
-        Account expectedAccount= Account.named("account sdkfj dsf");
+    public void testNewAccount() {
+        Account expectedAccount = Account.named("account sdkfj dsf");
         Result<Account> result = expenseService.newAccount(expectedAccount);
 
         assertTrue(result.isOk());
@@ -112,8 +125,8 @@ public class ExpenseServiceIntegrationTest {
     }
 
     @Test
-    public void testNewAccountDuplicitName(){
-        Account expectedAccount= Account.named("account sdkfj dsf");
+    public void testNewAccountDuplicitName() {
+        Account expectedAccount = Account.named("account sdkfj dsf");
         Result<Account> result = expenseService.newAccount(expectedAccount);
         testEntityManager.clear();
 

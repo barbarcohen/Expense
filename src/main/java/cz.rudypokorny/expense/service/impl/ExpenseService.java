@@ -8,7 +8,9 @@ import cz.rudypokorny.expense.dto.CategoryDTO;
 import cz.rudypokorny.expense.entity.ExpenseFilter;
 import cz.rudypokorny.expense.entity.Result;
 import cz.rudypokorny.expense.entity.Rules;
-import cz.rudypokorny.expense.model.*;
+import cz.rudypokorny.expense.model.Account;
+import cz.rudypokorny.expense.model.Category;
+import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.service.IExpenseService;
 import cz.rudypokorny.expense.validator.IValidator;
 import org.dozer.Mapper;
@@ -18,7 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class ExpenseService implements IExpenseService {
@@ -50,12 +53,20 @@ public class ExpenseService implements IExpenseService {
 
     @Override
     public Result<Expense> spend(Expense expense) {
+
+        if (expense.getCategory() != null) {
+            Category category = categoryDao.findOneByName(expense.getCategory().getName());
+            logger.debug("Loading category: {}", category);
+            expense.on(category);
+        }
+
+
         Rules rules = expenseValidator.validateNew(expense);
         if (rules.areBroken()) {
             return Result.fail(rules);
-        } else {
-            return Result.create(expenseDao.save(expense));
         }
+        return Result.create(expenseDao.save(expense));
+
     }
 
     @Override

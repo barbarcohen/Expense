@@ -19,7 +19,7 @@ public class Importer {
 
         //filter disticts categories
         Observable.fromIterable(result).distinct(FileImporter.Record::getCategory).forEach(e->{
-            //        categoryDao.save(Category.named(e.getCategory()));
+            //        categoryDao.save(Category.create(e.getCategory()));
             System.out.println(e.getCategory());
         });
 

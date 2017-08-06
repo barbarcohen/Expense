@@ -11,7 +11,7 @@ public enum CategoryEnum {
     //real categories
     DOMACNOST_POTRAVINY("Domácnost", "Potraviny");
 
-    public static Set<CategoryEnum> real = EnumSet.complementOf(EnumSet.of(NOT_DEFINED, TBD));
+    public static Set<CategoryEnum> categories = EnumSet.complementOf(EnumSet.of(NOT_DEFINED, TBD));
 
     private String category;
     private String subCategory;
