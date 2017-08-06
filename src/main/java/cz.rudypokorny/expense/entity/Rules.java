@@ -39,6 +39,7 @@ public class Rules {
     public String toString() {
         return "Rules{" +
                 "errors=" + errors +
+                ", exceptions=" + exceptions +
                 '}';
     }
 

@@ -51,6 +51,7 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
         return this;
     }
 
+
     public Expense by(Account account) {
         this.setAccount(Objects.requireNonNull(account));
         return this;

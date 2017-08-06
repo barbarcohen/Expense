@@ -36,6 +36,7 @@ public class ExpenseServiceIntegrationTest {
 
     private Account expectedAccount;
     private User currentUser;
+    private Account anotherAccount;
 
     @Before
     public void setup() {
@@ -44,7 +45,7 @@ public class ExpenseServiceIntegrationTest {
 
         testEntityManager.persist(currentUser);
         expectedAccount.activeFor(currentUser);
-        testEntityManager.persist(expectedAccount);
+        testEntityManager.persistAndFlush(expectedAccount);
 
         testEntityManager.flush();
         testEntityManager.clear();
@@ -81,8 +82,36 @@ public class ExpenseServiceIntegrationTest {
     }
 
     @Test
-    public void spendForUnknownAccount() {
-        Expense expense = Expense.newExpense(33.0).by(AccountCreator.create()).noted("message");
+    public void spendForNotPersistedAccount() {
+        Expense expense = Expense.newExpense(33.0).by(Account.named("abc"));
+
+        Result<Expense> result = expenseService.spend(expense);
+        assertTrue(result.isCompromised());
+    }
+
+    @Test
+    public void spendForDifferentAccount() {
+        //crating different user and account
+        User differentUser = SecurityContextTestUtil.addToSecurityContext(User.create("different", "different"));
+        testEntityManager.persist(differentUser);
+        anotherAccount = Account.named("abc");
+        testEntityManager.persistAndFlush(anotherAccount);
+        //switching back to current
+        SecurityContextTestUtil.addToSecurityContext(currentUser);
+
+        Expense expense = Expense.newExpense(33.0).by(anotherAccount);
+
+        Result<Expense> result = expenseService.spend(expense);
+        assertTrue(result.isCompromised());
+    }
+
+    @Test
+    public void spendForUserWithoutAccount() {
+        //crating different user and account
+        User differentUser = SecurityContextTestUtil.addToSecurityContext(User.create("different", "different"));
+        testEntityManager.persist(differentUser);
+
+        Expense expense = Expense.newExpense(33.0);
 
         Result<Expense> result = expenseService.spend(expense);
         assertTrue(result.isCompromised());

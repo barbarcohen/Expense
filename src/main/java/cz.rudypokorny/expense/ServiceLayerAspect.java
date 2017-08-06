@@ -57,6 +57,7 @@ public class ServiceLayerAspect {
                     User currentUser = ((ContextUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser();
                     AccountAware object = ((AccountAware) arg);
 
+                    //validate whether user have active account and whther the item is not requiring other than current user have
                     if (SecurityContextHolder.getContext().getAuthentication().isAuthenticated() &&
                             hasAccount(currentUser) &&
                             checkExpenseAccount(object.getAccount(), currentUser.getActiveAccount())) {
@@ -74,14 +75,14 @@ public class ServiceLayerAspect {
     // => if account is present on object it must be the same
     private boolean hasAccount(User currentUser) {
         if (currentUser.getActiveAccount() == null) {
-            throw new AccountAwareException(String.format("User %s must have an active account", currentUser));
+            throw new AccountAwareException(String.format("User %s must have an active account assigned.", currentUser));
         }
         return true;
     }
 
     private boolean checkExpenseAccount(Account objectAccount, Account currentAccount) {
         if (objectAccount!= null && !currentAccount.equals(objectAccount)) {
-            throw new AccountAwareException(String.format("Account cannot be changed % -> %", objectAccount, currentAccount));
+            throw new AccountAwareException(String.format("Account did not match: %s -> %s", objectAccount, currentAccount));
         }
         return true;
     }
