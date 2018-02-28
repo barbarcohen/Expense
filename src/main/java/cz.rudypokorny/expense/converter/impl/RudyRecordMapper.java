@@ -4,7 +4,7 @@ import cz.rudypokorny.expense.converter.RecordMapper;
 import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.util.DateUtil;
-import cz.rudypokorny.expense.converter.MappingUtil;
+import cz.rudypokorny.expense.converter.CategoryMapping;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -42,7 +42,7 @@ public class RudyRecordMapper implements RecordMapper<Expense> {
             String vendor = csvRecord.get(4);
             String currency = csvRecord.get(6);
 
-            Category convertedCategory = MappingUtil.getMappingFor(createCategoruString(category, subcategory)).full();
+            Category convertedCategory = CategoryMapping.getMappingFor(createCategoruString(category, subcategory)).full();
             expense = Expense.newExpense(amount).
                     on(convertedCategory).
                     at(date).

@@ -4,7 +4,7 @@ import cz.rudypokorny.expense.converter.RecordMapper;
 import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.util.DateUtil;
-import cz.rudypokorny.expense.converter.MappingUtil;
+import cz.rudypokorny.expense.converter.CategoryMapping;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -43,7 +43,7 @@ public class KatikRecordMapper implements RecordMapper<Expense> {
 
             ZonedDateTime date =DATE_FORMAT.parse(csvRecord.get(0)).toInstant().atZone(timezone);
 
-            Category convertedCategory = MappingUtil.getMappingFor(category).full();
+            Category convertedCategory = CategoryMapping.getMappingFor(category).full();
             expense = Expense.newExpense(amount).
                     on(convertedCategory).
                     at(date).

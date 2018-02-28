@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 /**
  * Created by Rudolf on 02/08/2017.
  */
-public class MappingUtil {
+public class CategoryMapping {
 
     //mapping rudy
     final private static Map<String, CategoryEnum> expenseItMapping = ImmutableMap.<String, CategoryEnum>builder().
@@ -117,7 +117,7 @@ public class MappingUtil {
             put("Sámoška-Potraviny a nápoje", CategoryEnum.HOUSEHOLD_GLOCERIES).
             build();
 
-    private static Logger logger = LoggerFactory.getLogger(MappingUtil.class);
+    private static Logger logger = LoggerFactory.getLogger(CategoryMapping.class);
 
     public static CategoryEnum getMappingFor(final String sourceCategoryName) {
         Optional<Map.Entry<String, CategoryEnum>> result = Stream.of(expenseItMapping, otherMapping).

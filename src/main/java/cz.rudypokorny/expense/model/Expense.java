@@ -125,4 +125,15 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
         return category != null && category.isValid();
     }
 
+    @Override
+    public String toString() {
+        return "Expense{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", when=" + when +
+                ", note='" + note + '\'' +
+                ", category=" + category +
+                ", account=" + account +
+                '}';
+    }
 }
