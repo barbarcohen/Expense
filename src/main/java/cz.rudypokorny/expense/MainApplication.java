@@ -3,11 +3,10 @@ package cz.rudypokorny.expense;
 
 import cz.rudypokorny.expense.dao.AccountDao;
 import cz.rudypokorny.expense.dao.UserDao;
+import cz.rudypokorny.expense.entity.ContextUser;
 import cz.rudypokorny.expense.model.Account;
-import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.User;
 import cz.rudypokorny.expense.service.IImportService;
-import cz.rudypokorny.util.CategoryEnum;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.springframework.boot.CommandLineRunner;
@@ -18,9 +17,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.security.authentication.TestingAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 
 @SpringBootApplication
@@ -48,19 +50,28 @@ public class MainApplication {
             //TODO run only if import args
             if (args.length > 0) {
                 User currentUser = User.create("user", "password");
+                ctx.getBean(UserDao.class).save(currentUser);
+
+                //do importin
+                Authentication auth = new TestingAuthenticationToken(
+                        ContextUser.create(currentUser, AuthorityUtils.createAuthorityList("USER")),
+                        currentUser.getPassword());
+                auth.setAuthenticated(true);
+                SecurityContextHolder.getContext().setAuthentication(auth);
+
                 Account account = Account.named("default").activeFor(currentUser);
 
                 ctx.getBean(AccountDao.class).save(account);
-                ctx.getBean(UserDao.class).save(currentUser);
+
 
                 IImportService importService = ctx.getBean(IImportService.class);
 
                 //import all categories
-                importService.importCategories(() -> {
+               /* importService.importCategories(() -> {
                     return CategoryEnum.categories.stream().
                             map(e -> Category.named(e.getSubCategory()).withParent(e.getCategory())).
                             collect(Collectors.toList());
-                });
+                });*/
 
                 //rudolf
                 //importService.importExpensesForAccount();
