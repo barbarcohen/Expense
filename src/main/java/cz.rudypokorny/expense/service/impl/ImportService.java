@@ -28,6 +28,8 @@ public class ImportService implements IImportService {
 
     @Override
     public void importExpensesForAccount(Account account, ImportSource<Expense> importSource) {
+        //TODO design importing better
+
         Objects.requireNonNull(importSource, "ImportSource cannot be null.");
         importSource.loadData().stream().
                 forEach(e -> {

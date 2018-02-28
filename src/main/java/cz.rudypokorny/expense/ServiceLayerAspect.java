@@ -33,7 +33,7 @@ public class ServiceLayerAspect {
     }
 
     @Pointcut("execution(public * cz.rudypokorny.expense.service.*.*(cz.rudypokorny.expense.entity.AccountAware+,..))")
-    public void selectServiceMethodsWithCategoryAwareSublassAsParameter() {
+    public void selectServiceMethodsWithAccountAwareSublassAsParameter() {
     }
 
     @Order(1)
@@ -48,7 +48,7 @@ public class ServiceLayerAspect {
     }
 
     @Order(2)
-    @Around("selectServiceMethodsWithCategoryAwareSublassAsParameter()")
+    @Around("selectServiceMethodsWithAccountAwareSublassAsParameter()")
     public Object injectAccount(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
             for (Object arg : joinPoint.getArgs()) {

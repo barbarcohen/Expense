@@ -34,7 +34,6 @@ public class SecurityConfiguration extends GlobalAuthenticationConfigurerAdapter
             public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
                 User user = userDao.findByName(s);
                 if(user !=null){
-                    //TODO use domain User = wrap it
                     return ContextUser.create(user, AuthorityUtils.createAuthorityList("USER"));
                 } else {
                     throw new UsernameNotFoundException("Username '"+s+"' not found");
