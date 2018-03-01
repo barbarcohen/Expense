@@ -1,7 +1,7 @@
 package cz.rudypokorny.util;
 
-import cz.rudypokorny.expense.converter.CategoryEnum;
-import cz.rudypokorny.expense.converter.CategoryMapping;
+import cz.rudypokorny.expense.converter.categories.CategoryEnum;
+import cz.rudypokorny.expense.converter.categories.CategoryMapping;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -33,10 +33,10 @@ public class MappingUtilTest {
     @Test
     public void getMappingExisting() throws Exception {
         CategoryEnum result = CategoryMapping.getMappingFor("Household -> Groceries");
-        assertEquals(CategoryEnum.HOUSEHOLD_GLOCERIES, result);
+        assertEquals(CategoryEnum.HOUSEHOLD_GROCERIES, result);
 
         result = CategoryMapping.getMappingFor("Sámoška-Potraviny a nápoje");
-        assertEquals(CategoryEnum.HOUSEHOLD_GLOCERIES, result);
+        assertEquals(CategoryEnum.HOUSEHOLD_GROCERIES, result);
     }
 
 }

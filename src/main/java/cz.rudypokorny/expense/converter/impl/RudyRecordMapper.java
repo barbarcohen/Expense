@@ -4,7 +4,7 @@ import cz.rudypokorny.expense.converter.RecordMapper;
 import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.util.DateUtil;
-import cz.rudypokorny.expense.converter.CategoryMapping;
+import cz.rudypokorny.expense.converter.categories.CategoryMapping;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
