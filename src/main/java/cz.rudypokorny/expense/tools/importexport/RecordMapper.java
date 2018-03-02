@@ -1,6 +1,4 @@
-package cz.rudypokorny.expense.importexport;
-
-import org.apache.commons.csv.CSVRecord;
+package cz.rudypokorny.expense.tools.importexport;
 
 /**
  * Created by Rudolf on 28/02/2018.

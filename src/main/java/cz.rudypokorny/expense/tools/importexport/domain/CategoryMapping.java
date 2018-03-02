@@ -1,4 +1,4 @@
-package cz.rudypokorny.expense.importexport.domain;
+package cz.rudypokorny.expense.tools.importexport.domain;
 
 import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;

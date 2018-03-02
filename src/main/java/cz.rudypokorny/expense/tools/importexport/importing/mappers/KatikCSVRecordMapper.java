@@ -1,11 +1,11 @@
-package cz.rudypokorny.expense.importexport.importing.mappers;
+package cz.rudypokorny.expense.tools.importexport.importing.mappers;
 
-import cz.rudypokorny.expense.importexport.RecordMapper;
-import cz.rudypokorny.expense.importexport.domain.CategoryEnum;
-import cz.rudypokorny.expense.importexport.domain.CategoryMapping;
+import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.tools.importexport.RecordMapper;
+import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
+import cz.rudypokorny.expense.tools.importexport.domain.CategoryMapping;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
-import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.util.DateUtil;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -19,12 +19,12 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
-import static cz.rudypokorny.expense.importexport.domain.CategoryEnum.*;
+import static cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum.*;
 
 /**
  * //7/26/17;Miminko;477;;Vana,prebalovak +povlak;vendor
  */
-public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CSVFormat> {
+public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Record, CSVFormat> {
 
     private static final String FILENAME = "source_katik.csv";
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yy");
@@ -50,9 +50,9 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
     }
 
     @Override
-    public Expense map(final CSVRecord record) {
+    public Record map(final CSVRecord record) {
         Objects.requireNonNull(record, "csvRecord cannot be null");
-        Expense expense = null;
+        Record expense = null;
         try {
             Double amount = Double.valueOf(cleanAmountValue(record.get(2)));
             String category = record.get(1);
@@ -63,7 +63,7 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
 
             Category convertedCategory = additionalMapping(CategoryMapping.getMappingFor(category).full(), category, note);
 
-            expense = Expense.newExpense(convertAmount(amount, convertedCategory)).
+            expense = Record.newExpense(convertAmount(amount, convertedCategory)).
                     on(convertedCategory).
                     by(ACCOUNT).
                     at(date).

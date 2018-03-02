@@ -1,8 +1,8 @@
-package cz.rudypokorny.expense.importexport.exporting.mappers;
+package cz.rudypokorny.expense.tools.importexport.exporting.mappers;
 
-import cz.rudypokorny.expense.importexport.RecordMapper;
+import cz.rudypokorny.expense.tools.importexport.RecordMapper;
 import cz.rudypokorny.expense.model.Category;
-import cz.rudypokorny.expense.model.Expense;
+import cz.rudypokorny.expense.model.Record;
 import cz.rudypokorny.util.DateUtil;
 import org.apache.commons.csv.CSVFormat;
 
@@ -11,14 +11,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
-public class WalletExportMapper implements RecordMapper<Expense, List<?>, CSVFormat> {
+public class WalletExportMapper implements RecordMapper<Record, List<?>, CSVFormat> {
 
     public static final String EMPTY_STRING = "";
     public static final String TYPE_EXPENSES = "Expenses";
     public static final String TYPE_INCOME = "Incomes";
     public static final String PAYMENT_TYPE_CASH = "CASH";
     public static final String PAYMENT_TYPE_LOCAL_CASH = "Cash";
-    public static final String ENVELOPE_ID = "2007";
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private final String filename;
 
@@ -40,12 +39,11 @@ public class WalletExportMapper implements RecordMapper<Expense, List<?>, CSVFor
     }
 
     @Override
-    public List<?> map(Expense record) {
+    public List<?> map(Record record) {
         String latitude, longtitude, accurancy, warranty, transfer, labels, envelopeId;
         latitude = longtitude = accurancy = warranty = transfer = labels = envelopeId = EMPTY_STRING;
         boolean customCategory =  true;
 
-        //TODO fix category.geChilredn
         return Arrays.asList(record.getAccount().getName(), convertCategory(record.getCategory()), record.getCurrency(), record.getAmount(), record.getAmount(),
                 convertType(record.getAmount()), PAYMENT_TYPE_CASH, PAYMENT_TYPE_LOCAL_CASH, record.getNote(), convertDate(record.getWhen()),
                 latitude, longtitude, accurancy, transfer, record.getVendor(), labels, envelopeId, customCategory);

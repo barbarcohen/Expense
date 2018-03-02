@@ -1,7 +1,7 @@
-package cz.rudypokorny.expense.importexport.importing;
+package cz.rudypokorny.expense.tools.importexport.importing;
 
 
-import cz.rudypokorny.expense.importexport.RecordMapper;
+import cz.rudypokorny.expense.tools.importexport.RecordMapper;
 import cz.rudypokorny.util.FileUtil;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;

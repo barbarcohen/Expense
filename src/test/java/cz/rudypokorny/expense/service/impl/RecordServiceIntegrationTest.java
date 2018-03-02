@@ -5,7 +5,7 @@ import cz.rudypokorny.expense.entity.Result;
 import cz.rudypokorny.expense.entity.Rules;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.AccountCreator;
-import cz.rudypokorny.expense.model.Expense;
+import cz.rudypokorny.expense.model.Record;
 import cz.rudypokorny.expense.model.User;
 import cz.rudypokorny.expense.service.IExpenseService;
 import cz.rudypokorny.util.SecurityContextTestUtil;
@@ -25,7 +25,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @javax.transaction.Transactional
-public class ExpenseServiceIntegrationTest {
+public class RecordServiceIntegrationTest {
 
 
     @Autowired
@@ -55,9 +55,9 @@ public class ExpenseServiceIntegrationTest {
     @Test
     public void spend() throws Exception {
         String expectedMessage = "message";
-        Expense expectedExpense = Expense.newExpense(33.0).noted(expectedMessage);
+        Record expectedRecord = Record.newExpense(33.0).noted(expectedMessage);
 
-        Result<Expense> result = expenseService.spend(expectedExpense);
+        Result<Record> result = expenseService.spend(expectedRecord);
 
         assertFalse(result.isCompromised());
 
@@ -65,27 +65,27 @@ public class ExpenseServiceIntegrationTest {
         testEntityManager.clear();
 
         Account freshAccount = testEntityManager.find(Account.class, expectedAccount.getId());
-        assertEquals(1, freshAccount.getExpenses().size());
+        assertEquals(1, freshAccount.getRecords().size());
 
-        Expense actualExpense = freshAccount.getExpenses().get(0);
+        Record actualRecord = freshAccount.getRecords().get(0);
 
-        assertEquals(expectedExpense.getId(), actualExpense.getId());
-        assertEquals(expectedExpense.getAmount(), actualExpense.getAmount());
-        assertEquals(expectedExpense.getWhen(), actualExpense.getWhen());
-        assertEquals(expectedMessage, actualExpense.getNote());
+        assertEquals(expectedRecord.getId(), actualRecord.getId());
+        assertEquals(expectedRecord.getAmount(), actualRecord.getAmount());
+        assertEquals(expectedRecord.getWhen(), actualRecord.getWhen());
+        assertEquals(expectedMessage, actualRecord.getNote());
 
-        assertEquals(expectedAccount.getId(), actualExpense.getAccount().getId());
+        assertEquals(expectedAccount.getId(), actualRecord.getAccount().getId());
 
-        assertNotNull(expectedExpense.getUpdatedDate());
-        assertNotNull(expectedExpense.getCreatedDate());
+        assertNotNull(expectedRecord.getUpdatedDate());
+        assertNotNull(expectedRecord.getCreatedDate());
 
     }
 
     @Test
     public void spendForNotPersistedAccount() {
-        Expense expense = Expense.newExpense(33.0).by(Account.named("abc"));
+        Record record = Record.newExpense(33.0).by(Account.named("abc"));
 
-        Result<Expense> result = expenseService.spend(expense);
+        Result<Record> result = expenseService.spend(record);
         assertTrue(result.isCompromised());
     }
 
@@ -99,9 +99,9 @@ public class ExpenseServiceIntegrationTest {
         //switching back to current
         SecurityContextTestUtil.addToSecurityContext(currentUser);
 
-        Expense expense = Expense.newExpense(33.0).by(anotherAccount);
+        Record record = Record.newExpense(33.0).by(anotherAccount);
 
-        Result<Expense> result = expenseService.spend(expense);
+        Result<Record> result = expenseService.spend(record);
         assertTrue(result.isCompromised());
     }
 
@@ -111,9 +111,9 @@ public class ExpenseServiceIntegrationTest {
         User differentUser = SecurityContextTestUtil.addToSecurityContext(User.create("different", "different"));
         testEntityManager.persist(differentUser);
 
-        Expense expense = Expense.newExpense(33.0);
+        Record record = Record.newExpense(33.0);
 
-        Result<Expense> result = expenseService.spend(expense);
+        Result<Record> result = expenseService.spend(record);
         assertTrue(result.isCompromised());
     }
 

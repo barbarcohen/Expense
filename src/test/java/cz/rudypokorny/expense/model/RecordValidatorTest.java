@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Rudolf on 12/07/2017.
  */
-public class ExpenseValidatorTest {
+public class RecordValidatorTest {
     @Test
     public void isValid() throws Exception {
 

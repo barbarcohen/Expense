@@ -51,6 +51,6 @@ public class AccountDaoAwareHelperTestUtil{
         assertEquals(expectedAccount.getName(), actualAccount.getName());
         assertNotNull(actualAccount.getCreatedDate());
         assertNotNull(actualAccount.getUpdatedDate());
-        assertTrue(actualAccount.getExpenses().isEmpty());
+        assertTrue(actualAccount.getRecords().isEmpty());
     }
 }
