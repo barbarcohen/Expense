@@ -1,6 +1,7 @@
 package cz.rudypokorny.expense.importexport.importing.mappers;
 
 import cz.rudypokorny.expense.importexport.RecordMapper;
+import cz.rudypokorny.expense.importexport.domain.CategoryEnum;
 import cz.rudypokorny.expense.importexport.domain.CategoryMapping;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
@@ -23,7 +24,7 @@ import java.util.Objects;
  */
 //"02/08/2015","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150","","10BC8A31-3834-4286-9E5F-B0D0D124E265"
 public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CSVFormat> {
-    private static final String FILENAME = "source_rudy.csv";
+    private static final String FILENAME = "source_rudik.csv";
     private static final DateTimeFormatter DATETIME_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final Logger logger = LoggerFactory.getLogger(RudikCSVRecordMapper.class);
     private final ZoneId timezone;
@@ -33,19 +34,19 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
         timezone = DateUtil.getCurrentTimeZone();
     }
 
-    public Expense map(final CSVRecord csvRecord) {
-        Objects.requireNonNull(csvRecord, "csvRecord cannot be null");
+    public Expense map(final CSVRecord record) {
+        Objects.requireNonNull(record, "csvRecord cannot be null");
         Expense expense = null;
         try {
-            Double amount = Double.valueOf(cleanAmountValue(csvRecord.get(7)));
-            String subcategory = csvRecord.get(3);
-            String category = csvRecord.get(2);
-            String note = StringUtils.trimToNull(csvRecord.get(8));
-            ZonedDateTime date = LocalDate.parse(csvRecord.get(0), DATETIME_FORMAT).atStartOfDay(timezone);
-            String vendor = csvRecord.get(4);
-            String currency = csvRecord.get(6);
-            String extId = csvRecord.get(9);
-            String payment = csvRecord.get(5);
+            Double amount = Double.valueOf(cleanAmountValue(record.get(7)));
+            String subcategory = record.get(3);
+            String category = record.get(2);
+            String note = StringUtils.trimToNull(record.get(8));
+            ZonedDateTime date = LocalDate.parse(record.get(0), DATETIME_FORMAT).atStartOfDay(timezone);
+            String vendor = record.get(4);
+            String currency = record.get(6);
+            String extId = record.get(9);
+            String payment = record.get(5);
 
             Category convertedCategory = CategoryMapping.getMappingFor(category, subcategory).full();
             expense = Expense.newExpense(amount).

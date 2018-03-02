@@ -9,7 +9,7 @@ public interface RecordMapper<IN, OUT, CONFIG> {
 
     CONFIG getConfig();
 
-    OUT map(IN csvRecord);
+    OUT map(IN record);
 
     String getFileName();
 

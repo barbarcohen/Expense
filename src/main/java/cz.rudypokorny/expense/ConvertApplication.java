@@ -1,6 +1,8 @@
 package cz.rudypokorny.expense;
 
 import cz.rudypokorny.expense.importexport.exporting.CSVExporter;
+import cz.rudypokorny.expense.importexport.exporting.mappers.ExpenseItExportMapper;
+import cz.rudypokorny.expense.importexport.exporting.mappers.WalletExportMapper;
 import cz.rudypokorny.expense.importexport.importing.CSVImporter;
 import cz.rudypokorny.expense.importexport.importing.mappers.KatikCSVRecordMapper;
 import cz.rudypokorny.expense.importexport.importing.mappers.RudikCSVRecordMapper;
@@ -20,18 +22,14 @@ public class ConvertApplication {
         List<Expense> expenseListRudy =  new CSVImporter(new RudikCSVRecordMapper()).load();
         List<Expense> expenseListKatik = new CSVImporter(new KatikCSVRecordMapper()).load();
 
-
         List<Expense> all = new ArrayList<>();
         all.addAll(expenseListKatik);
         all.addAll(expenseListRudy);
 
-        CSVExporter exporter = new CSVExporter("Katik-expenses-28022018.csv");
-        CSVExporter exporterRudik = new CSVExporter("Rudik-expenses-28022018.csv");
-        CSVExporter exporterAll = new CSVExporter("All-expenses-28022018.csv");
-
-        exporter.export(expenseListKatik);
-        exporterRudik.export(expenseListRudy);
-        exporterAll.export(all);
+        //new CSVExporter(new ExpenseItExportMapper("target/Expenses-rudik")).export(expenseListRudy);
+        //new CSVExporter(new ExpenseItExportMapper("target/Expenses-katik")).export(expenseListKatik);
+        //new CSVExporter(new ExpenseItExportMapper("target/Expenses-all")).export(all);
+        new CSVExporter(new WalletExportMapper("target/Wallet")).export(all);
     }
 
 }

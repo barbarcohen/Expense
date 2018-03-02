@@ -130,6 +130,8 @@ public class CategoryMapping {
             put("Polsko nákupy mé", CategoryEnum.VACATION_OTHER).
             put("pokuty", CategoryEnum.CAR_FEES).
             put("Sámoška-Potraviny a nápoje", CategoryEnum.HOUSEHOLD_GROCERIES).
+            put("Income-Salary", CategoryEnum.INCOME_SALARY).
+            put("Income-Other", CategoryEnum.INCOME_OTHER).
             build();
 
     private static Logger logger = LoggerFactory.getLogger(CategoryMapping.class);

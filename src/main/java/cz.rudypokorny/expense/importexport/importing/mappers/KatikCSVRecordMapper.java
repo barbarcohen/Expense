@@ -1,6 +1,7 @@
 package cz.rudypokorny.expense.importexport.importing.mappers;
 
 import cz.rudypokorny.expense.importexport.RecordMapper;
+import cz.rudypokorny.expense.importexport.domain.CategoryEnum;
 import cz.rudypokorny.expense.importexport.domain.CategoryMapping;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
@@ -21,7 +22,7 @@ import java.util.Objects;
 import static cz.rudypokorny.expense.importexport.domain.CategoryEnum.*;
 
 /**
- * //7/26/17;Miminko;477;;Vana,prebalovak +povlak
+ * //7/26/17;Miminko;477;;Vana,prebalovak +povlak;vendor
  */
 public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CSVFormat> {
 
@@ -49,24 +50,26 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
     }
 
     @Override
-    public Expense map(final CSVRecord csvRecord) {
-        Objects.requireNonNull(csvRecord, "csvRecord cannot be null");
+    public Expense map(final CSVRecord record) {
+        Objects.requireNonNull(record, "csvRecord cannot be null");
         Expense expense = null;
         try {
-            Double amount = Double.valueOf(cleanAmountValue(csvRecord.get(2)));
-            String category = csvRecord.get(1);
-            String note = StringUtils.trimToNull(csvRecord.get(4));
+            Double amount = Double.valueOf(cleanAmountValue(record.get(2)));
+            String category = record.get(1);
+            String note = StringUtils.trimToNull(record.get(4));
+            String vendor = StringUtils.trimToNull(record.get(5));
 
-            ZonedDateTime date = DATE_FORMAT.parse(csvRecord.get(0)).toInstant().atZone(timezone);
+            ZonedDateTime date = DATE_FORMAT.parse(record.get(0)).toInstant().atZone(timezone);
 
             Category convertedCategory = additionalMapping(CategoryMapping.getMappingFor(category).full(), category, note);
 
-            expense = Expense.newExpense(-amount).
+            expense = Expense.newExpense(convertAmount(amount, convertedCategory)).
                     on(convertedCategory).
                     by(ACCOUNT).
                     at(date).
                     currency(CURRENCY).
                     payment("Cash").
+                    vendor(vendor).
                     noted(note);
             logger.trace("Converted entity: " + expense.toString());
         } catch (Exception e) {
@@ -74,6 +77,13 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
         }
 
         return expense;
+    }
+
+    private Double convertAmount(Double amount, Category category){
+        if(!CategoryEnum.INCOME_SALARY.getCategory().equals(category.getParent().getName())){
+            amount *= -1;
+        }
+        return amount;
     }
 
     private String cleanAmountValue(String value) {
