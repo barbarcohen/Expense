@@ -1,4 +1,4 @@
-package cz.rudypokorny.expense.converter.categories;
+package cz.rudypokorny.expense.importexport.domain;
 
 import cz.rudypokorny.expense.model.Category;
 
@@ -6,11 +6,11 @@ import java.util.EnumSet;
 import java.util.Set;
 
 public enum CategoryEnum {
-    //technical categories
+    //technical domain
     NOT_DEFINED("Not defined", "Unknown"),
     TBD("TBD", "TBD sub"),
 
-    //real categories
+    //real domain
     HOUSEHOLD_GROCERIES("Household", "Groceries"),
     HOUSEHOLD_MAINTENANCE_REPAIRS("Household", "Maintenance & Repairs"),
     HOUSEHOLD_IMPROVEMENT("Household", "Furniture & Equipments"),
@@ -22,6 +22,7 @@ public enum CategoryEnum {
     HOUSEHOLD_OTHER("Household", "Other"),
     HOUSEHOLD_MEDICINE("Household", "Medicine"),
     HOUSEHOLD_HEALTHCARE("Household", "Healthcare"),
+    HOUSEHOLD_GARDEN("Household", "Garden"),
 
     FOOD_SWEETS("Meals", "Sweet & Salty"),
     FOOD_SNACK("Meals", "Snack"),

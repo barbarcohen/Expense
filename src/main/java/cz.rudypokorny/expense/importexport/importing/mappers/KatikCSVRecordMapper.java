@@ -1,10 +1,12 @@
-package cz.rudypokorny.expense.converter.impl;
+package cz.rudypokorny.expense.importexport.importing.mappers;
 
-import cz.rudypokorny.expense.converter.RecordMapper;
-import cz.rudypokorny.expense.converter.categories.CategoryMapping;
+import cz.rudypokorny.expense.importexport.RecordMapper;
+import cz.rudypokorny.expense.importexport.domain.CategoryMapping;
+import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.util.DateUtil;
+import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -16,25 +18,37 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
-import static cz.rudypokorny.expense.converter.categories.CategoryEnum.*;
+import static cz.rudypokorny.expense.importexport.domain.CategoryEnum.*;
 
 /**
  * //7/26/17;Miminko;477;;Vana,prebalovak +povlak
  */
-public class KatikRecordMapper implements RecordMapper<Expense> {
+public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CSVFormat> {
 
     private static final String FILENAME = "source_katik.csv";
-    private static final String DATEFORMAT = "MM/dd/yy";
-    private static final DateFormat DATE_FORMAT = new SimpleDateFormat(DATEFORMAT);
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yy");
     private static final String CURRENCY = "CZK";
-    private static final Logger logger = LoggerFactory.getLogger(KatikRecordMapper.class);
 
+    private static final CSVFormat CSV_FORMAT = CSVFormat.DEFAULT.withDelimiter(';');
+    private static final Logger logger = LoggerFactory.getLogger(KatikCSVRecordMapper.class);
+    private static final Account ACCOUNT = Account.named("Kátik");
     private final ZoneId timezone;
 
-    public KatikRecordMapper() {
+    public KatikCSVRecordMapper() {
         timezone = DateUtil.getCurrentTimeZone();
     }
 
+    @Override
+    public String getFileName() {
+        return FILENAME;
+    }
+
+    @Override
+    public CSVFormat getConfig() {
+        return CSV_FORMAT;
+    }
+
+    @Override
     public Expense map(final CSVRecord csvRecord) {
         Objects.requireNonNull(csvRecord, "csvRecord cannot be null");
         Expense expense = null;
@@ -45,11 +59,14 @@ public class KatikRecordMapper implements RecordMapper<Expense> {
 
             ZonedDateTime date = DATE_FORMAT.parse(csvRecord.get(0)).toInstant().atZone(timezone);
 
-            Category convertedCategory = additionalMapping(CategoryMapping.getMappingFor(category).full(), category, amount, note);
+            Category convertedCategory = additionalMapping(CategoryMapping.getMappingFor(category).full(), category, note);
 
-            expense = Expense.newExpense(amount).
+            expense = Expense.newExpense(-amount).
                     on(convertedCategory).
+                    by(ACCOUNT).
                     at(date).
+                    currency(CURRENCY).
+                    payment("Cash").
                     noted(note);
             logger.trace("Converted entity: " + expense.toString());
         } catch (Exception e) {
@@ -59,41 +76,36 @@ public class KatikRecordMapper implements RecordMapper<Expense> {
         return expense;
     }
 
-    @Override
-    public String getFileName() {
-        return FILENAME;
-    }
-
     private String cleanAmountValue(String value) {
         return value.replaceAll("[^\\d.-]", "");
     }
 
     /**
      * if the amout is greater than 1000 or notes are not empty try to determine using additional data
-     *
-     * @param originalCategory
-     * @param amount
-     * @param notes
-     * @return
      */
-    private boolean involveAdditionalData(final Category category, final String originalCategory, final Double amount, final String notes) {
+    private boolean involveAdditionalData(final Category category, final String notes) {
         return StringUtils.isNotBlank(notes) && isControversial(category);
     }
 
-    private Category additionalMapping(final Category originalCategory, final String categorySource, final Double amount, final String note) {
+    private Category additionalMapping(final Category originalCategory, final String categorySource, final String note) {
         Category resultedCategory = null;
-        if (involveAdditionalData(originalCategory, categorySource, amount, note)) {
-            resultedCategory = determineCategory(originalCategory, categorySource, amount, new Note(note));
+        if (involveAdditionalData(originalCategory, note)) {
+            resultedCategory = determineCategory(originalCategory, categorySource, new Note(note));
         }
         return resultedCategory != null ? resultedCategory : originalCategory;
     }
 
     private boolean isControversial(final Category category) {
-        return TBD.full().equals(category);
+        return HOUSEHOLD_MEDICINE.full().equals(category) || VACATION_FEES.full().equals(category) ||
+                INVESTMENTS_INVESTMENTS.full().equals(category) || SPORT_FEES.full().equals(category) ||
+                PERSONAL_OTHER.full().equals(category) ||
+                FASHION_CLOTHES.full().equals(category) ||
+                BABY_OTHER.full().equals(category) ||
+                CAR_FUEL.full().equals(category) ||
+                HOUSEHOLD_MEDICINE.full().equals(category);
     }
 
-    private Category determineCategory(final Category foundCategory, final String originalCategory, final Double amount, final Note note) {
-        //logger.debug("Determining KATIK's category: {}, amount: {}, notes: '{}'", originalCategory, amount, note);
+    private Category determineCategory(final Category foundCategory, final String originalCategory, final Note note) {
         Category category = null;
 
         if (note.is("Spoření, pojištění atd za mě a Viky")) {
@@ -126,13 +138,12 @@ public class KatikRecordMapper implements RecordMapper<Expense> {
             category = FASHION_BOOTS.full();
         } else if (note.is("Kabelka", "Šperk", "Vložky do bot", "Svatební prsteny", "Deštník")) {
             category = FASHION_ACCESSORIES.full();
-
         } else if (note.is("Spodního prádla", "Sekáč", "Šátky", "Tílko", "Bunda", "Ponožky", "Podprsenky", "Kalhotky", "Primark", "Svatba šaty", "Svatební šaty", "Sport výstaviště")) {
             category = FASHION_CLOTHES.full();
         } else if (note.is("Kadernice", "Kadeřnice", "Svatba kadeřnictví, kosmetika", "Svatba nehty, nákup", "Svatba účes", "Svatba stuhy",
-                "Stuhy", "Svatba ubrousky", "Bijou")) {
+                "Stuhy", "Svatba ubrousky", "Bijou", "Pomocník", "Dáno rudymu", "Kytka", "Klíče")) {
             category = PERSONAL_OTHER.full();
-        } else if (note.is("Poplatek čsk", "Tisk", "Pošta", "Pas", "Řidičák", "Popelnice", "Doklady fotky na řidičák",
+        } else if (note.is("Půjčka", "Poplatek čsk", "Tisk", "Pošta", "Pas", "Řidičák", "Popelnice", "Doklady fotky na řidičák",
                 "Doklady trvalé bydliště", "Nájem cernotin", "Absolventská karta")) {
             category = PERSONAL_FEES.full();
         } else if (note.is("obědy")) {
@@ -180,9 +191,35 @@ public class KatikRecordMapper implements RecordMapper<Expense> {
             category = ELECTRONICS_CAMERA.full();
         }
         if (category == null) {
-            logger.warn("No mapping found for {} with note:'{}', using PERSONAL_OTHER", originalCategory, note);
-            category = PERSONAL_OTHER.full();
+            logger.warn("No mapping found for {} with note:'{}', using category {}", originalCategory, note, foundCategory);
+            category = foundCategory;
         }
         return category;
+    }
+
+    private class Note {
+        private String note;
+
+        public Note(String note) {
+            this.note = note;
+        }
+
+        public boolean is(final String... values) {
+            return values != null && values.length > 0 && noteHasValue(values);
+        }
+
+        @Override
+        public String toString() {
+            return note;
+        }
+
+        private boolean noteHasValue(String... values) {
+            for (String value : values) {
+                if (value != null && value.trim().equals(this.note)) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

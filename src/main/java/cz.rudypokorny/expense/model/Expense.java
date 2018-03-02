@@ -39,6 +39,18 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
     @NotNull
     private Account account;
 
+    @Transient
+    private String vendor;
+
+    @Transient
+    private String currency;
+
+    @Transient
+    private String extId;
+
+    @Transient
+    private String payment;
+
     public static Expense newExpense(Double amount) {
         Expense expense = new Expense();
         expense.setAmount(Objects.requireNonNull(amount));
@@ -66,6 +78,26 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
 
     public Expense on(Category category) {
         this.category = category;
+        return this;
+    }
+
+    public Expense EXT(String extId) {
+        this.extId = extId;
+        return this;
+    }
+
+    public Expense vendor(String vendor) {
+        this.vendor = vendor;
+        return this;
+    }
+
+    public Expense currency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    public Expense payment(String payment) {
+        this.payment = payment;
         return this;
     }
 
@@ -120,9 +152,47 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
         this.account = account;
     }
 
+    public String getVendor() {
+        return vendor;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public String getExtId() {
+        return extId;
+    }
+
+    public String getPayment() {
+        return payment;
+    }
+
     @Transient
     public boolean hasCategory() {
         return category != null && category.isValid();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Expense expense = (Expense) o;
+        return Objects.equals(id, expense.id) &&
+                Objects.equals(amount, expense.amount) &&
+                Objects.equals(when, expense.when) &&
+                Objects.equals(note, expense.note) &&
+                Objects.equals(category, expense.category) &&
+                Objects.equals(account, expense.account) &&
+                Objects.equals(vendor, expense.vendor) &&
+                Objects.equals(currency, expense.currency) &&
+                Objects.equals(extId, expense.extId) &&
+                Objects.equals(payment, expense.payment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, amount, when, note, category, account, vendor, currency, extId, payment);
     }
 
     @Override
@@ -134,6 +204,10 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
                 ", note='" + note + '\'' +
                 ", category=" + category +
                 ", account=" + account +
+                ", vendor='" + vendor + '\'' +
+                ", currency='" + currency + '\'' +
+                ", extId='" + extId + '\'' +
+                ", payment='" + payment + '\'' +
                 '}';
     }
 }

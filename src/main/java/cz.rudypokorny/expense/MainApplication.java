@@ -66,9 +66,9 @@ public class MainApplication {
 
                 IImportService importService = ctx.getBean(IImportService.class);
 
-                //import all categories
+                //import all domain
                /* importService.importCategories(() -> {
-                    return CategoryEnum.categories.stream().
+                    return CategoryEnum.domain.stream().
                             map(e -> Category.named(e.getSubCategory()).withParent(e.getCategory())).
                             collect(Collectors.toList());
                 });*/

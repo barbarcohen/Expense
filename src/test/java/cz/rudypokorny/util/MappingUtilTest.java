@@ -1,7 +1,7 @@
 package cz.rudypokorny.util;
 
-import cz.rudypokorny.expense.converter.categories.CategoryEnum;
-import cz.rudypokorny.expense.converter.categories.CategoryMapping;
+import cz.rudypokorny.expense.importexport.domain.CategoryEnum;
+import cz.rudypokorny.expense.importexport.domain.CategoryMapping;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

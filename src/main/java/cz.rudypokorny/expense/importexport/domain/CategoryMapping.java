@@ -1,4 +1,4 @@
-package cz.rudypokorny.expense.converter.categories;
+package cz.rudypokorny.expense.importexport.domain;
 
 import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
@@ -23,12 +23,15 @@ public class CategoryMapping {
             put("Home -> Home Improvement", CategoryEnum.HOUSEHOLD_IMPROVEMENT).
             put("Home -> Maintenance and Repair", CategoryEnum.HOUSEHOLD_MAINTENANCE_REPAIRS).
             put("Home -> Mortgage", CategoryEnum.HOUSEHOLD_MORTGAGE).
+            put("Home -> Loan", CategoryEnum.HOUSEHOLD_MORTGAGE).
             put("Household -> Groceries", CategoryEnum.HOUSEHOLD_GROCERIES).
             put("Home -> Services", CategoryEnum.HOUSEHOLD_SERVICES_FEES).
             put("Home -> Insurance", CategoryEnum.HOUSEHOLD_INSURANCE).
+            put("Home -> Internet", CategoryEnum.HOUSEHOLD_SERVICES_FEES).
             put("Utilities -> internet", CategoryEnum.HOUSEHOLD_SERVICES_FEES).
             put("Household -> Supplies", CategoryEnum.HOUSEHOLD_OTHER).
             put("Home -> Electricity", CategoryEnum.HOUSEHOLD_ELECTRICITY).
+            put("Home -> Garden", CategoryEnum.HOUSEHOLD_GARDEN).
 
             put("Entertainment -> Shows", CategoryEnum.ENTERTAINMENT_CULTURE).
             put("Entertainment -> Booz", CategoryEnum.ENTERTAINMENT_PARTY_PUB).
@@ -37,6 +40,7 @@ public class CategoryMapping {
             put("Entertainment -> Other", CategoryEnum.ENTERTAINMENT_OTHER).
             put("Entertainment -> Games", CategoryEnum.ENTERTAINMENT_APPS_GAMES).
             put("Entertainment -> Party", CategoryEnum.ENTERTAINMENT_PARTY_PUB).
+            put("Entertainment -> Music", CategoryEnum.ENTERTAINMENT_APPS_GAMES).
             put("Entertainment -> Books", CategoryEnum.ENTERTAINMENT_BOOKS).
             put("Entertainment -> Dance", CategoryEnum.ENTERTAINMENT_OTHER).
             put("Utilities -> Apps - Others", CategoryEnum.ENTERTAINMENT_APPS_GAMES).
@@ -55,7 +59,7 @@ public class CategoryMapping {
             put("Income -> Salary", CategoryEnum.INCOME_SALARY).
             put("Income -> Photo", CategoryEnum.INCOME_OTHER).
 
-            put("Personal -> Self Improvement", CategoryEnum.TBD).
+            put("Personal -> Self Improvement", CategoryEnum.PERSONAL_EDUCATION).
             put("Personal -> Haircuts", CategoryEnum.PERSONAL_OTHER).
             put("Personal -> Clothing", CategoryEnum.FASHION_CLOTHES).
             put("Personal -> Medical", CategoryEnum.HOUSEHOLD_MEDICINE).
@@ -63,6 +67,7 @@ public class CategoryMapping {
             put("Personal -> Gift", CategoryEnum.PERSONAL_GIFTS).
             put("Personal -> Dental", CategoryEnum.HOUSEHOLD_HEALTHCARE).
             put("Personal -> Other", CategoryEnum.PERSONAL_OTHER).
+            put("Personal -> Baby", CategoryEnum.BABY_OTHER).
 
             put("Sport -> Fees", CategoryEnum.SPORT_FEES).
             put("Sport -> Equipment", CategoryEnum.SPORT_EQUIPMENT).
@@ -101,25 +106,25 @@ public class CategoryMapping {
             put("Volný čas-kino,koncert..", CategoryEnum.ENTERTAINMENT_CULTURE).
             put("K+R", CategoryEnum.HOUSEHOLD_GROCERIES).
             put("drogerie", CategoryEnum.HOUSEHOLD_SUPPLIES).
-            put("lékárna", CategoryEnum.TBD).//jenom kata
+            put("lékárna", CategoryEnum.HOUSEHOLD_HEALTHCARE).//jenom kata
             put("Kavárna", CategoryEnum.FOOD_SNACK).
             put("jidlo", CategoryEnum.FOOD_SNACK).
-            put("Doprava", CategoryEnum.TBD).//auto (1000+) + all others MHD
+            put("Doprava", CategoryEnum.CAR_FUEL).//auto (1000+) + all others MHD
             put("Na jedno", CategoryEnum.ENTERTAINMENT_PARTY_PUB).
-            put("Miminko", CategoryEnum.TBD).//leky vybaneni jidlo plinky
+            put("Miminko", CategoryEnum.BABY_OTHER).//leky vybaneni jidlo plinky
             put("společná domácnost", CategoryEnum.HOUSEHOLD_IMPROVEMENT).//? jidlo nebo vybaveni?
-            put("Oblečení boty", CategoryEnum.TBD).//boty taky
-            put("Ostatní", CategoryEnum.TBD).//viz poznamky
-            put("Sport", CategoryEnum.TBD).// fees & vybaveni - viz poznamky
+            put("Oblečení boty", CategoryEnum.FASHION_CLOTHES).//boty taky
+            put("Ostatní", CategoryEnum.PERSONAL_OTHER).//viz poznamky
+            put("Sport", CategoryEnum.SPORT_FEES).// fees & vybaveni - viz poznamky
             put("Mlsání", CategoryEnum.FOOD_SWEETS).
-            put("Nutné výdaje", CategoryEnum.TBD).//pojisteni a investice
+            put("Nutné výdaje", CategoryEnum.INVESTMENTS_INVESTMENTS).//pojisteni a investice
             put("Zvaní na pokrm,pití", CategoryEnum.FOOD_RESTAURANT).
-            put("dovolená", CategoryEnum.TBD).
+            put("dovolená", CategoryEnum.VACATION_FEES).
             put("obědy", CategoryEnum.FOOD_WORK_LUNCH).
             put("dárky k narozeninám", CategoryEnum.PERSONAL_GIFTS).
             put("Zdraví,relax,sauna,lymf.", CategoryEnum.WELLNESS_WELLNESS).
             put("Restaurace", CategoryEnum.FOOD_RESTAURANT).
-            put("doktor", CategoryEnum.TBD).
+            put("doktor", CategoryEnum.HOUSEHOLD_MEDICINE).
             put("dárky vánoční", CategoryEnum.PERSONAL_GIFTS_CHRISTMAS).
             put("Polsko nákupy společné", CategoryEnum.VACATION_OTHER).
             put("Polsko nákupy mé", CategoryEnum.VACATION_OTHER).
@@ -129,7 +134,10 @@ public class CategoryMapping {
 
     private static Logger logger = LoggerFactory.getLogger(CategoryMapping.class);
 
-    //TODO add note at the note beggining => in case of moveing between categories
+    //TODO add note at the note beggining => in case of moveing between domain
+    public static CategoryEnum getMappingFor(final String category, String subCategory) {
+        return getMappingFor(category + " -> " + subCategory);
+    }
     public static CategoryEnum getMappingFor(final String sourceCategoryName) {
         Optional<Map.Entry<String, CategoryEnum>> result = Stream.of(expenseItMapping, otherMapping).
                 map(Map::entrySet).flatMap(Collection::stream).
