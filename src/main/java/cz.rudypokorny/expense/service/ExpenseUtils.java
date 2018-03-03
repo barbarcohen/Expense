@@ -1,7 +1,7 @@
 package cz.rudypokorny.expense.service;
 
 import cz.rudypokorny.expense.model.Category;
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 
 import java.util.*;
 import java.util.function.Function;
@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
  */
 public class ExpenseUtils {
 
-    public static DoubleSummaryStatistics sumTotals(List<Record> records){
-        Objects.requireNonNull(records);
-        return records.stream().mapToDouble(Record::getAmount).summaryStatistics();
+    public static DoubleSummaryStatistics sumTotals(List<Expense> expenses){
+        Objects.requireNonNull(expenses);
+        return expenses.stream().mapToDouble(Expense::getAmount).summaryStatistics();
     }
 
-    public static List<Category> distinctiveCategories(List<Record> records){
-        Objects.requireNonNull(records);
-        return records.stream().map(e -> e.getCategory()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).
+    public static List<Category> distinctiveCategories(List<Expense> expenses){
+        Objects.requireNonNull(expenses);
+        return expenses.stream().map(e -> e.getCategory()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).
                 entrySet().stream().map(Map.Entry::getKey).collect(Collectors.toList());
 
     }

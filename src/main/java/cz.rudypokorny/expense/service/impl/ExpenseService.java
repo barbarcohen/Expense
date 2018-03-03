@@ -10,7 +10,7 @@ import cz.rudypokorny.expense.entity.Result;
 import cz.rudypokorny.expense.entity.Rules;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.service.IExpenseService;
 import cz.rudypokorny.expense.validator.IValidator;
 import org.dozer.Mapper;
@@ -36,7 +36,7 @@ public class ExpenseService implements IExpenseService {
 
     @Autowired
     @Qualifier("expenseValidator")
-    private IValidator<Record> expenseValidator;
+    private IValidator<Expense> expenseValidator;
 
     @Autowired
     @Qualifier("categoryValidator")
@@ -52,20 +52,20 @@ public class ExpenseService implements IExpenseService {
     private Logger logger = LoggerFactory.getLogger(ExpenseService.class);
 
     @Override
-    public Result<Record> spend(Record record) {
+    public Result<Expense> spend(Expense expense) {
 
-        if (record.getCategory() != null) {
-            Category category = categoryDao.findOneByName(record.getCategory().getName());
+        if (expense.getCategory() != null) {
+            Category category = categoryDao.findOneByName(expense.getCategory().getName());
             logger.debug("Loading category: {}", category);
-            record.on(category);
+            expense.on(category);
         }
 
 
-        Rules rules = expenseValidator.validateNew(record);
+        Rules rules = expenseValidator.validateNew(expense);
         if (rules.areBroken()) {
             return Result.fail(rules);
         }
-        return Result.create(expenseDao.save(record));
+        return Result.create(expenseDao.save(expense));
 
     }
 
@@ -79,14 +79,14 @@ public class ExpenseService implements IExpenseService {
     }
 
     @Override
-    public Result<Optional<Record>> getExpense(Long id) {
+    public Result<Optional<Expense>> getExpense(Long id) {
         return Result.create(Optional.ofNullable(expenseDao.findOne(id)));
     }
 
     @Override
-    public Result<Iterable<Record>> findExpenseByFilter(ExpenseFilter filter) {
+    public Result<Iterable<Expense>> findExpenseByFilter(ExpenseFilter filter) {
         //FIXME validate filter
-        Iterable<Record> expenses = expenseDao.findAll(PredicateBuilder.fromExpenseFilter(filter));
+        Iterable<Expense> expenses = expenseDao.findAll(PredicateBuilder.fromExpenseFilter(filter));
         return Result.create(expenses);
     }
 

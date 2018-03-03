@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 @Entity
 @Table
-public class Record extends Auditable implements Serializable, Validable, AccountAware {
+public class Expense extends Auditable implements Serializable, Validable, AccountAware {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,52 +51,52 @@ public class Record extends Auditable implements Serializable, Validable, Accoun
     @Transient
     private String payment;
 
-    public static Record newExpense(Double amount) {
-        Record record = new Record();
-        record.setAmount(Objects.requireNonNull(amount));
-        record.setWhen(DateUtil.getCurrentDateTime());
-        return record;
+    public static Expense newExpense(Double amount) {
+        Expense expense = new Expense();
+        expense.setAmount(Objects.requireNonNull(amount));
+        expense.setWhen(DateUtil.getCurrentDateTime());
+        return expense;
     }
 
-    public Record noted(String note) {
+    public Expense noted(String note) {
         this.setNote(note);
         return this;
     }
 
 
-    public Record by(Account account) {
+    public Expense by(Account account) {
         this.setAccount(Objects.requireNonNull(account));
         return this;
     }
 
-    public Record at(ZonedDateTime when) {
+    public Expense at(ZonedDateTime when) {
         if (when != null) {
             this.setWhen(when);
         }
         return this;
     }
 
-    public Record on(Category category) {
+    public Expense on(Category category) {
         this.category = category;
         return this;
     }
 
-    public Record EXT(String extId) {
+    public Expense EXT(String extId) {
         this.extId = extId;
         return this;
     }
 
-    public Record vendor(String vendor) {
+    public Expense vendor(String vendor) {
         this.vendor = vendor;
         return this;
     }
 
-    public Record currency(String currency) {
+    public Expense currency(String currency) {
         this.currency = currency;
         return this;
     }
 
-    public Record payment(String payment) {
+    public Expense payment(String payment) {
         this.payment = payment;
         return this;
     }
@@ -177,17 +177,17 @@ public class Record extends Auditable implements Serializable, Validable, Accoun
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Record record = (Record) o;
-        return Objects.equals(id, record.id) &&
-                Objects.equals(amount, record.amount) &&
-                Objects.equals(when, record.when) &&
-                Objects.equals(note, record.note) &&
-                Objects.equals(category, record.category) &&
-                Objects.equals(account, record.account) &&
-                Objects.equals(vendor, record.vendor) &&
-                Objects.equals(currency, record.currency) &&
-                Objects.equals(extId, record.extId) &&
-                Objects.equals(payment, record.payment);
+        Expense expense = (Expense) o;
+        return Objects.equals(id, expense.id) &&
+                Objects.equals(amount, expense.amount) &&
+                Objects.equals(when, expense.when) &&
+                Objects.equals(note, expense.note) &&
+                Objects.equals(category, expense.category) &&
+                Objects.equals(account, expense.account) &&
+                Objects.equals(vendor, expense.vendor) &&
+                Objects.equals(currency, expense.currency) &&
+                Objects.equals(extId, expense.extId) &&
+                Objects.equals(payment, expense.payment);
     }
 
     @Override

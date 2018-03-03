@@ -1,7 +1,11 @@
 package cz.rudypokorny.expense;
 
-import cz.rudypokorny.expense.model.Record;
-import cz.rudypokorny.expense.service.ExpenseStatistics;
+import cz.rudypokorny.expense.model.Expense;
+import cz.rudypokorny.expense.tools.importexport.exporting.CSVExporter;
+import cz.rudypokorny.expense.tools.importexport.exporting.mappers.ExpenseItExportMapper;
+import cz.rudypokorny.expense.tools.importexport.exporting.mappers.WalletExportMapper;
+import cz.rudypokorny.expense.tools.importexport.exporting.mappers.WalletSimpleExportMapper;
+import cz.rudypokorny.expense.tools.statistics.RecordStatistics;
 import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 import cz.rudypokorny.expense.tools.importexport.importing.CSVImporter;
 import cz.rudypokorny.expense.tools.importexport.importing.mappers.KatikCSVRecordMapper;
@@ -18,19 +22,20 @@ public class ConvertApplication {
 
     public static void main(String[] args) throws IOException {
 
-        List<Record> recordListRudy =  new CSVImporter(new RudikCSVRecordMapper()).load();
-        List<Record> recordListKatik = new CSVImporter(new KatikCSVRecordMapper()).load();
+        List<Expense> expenseListRudy =  new CSVImporter(new RudikCSVRecordMapper()).load();
+        List<Expense> expenseListKatik = new CSVImporter(new KatikCSVRecordMapper()).load();
 
-        List<Record> all = new ArrayList<>();
-        all.addAll(recordListKatik);
-        all.addAll(recordListRudy);
+        List<Expense> all = new ArrayList<>();
+        all.addAll(expenseListKatik);
+        all.addAll(expenseListRudy);
 
         //new CSVExporter(new ExpenseItExportMapper("target/Expenses-rudik")).export(expenseListRudy);
         //new CSVExporter(new ExpenseItExportMapper("target/Expenses-katik")).export(expenseListKatik);
         //new CSVExporter(new ExpenseItExportMapper("target/Expenses-all")).export(all);
-        //new CSVExporter(new WalletExportMapper("target/Wallet")).export(all);
+        new CSVExporter(new WalletSimpleExportMapper("target/Wallet-Katik")).export(expenseListKatik);
+        new CSVExporter(new WalletSimpleExportMapper("target/Wallet-Rudik")).export(expenseListRudy);
 
-        ExpenseStatistics.compute(all).filterByCategory(CategoryEnum.INCOME_OTHER).getRecords().size();
+        //System.out.println(RecordStatistics.compute(all).filterByCategory(CategoryEnum.INCOME_OTHER).toString());
     }
 
 }

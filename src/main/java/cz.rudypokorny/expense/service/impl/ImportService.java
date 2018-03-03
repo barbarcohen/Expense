@@ -4,7 +4,7 @@ import cz.rudypokorny.expense.dao.CategoryDao;
 import cz.rudypokorny.expense.entity.ImportSource;
 import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Category;
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.service.IExpenseService;
 import cz.rudypokorny.expense.service.IImportService;
 import org.slf4j.Logger;
@@ -27,7 +27,7 @@ public class ImportService implements IImportService {
     private IExpenseService expenseService;
 
     @Override
-    public void importExpensesForAccount(Account account, ImportSource<Record> importSource) {
+    public void importExpensesForAccount(Account account, ImportSource<Expense> importSource) {
         //TODO design importing better
 
         Objects.requireNonNull(importSource, "ImportSource cannot be null.");

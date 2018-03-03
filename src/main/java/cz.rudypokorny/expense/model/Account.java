@@ -24,7 +24,7 @@ public class Account extends Auditable implements Validable {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
-    private List<Record> records = new ArrayList<>();
+    private List<Expense> expenses = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "activeAccount")
     private List<User> activeUsers = new ArrayList<>();
@@ -65,12 +65,12 @@ public class Account extends Auditable implements Validable {
         this.name = name;
     }
 
-    public List<Record> getRecords() {
-        return records;
+    public List<Expense> getExpenses() {
+        return expenses;
     }
 
-    void setRecords(List<Record> records) {
-        this.records = records;
+    void setExpenses(List<Expense> expenses) {
+        this.expenses = expenses;
     }
 
     public List<User> getActiveUsers() {

@@ -15,11 +15,11 @@ import static org.junit.Assert.assertNull;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(DateUtil.class)
-public class RecordTest {
+public class ExpenseTest {
 
     @Test(expected = NullPointerException.class)
     public void newExpenseWithNull() {
-        Record result = Record.newExpense(null);
+        Expense result = Expense.newExpense(null);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class RecordTest {
         PowerMockito.mockStatic(DateUtil.class);
         Mockito.when(DateUtil.getCurrentDateTime()).thenReturn(expectedDateTIme);
         double expected = 1.23;
-        Record result = Record.newExpense(new Double(expected));
+        Expense result = Expense.newExpense(new Double(expected));
 
         assertEquals(Double.valueOf(expected), result.getAmount());
         assertEquals(expectedDateTIme, result.getWhen());
@@ -37,7 +37,7 @@ public class RecordTest {
     @Test
     public void testWithNote() throws Exception {
         String expected = "Some value";
-        Record result = Record.newExpense(1d);
+        Expense result = Expense.newExpense(1d);
 
         assertNull(result.getNote());
         assertEquals(expected, result.noted(expected).getNote());
@@ -46,7 +46,7 @@ public class RecordTest {
     @Test
     public void forAccount() throws Exception {
         Account expected = new Account();
-        Record result = Record.newExpense(1d);
+        Expense result = Expense.newExpense(1d);
 
         assertNull(result.getAccount());
         assertEquals(expected, result.by(expected).getAccount());

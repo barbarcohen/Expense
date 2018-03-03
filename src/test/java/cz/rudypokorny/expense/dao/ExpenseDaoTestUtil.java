@@ -1,7 +1,7 @@
 package cz.rudypokorny.expense.dao;
 
 import cz.rudypokorny.expense.model.Account;
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.model.User;
 import cz.rudypokorny.util.SecurityContextTestUtil;
 import org.assertj.core.util.IterableUtil;
@@ -47,19 +47,19 @@ public class ExpenseDaoTestUtil {
 
     @Test
     public void testFindAll() {
-        Record expectedRecord = Record.newExpense(1d).by(expectedAccount);
+        Expense expectedExpense = Expense.newExpense(1d).by(expectedAccount);
 
-        testEntityManager.persist(expectedRecord);
+        testEntityManager.persist(expectedExpense);
 
-        Iterable<Record> result = expenseDao.findAll();
+        Iterable<Expense> result = expenseDao.findAll();
 
         assertFalse(IterableUtil.nonNullElementsIn(result).isEmpty());
 
-        Record actualRecord = result.iterator().next();
-        assertEquals(expectedRecord.getAccount(), actualRecord.getAccount());
-        assertEquals(expectedRecord.getAmount(), actualRecord.getAmount());
-        assertNotNull(actualRecord.getCreatedDate());
-        assertNotNull(actualRecord.getUpdatedDate());
+        Expense actualExpense = result.iterator().next();
+        assertEquals(expectedExpense.getAccount(), actualExpense.getAccount());
+        assertEquals(expectedExpense.getAmount(), actualExpense.getAmount());
+        assertNotNull(actualExpense.getCreatedDate());
+        assertNotNull(actualExpense.getUpdatedDate());
     }
 
     @Test
@@ -68,9 +68,9 @@ public class ExpenseDaoTestUtil {
         ZonedDateTime now = ZonedDateTime.now();
         ZonedDateTime expectedTime = now.minusNanos(1);
 
-        Record recordInPast = Record.newExpense(1.0).by(expectedAccount).at(expectedTime);
+        Expense expenseInPast = Expense.newExpense(1.0).by(expectedAccount).at(expectedTime);
 
-        testEntityManager.persistAndFlush(recordInPast);
+        testEntityManager.persistAndFlush(expenseInPast);
 
         //from now to future + nano
         assertFalse(expenseDao.findByWhenBetween(now, now.plusNanos(1)).iterator().hasNext());
@@ -78,9 +78,9 @@ public class ExpenseDaoTestUtil {
         assertFalse(expenseDao.findByWhenBetween(now.minusDays(2), now.minusNanos(2)).iterator().hasNext());
 
         //in past from now
-        Record actualRecord = expenseDao.findByWhenBetween(now.minusDays(1), now).iterator().next();
-        assertEquals(recordInPast.getId(), actualRecord.getId());
-        assertEquals(recordInPast.getAmount(), actualRecord.getAmount());
+        Expense actualExpense = expenseDao.findByWhenBetween(now.minusDays(1), now).iterator().next();
+        assertEquals(expenseInPast.getId(), actualExpense.getId());
+        assertEquals(expenseInPast.getAmount(), actualExpense.getAmount());
 
     }
 }

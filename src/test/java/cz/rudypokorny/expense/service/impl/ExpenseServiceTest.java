@@ -32,10 +32,10 @@ import static org.mockito.Mockito.*;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(DateUtil.class)
-public class RecordServiceTest {
+public class ExpenseServiceTest {
 
     @Captor
-    private ArgumentCaptor<Record> expenseCaptor;
+    private ArgumentCaptor<Expense> expenseCaptor;
 
     @InjectMocks
     private IExpenseService expenseService = new ExpenseService();
@@ -68,12 +68,12 @@ public class RecordServiceTest {
     public void spendBrokingRules() {
         when(expenseValidator.validateNew(any())).thenReturn(new Rules().broken("someError"));
 
-        Record givenRecord = Record.newExpense(EXPECTED_AMOUNT).by(AccountCreator.create());
+        Expense givenExpense = Expense.newExpense(EXPECTED_AMOUNT).by(AccountCreator.create());
 
-        Result<Record> result = expenseService.spend(givenRecord);
+        Result<Expense> result = expenseService.spend(givenExpense);
 
         assertTrue(result.isCompromised());
-        verify(expenseDao, never()).save(eq(givenRecord));
+        verify(expenseDao, never()).save(eq(givenExpense));
     }
     /*
         @Test
@@ -143,7 +143,7 @@ public class RecordServiceTest {
         when(categoryDao.findOneByName(eq(expectedCategory.getName()))).thenReturn(expectedCategory);
         when(expenseValidator.validateNew(any())).thenReturn(new Rules());
 
-        Result<Record> result = expenseService.spend(Record.newExpense(EXPECTED_AMOUNT).
+        Result<Expense> result = expenseService.spend(Expense.newExpense(EXPECTED_AMOUNT).
                 at(expectedWhen).
                 noted(expectedNote).
                 by(expectedAccount).
@@ -151,20 +151,20 @@ public class RecordServiceTest {
         assertFalse(result.isCompromised());
         verify(expenseDao).save(expenseCaptor.capture());
 
-        Record actualRecord = expenseCaptor.getValue();
+        Expense actualExpense = expenseCaptor.getValue();
 
-        assertEquals(EXPECTED_AMOUNT, actualRecord.getAmount());
-        assertEquals(expectedWhen, actualRecord.getWhen());
-        assertEquals(expectedAccount, actualRecord.getAccount());
-        assertEquals(expectedCategory, actualRecord.getCategory());
-        assertEquals(expectedNote, actualRecord.getNote());
+        assertEquals(EXPECTED_AMOUNT, actualExpense.getAmount());
+        assertEquals(expectedWhen, actualExpense.getWhen());
+        assertEquals(expectedAccount, actualExpense.getAccount());
+        assertEquals(expectedCategory, actualExpense.getCategory());
+        assertEquals(expectedNote, actualExpense.getNote());
     }
 
     @Test
     public void getExpense() throws Exception {
         when(expenseDao.findOne(anyLong())).thenReturn(null);
 
-        Result<Optional<Record>> result = expenseService.getExpense(1L);
+        Result<Optional<Expense>> result = expenseService.getExpense(1L);
         assertFalse(result.get().isPresent());
         assertFalse(result.isCompromised());
     }

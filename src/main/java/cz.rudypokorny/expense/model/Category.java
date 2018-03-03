@@ -28,7 +28,7 @@ public class Category implements Serializable, Validable {
     private List<Category> children;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
-    private List<Record> records;
+    private List<Expense> expenses;
 
     public static Category named(String name) {
         Category category = new Category();
@@ -104,7 +104,7 @@ public class Category implements Serializable, Validable {
         if (!name.equals(category.name)) return false;
         if (parent != null ? !parent.equals(category.parent) : category.parent != null) return false;
         if (children != null ? !children.equals(category.children) : category.children != null) return false;
-        return records != null ? records.equals(category.records) : category.records == null;
+        return expenses != null ? expenses.equals(category.expenses) : category.expenses == null;
 
     }
 
@@ -114,7 +114,7 @@ public class Category implements Serializable, Validable {
         result = 31 * result + name.hashCode();
         result = 31 * result + (parent != null ? parent.hashCode() : 0);
         result = 31 * result + (children != null ? children.hashCode() : 0);
-        result = 31 * result + (records != null ? records.hashCode() : 0);
+        result = 31 * result + (expenses != null ? expenses.hashCode() : 0);
         return result;
     }
 }

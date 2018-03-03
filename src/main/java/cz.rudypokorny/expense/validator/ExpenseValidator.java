@@ -1,14 +1,14 @@
 package cz.rudypokorny.expense.validator;
 
 import cz.rudypokorny.expense.entity.Rules;
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 import org.springframework.stereotype.Component;
 
 @Component(value = "expenseValidator")
-public class ExpenseValidator implements IValidator<Record> {
+public class ExpenseValidator implements IValidator<Expense> {
 
     @Override
-    public Rules validateNew(Record entity) {
+    public Rules validateNew(Expense entity) {
         Rules rules = new Rules();
         //TODO only BS rules
         if (entity == null) {
@@ -27,12 +27,12 @@ public class ExpenseValidator implements IValidator<Record> {
 
 
     @Override
-    public Rules validateUpdate(Record entity) {
+    public Rules validateUpdate(Expense entity) {
         return null;
     }
 
     @Override
-    public Rules validateDelete(Record entity) {
+    public Rules validateDelete(Expense entity) {
         return null;
     }
 }
