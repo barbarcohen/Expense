@@ -82,6 +82,7 @@ public class CategoryMapping {
             put("Electronics -> Computer", CategoryEnum.ELECTRONICS_COMPUTER).
             put("Electronics -> Audio", CategoryEnum.ELECTRONICS_COMPUTER).
             put("Electronics -> Other", CategoryEnum.ELECTRONICS_OTHER).
+            put("Electronics -> Game Consoles", CategoryEnum.ELECTRONICS_OTHER).
 
             put("Auto -> Repair", CategoryEnum.CAR_REPAIRS_MAINTENANCE).
             put("Auto -> Insurance", CategoryEnum.CAR_INSURANCE).

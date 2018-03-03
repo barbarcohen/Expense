@@ -1,6 +1,6 @@
 package cz.rudypokorny.expense.tools.importexport.exporting.mappers;
 
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.tools.importexport.RecordMapper;
 import cz.rudypokorny.util.DateUtil;
 import org.apache.commons.csv.CSVFormat;
@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExpenseItExportMapper implements RecordMapper<Record, List<?>, CSVFormat> {
+public class ExpenseItExportMapper implements RecordMapper<Expense, List<?>, CSVFormat> {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -34,10 +34,10 @@ public class ExpenseItExportMapper implements RecordMapper<Record, List<?>, CSVF
     }
 
     @Override
-    public List<?> map(Record record) {
-        return Arrays.asList(convertDate(record.getWhen()), record.getAccount().getName(), record.getCategory().getParent().getName(),
-                record.getCategory().getName(), record.getVendor(), record.getPayment(), record.getCurrency(), record.getAmount(),
-                record.getNote(), record.getExtId());
+    public List<?> map(Expense expense) {
+        return Arrays.asList(convertDate(expense.getWhen()), expense.getAccount().getName(), expense.getCategory().getParent().getName(),
+                expense.getCategory().getName(), expense.getVendor(), expense.getPayment(), expense.getCurrency(), expense.getAmount(),
+                expense.getNote(), expense.getExtId());
     }
 
     @Override

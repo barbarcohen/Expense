@@ -1,6 +1,6 @@
 package cz.rudypokorny.expense.tools.importexport.importing.mappers;
 
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.tools.importexport.RecordMapper;
 import cz.rudypokorny.expense.tools.importexport.domain.CategoryMapping;
 import cz.rudypokorny.expense.model.Account;
@@ -22,7 +22,7 @@ import java.util.Objects;
  * Created by Rudolf on 28/02/2018.
  */
 //"02/08/2015","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150","","10BC8A31-3834-4286-9E5F-B0D0D124E265"
-public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Record, CSVFormat> {
+public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CSVFormat> {
     private static final String FILENAME = "source_rudik.csv";
     private static final DateTimeFormatter DATETIME_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final Logger logger = LoggerFactory.getLogger(RudikCSVRecordMapper.class);
@@ -33,9 +33,9 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Record, CSV
         timezone = DateUtil.getCurrentTimeZone();
     }
 
-    public Record map(final CSVRecord record) {
+    public Expense map(final CSVRecord record) {
         Objects.requireNonNull(record, "csvRecord cannot be null");
-        Record expense = null;
+        Expense expense = null;
         try {
             Double amount = Double.valueOf(cleanAmountValue(record.get(7)));
             String subcategory = record.get(3);
@@ -48,7 +48,7 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Record, CSV
             String payment = record.get(5);
 
             Category convertedCategory = CategoryMapping.getMappingFor(category, subcategory).full();
-            expense = Record.newExpense(amount).
+            expense = Expense.newExpense(amount).
                     on(convertedCategory).
                     by(ACCOUNT).
                     at(date).

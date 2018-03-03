@@ -1,6 +1,6 @@
 package cz.rudypokorny.expense.tools.importexport.exporting;
 
-import cz.rudypokorny.expense.model.Record;
+import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.tools.importexport.RecordMapper;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
@@ -18,20 +18,20 @@ public class CSVExporter {
 
     private static final Logger logger = LoggerFactory.getLogger(CSVExporter.class);
 
-    private final RecordMapper<Record, List<?>, CSVFormat> recordMapper;
+    private final RecordMapper<Expense, List<?>, CSVFormat> recordMapper;
 
     public CSVExporter(RecordMapper recordMapper) {
         this.recordMapper = Objects.requireNonNull(recordMapper, "recordMapper cannot be null");
     }
 
-    public void export(List<Record> records) throws IOException {
+    public void export(List<Expense> expenses) throws IOException {
         try (
                 BufferedWriter writer = Files.newBufferedWriter(Paths.get(recordMapper.getFileName()));
                 CSVPrinter csvPrinter = new CSVPrinter(writer, recordMapper.getConfig());
         ) {
-            logger.debug("Exporting {} expenses to {}.", records.size(), recordMapper.getFileName());
+            logger.debug("Exporting {} expenses to {}.", expenses.size(), recordMapper.getFileName());
 
-            records.stream().forEach(expense -> {
+            expenses.stream().forEach(expense -> {
                 try {
                     csvPrinter.printRecord(recordMapper.map(expense));
                 } catch (IOException e) {
