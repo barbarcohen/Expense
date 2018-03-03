@@ -8,10 +8,8 @@ Date,Type,Category,Subcategory,Vendor,Payment,Currency,Amount,Note,ID
 "02/05/2014","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","EAE6778D-953A-43CE-AAB1-FD06F0A50E74"
 "02/05/2014","Rudík","Investments","Pension Fund","Česká Pojištovna","Account Transfer","CZK","-300,","","F06D0E4C-3D49-4524-AB3A-5C43511804A5"
 "02/05/2014","Rudík","Auto","Gas","None","Cash","CZK","-507,","","9F450893-0FD0-499B-95CD-76F492B809B5"
-"02/05/2014","Rudík","Personal","Gift","None","Debit Card","CZK","-78,94","USD 3.99, rate: 19.78500000
-Aliexpress","FDDE6B17-505E-4045-94C7-2952F91C11C4"
-"02/05/2014","Rudík","Personal","Gift","None","Debit Card","CZK","-33,44","USD 1.69, rate: 19.78500000
-Aliexpress","1C3234CF-F7DE-4739-A410-AA74C746ECBB"
+"02/05/2014","Rudík","Personal","Gift","None","Debit Card","CZK","-78,94","USD 3.99, rate: 19.78500000 Aliexpress","FDDE6B17-505E-4045-94C7-2952F91C11C4"
+"02/05/2014","Rudík","Personal","Gift","None","Debit Card","CZK","-33,44","USD 1.69, rate: 19.78500000 Aliexpress","1C3234CF-F7DE-4739-A410-AA74C746ECBB"
 "04/05/2014","Rudík","Food","Restaurant","None","Cash","CZK","-270,","","C0E2A474-862E-4667-B1FE-1F3E59BCEC0C"
 "04/05/2014","Rudík","Household","Groceries","None","Debit Card","CZK","-299,","","BE6E7FD3-A635-446F-A257-FBAE9EEF744C"
 "04/05/2014","Rudík","Entertainment","Books","None","Debit Card","CZK","-299,","","1E2ABA96-411E-4948-84CB-D9C1D5D00B41"
@@ -75,8 +73,7 @@ Aliexpress","1C3234CF-F7DE-4739-A410-AA74C746ECBB"
 "19/05/2014","Rudík","Personal","Gift","None","Debit Card","CZK","-209,","Olej na masaz","0159E938-A23B-4547-A825-1F2D9BF3D45A"
 "19/05/2014","Rudík","Personal","Gift","None","Cash","CZK","-111,","Fixy na sklo","1982130B-954B-488D-B0B6-1687D41B258E"
 "19/05/2014","Rudík","Personal","Gift","None","Cash","CZK","-50,","Cetka na krabku","7BF08E6D-18F1-4F3A-9D65-A32F34641675"
-"20/05/2014","Rudík","Entertainment","Apps","Apple Inc.","Debit Card","CZK","-49,18","EUR 1.79, rate: 27.47350000
-","72FCB5F6-B08C-42EC-B057-896ED98AFBA4"
+"20/05/2014","Rudík","Entertainment","Apps","Apple Inc.","Debit Card","CZK","-49,18","EUR 1.79, rate: 27.47350000","72FCB5F6-B08C-42EC-B057-896ED98AFBA4"
 "20/05/2014","Rudík","Food","Lunch","None","Cash","CZK","-79,","","895E1160-519C-48B8-955E-A06495B8BC60"
 "20/05/2014","Rudík","Income","Meal Tickets","None","Cash","CZK","1 530,","","CBF33788-1889-4C33-A632-0EAC1DF8DF3B"
 "20/05/2014","Rudík","Food","Restaurant","None","Cash","CZK","-200,","","F8AE2A68-2086-4034-8C24-0819BC075890"
@@ -129,8 +126,7 @@ Aliexpress","1C3234CF-F7DE-4739-A410-AA74C746ECBB"
 "03/06/2014","Rudík","Home","Home Improvement","Hornbach","Debit Card","CZK","-169,","","E151AEF7-1152-4D8F-A7CF-BEF72FBB73E1"
 "03/06/2014","Rudík","Home","Home Improvement","None","Cash","CZK","3 000,","Skrine martina","48900A14-1341-486A-A5FD-8B2CE18C0D43"
 "03/06/2014","Rudík","Household","Groceries","Albert","Debit Card","CZK","-740,","","59986BBB-3CB1-4FBA-A03E-6F4A9997F7FB"
-"04/06/2014","Rudík","Entertainment","Apps","None","Debit Card","CZK","-24,44","EUR 0.89, rate: 27.45530000
-","7FD89305-ED64-411B-B51C-C2D7256F1C7A"
+"04/06/2014","Rudík","Entertainment","Apps","None","Debit Card","CZK","-24,44","EUR 0.89, rate: 27.45530000","7FD89305-ED64-411B-B51C-C2D7256F1C7A"
 "04/06/2014","Rudík","Food","Snack","None","Cash","CZK","-20,","","338234A4-FFE3-43F1-A472-5F933DE420F2"
 "04/06/2014","Rudík","Home","Maintenance and Repair","Hornbach","Debit Card","CZK","-1 971,","Barvy vyponace svetla","8B8E552B-8AC5-42D9-866D-DED20BFC3041"
 "04/06/2014","Rudík","Auto","Gas","Shell","Debit Card","CZK","-601,","","38E21175-3F98-4798-98E8-D1E4B2E5B375"
@@ -165,8 +161,7 @@ Aliexpress","1C3234CF-F7DE-4739-A410-AA74C746ECBB"
 "12/06/2014","Rudík","Household","Groceries","Tesco","Debit Card","CZK","-295,","","F74B2DE1-1BD5-4CE5-B6BB-67D0EE2A705E"
 "12/06/2014","Rudík","Home","Home Improvement","None","Direct Debit","CZK","-60,","","4C97866C-28FF-4DF0-8A5B-7C30244A9FB6"
 "13/06/2014","Rudík","Vacation","Transport","None","Cash","CZK","-1 000,","","A5015A25-AE8B-44BA-9459-3F86568BDE4F"
-"13/06/2014","Rudík","Vacation","Other","None","Cash","CZK","-1 921,87","EUR 70.00, rate: 27.45530000
-","AC5ABE42-BFE1-454C-B858-4E5B8C986503"
+"13/06/2014","Rudík","Vacation","Other","None","Cash","CZK","-1 921,87","EUR 70.00, rate: 27.45530000","AC5ABE42-BFE1-454C-B858-4E5B8C986503"
 "13/06/2014","Rudík","Income","Rent MB","None","Account Transfer","CZK","3 000,","","DA965F11-DA2C-4107-8A80-7FEB32FB7D41"
 "13/06/2014","Rudík","Income","Salary","None","Account Transfer","CZK","43 342,","","67CDA001-6D97-4C36-A6B2-90C33672C785"
 "13/06/2014","Rudík","Vacation","Insurance","None","Debit Card","CZK","-126,","","B053EE25-A58C-450E-AD99-A5F7306C4770"
@@ -188,8 +183,7 @@ Aliexpress","1C3234CF-F7DE-4739-A410-AA74C746ECBB"
 "19/06/2014","Rudík","Food","Snack","None","Cash","CZK","-47,","","7A4A19B5-6F49-41EC-BD95-1AA76415BAA4"
 "19/06/2014","Rudík","Vacation","Insurance","None","Debit Card","CZK","-336,","","259FC5FE-AF47-4A55-852A-1428E62F7AC3"
 "20/06/2014","Rudík","Vacation","Transport","None","Account Transfer","CZK","-1 750,","","A07EC6BF-72DB-45D3-9A0D-FC6C60808E0B"
-"20/06/2014","Rudík","Vacation","Hotels","None","Cash","CZK","-3 102,06","EUR 113.00, rate: 27.45190000
-","829462EC-463D-4C1C-9B03-DEB263F49F21"
+"20/06/2014","Rudík","Vacation","Hotels","None","Cash","CZK","-3 102,06","EUR 113.00, rate: 27.45190000","829462EC-463D-4C1C-9B03-DEB263F49F21"
 "20/06/2014","Rudík","Vacation","Other","None","Cash","CZK","-560,","Vydaje","2211BED6-2E61-4736-8E1E-296FFB1EECA2"
 "23/06/2014","Rudík","Home","Electricity","Eon","Direct Debit","CZK","-700,","","FC12CA95-7EDB-47BA-A3FC-861D755F27F3"
 "26/06/2014","Rudík","Vacation","Other","None","Debit Card","CZK","-4 130,5","Booz food entertainment","CE2EB088-BE45-4F07-948F-CA4974DA0A48"
@@ -1044,24 +1038,15 @@ Aliexpress","1C3234CF-F7DE-4739-A410-AA74C746ECBB"
 "27/02/2015","Rudík","Food","Lunch","None","Cash","CZK","-94,","","82C59130-191B-4C7F-BB22-8C76148BD995"
 "27/02/2015","Rudík","Personal","Other","None","Cash","CZK","-236,","Pojisteni","99EA2541-1FFF-41BA-A217-F2AA371D6038"
 "27/02/2015","Rudík","Personal","Other","None","Cash","CZK","-34,","Posta","098E9D09-0672-49B9-AEA5-D3CA6814843E"
-"01/03/2015","Rudík","Sport","Fees","None","Cash","CZK","-6 412,","EUR 229.00, rate: 28.00000000
-Skipas","E8B9DFD5-4772-45C0-81A1-EF015F77C1FE"
+"01/03/2015","Rudík","Sport","Fees","None","Cash","CZK","-6 412,","EUR 229.00, rate: 28.00000000 Skipas","E8B9DFD5-4772-45C0-81A1-EF015F77C1FE"
 "02/03/2015","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","DC9BC780-ED40-41DD-90E6-20DB7190CE35"
-"04/03/2015","Rudík","Food","Snack","None","Cash","CZK","-64,4","EUR 2.30, rate: 28
-","EC401DC2-DBB6-400F-9CD0-7D93347A83B6"
-"04/03/2015","Rudík","Household","Groceries","None","Cash","CZK","-392,","EUR 14.00, rate: 28.00000000
-","556BE3AF-52A4-4743-A0DD-8898F267BE97"
-"04/03/2015","Rudík","Sport","Fees","None","Cash","CZK","-476,","EUR 17.00, rate: 28.00000000
-Sauna","0D9296D5-24F6-4EA9-8078-00FBD65C425F"
-"05/03/2015","Rudík","Household","Groceries","None","Cash","CZK","-392,","EUR 14.00, rate: 28.00000000
-","38368791-095F-44B5-84A7-D85630AB6F96"
-"06/03/2015","Rudík","Food","Lunch","None","Cash","CZK","-302,4","EUR 10.80, rate: 28.00000000
-","778C3069-FDCC-4089-AFAA-2D98FF62E195"
-"06/03/2015","Rudík","Entertainment","Party","None","Cash","CZK","-364,","EUR 13.00, rate: 28.00000000
-","D106C7B7-A87A-4DFC-A6DF-24139A10F1AA"
-"07/03/2015","Rudík","Vacation","Hotels","None","Cash","CZK","-280,","EUR 10.00, rate: 28.00000000
-
-Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
+"04/03/2015","Rudík","Food","Snack","None","Cash","CZK","-64,4","EUR 2.30, rate: 28","EC401DC2-DBB6-400F-9CD0-7D93347A83B6"
+"04/03/2015","Rudík","Household","Groceries","None","Cash","CZK","-392,","EUR 14.00, rate: 28.00000000","556BE3AF-52A4-4743-A0DD-8898F267BE97"
+"04/03/2015","Rudík","Sport","Fees","None","Cash","CZK","-476,","EUR 17.00, rate: 28.00000000 Sauna","0D9296D5-24F6-4EA9-8078-00FBD65C425F"
+"05/03/2015","Rudík","Household","Groceries","None","Cash","CZK","-392,","EUR 14.00, rate: 28.00000000","38368791-095F-44B5-84A7-D85630AB6F96"
+"06/03/2015","Rudík","Food","Lunch","None","Cash","CZK","-302,4","EUR 10.80, rate: 28.00000000","778C3069-FDCC-4089-AFAA-2D98FF62E195"
+"06/03/2015","Rudík","Entertainment","Party","None","Cash","CZK","-364,","EUR 13.00, rate: 28.00000000","D106C7B7-A87A-4DFC-A6DF-24139A10F1AA"
+"07/03/2015","Rudík","Vacation","Hotels","None","Cash","CZK","-280,","EUR 10.00, rate: 28.00000000 Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "08/03/2015","Rudík","Household","Groceries","None","Cash","CZK","-350,","","FF097D21-EDEC-424F-B92D-4038BCF66824"
 "09/03/2015","Rudík","Income","Salary","None","Account Transfer","CZK","45 146,","","EF363C93-FD7F-471B-BA81-BF1B3652E0B6"
 "10/03/2015","Rudík","Utilities","CellPhone","Vodafone","Direct Debit","CZK","-568,","","4448DB00-E33C-4954-9492-136CCB6931CD"
@@ -1080,8 +1065,7 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "12/03/2015","Rudík","Household","Groceries","None","Cash","CZK","-182,","","EF4C8746-BABE-4820-96A3-6696149F923F"
 "12/03/2015","Rudík","Personal","Medical","None","Cash","CZK","-79,","","6A7A63A2-FEB0-4ACF-9986-C28681864AB7"
 "13/03/2015","Rudík","Home","Services","Česká pošta","Direct Debit","CZK","-330,","Cro/ct","57CA2268-6DCA-48BB-9296-F471C9FA5174"
-"14/03/2015","Rudík","Entertainment","Games","None","Cash","CZK","-149,88","EUR 5.49, rate: 27.30140000
-","94D11469-3D74-4C4B-A329-97EA71358210"
+"14/03/2015","Rudík","Entertainment","Games","None","Cash","CZK","-149,88","EUR 5.49, rate: 27.30140000","94D11469-3D74-4C4B-A329-97EA71358210"
 "15/03/2015","Rudík","Home","Mortgage","KB","Direct Debit","CZK","-7 603,","","2CE255CE-DC52-4D89-BDC4-C7D283203599"
 "15/03/2015","Rudík","Household","Groceries","None","Cash","CZK","-200,","","13860DEC-53AE-4AF0-9285-83CFF21A9A45"
 "15/03/2015","Rudík","Home","Internet","Netbox","Account Transfer","CZK","-375,","","453FE19F-FC0C-41E6-B213-43A3B0FD9D28"
@@ -1105,8 +1089,7 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "21/03/2015","Rudík","Entertainment","Other","None","Cash","CZK","-70,","","088D25F9-832F-42D6-B9CA-5D93505BAC26"
 "21/03/2015","Rudík","Food","Restaurant","None","Cash","CZK","-180,","","495CA9E2-10B7-47D2-91A9-54C014CC8F55"
 "21/03/2015","Rudík","Auto","Gas","None","Cash","CZK","200,","Miri","E90AF43F-18EE-4704-B612-837D17BC1133"
-"22/03/2015","Rudík","Entertainment","Games","None","Cash","CZK","-205,49","EUR 7.50, rate: 27.39810000
-","6DDC3AF3-6311-4402-855A-2FE8B711CA16"
+"22/03/2015","Rudík","Entertainment","Games","None","Cash","CZK","-205,49","EUR 7.50, rate: 27.39810000","6DDC3AF3-6311-4402-855A-2FE8B711CA16"
 "23/03/2015","Rudík","Food","Lunch","None","Cash","CZK","-94,","","EA26A380-9083-4A7D-8C4A-4F512BABBE90"
 "23/03/2015","Rudík","Food","Snack","None","Cash","CZK","-34,","","A90E961C-A89C-424A-BF3B-EA9869549F56"
 "23/03/2015","Rudík","Entertainment","Booz","None","Cash","CZK","-220,","","5B21855D-9051-4432-9A5F-6AE4FC58A651"
@@ -1116,8 +1099,7 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "24/03/2015","Rudík","Food","Snack","None","Cash","CZK","-20,","","FF46D687-F718-4B1C-8C7B-7999A208E326"
 "25/03/2015","Rudík","Food","Lunch","None","Cash","CZK","-79,","","D0EFAA49-5A03-4FA6-83B6-D088F70F4845"
 "25/03/2015","Rudík","Food","Snack","None","Cash","CZK","-40,","","87357DA2-F152-4D50-BA04-50DF0BFB25ED"
-"26/03/2015","Rudík","Entertainment","Music","None","Debit Card","CZK","-191,37","EUR 6.99, rate: 27.37730000
-","AEA02AE2-C1AF-49E6-AA9C-4E2B590BBFB5"
+"26/03/2015","Rudík","Entertainment","Music","None","Debit Card","CZK","-191,37","EUR 6.99, rate: 27.37730000","AEA02AE2-C1AF-49E6-AA9C-4E2B590BBFB5"
 "26/03/2015","Rudík","Food","Snack","None","Cash","CZK","-42,","","C75BC171-850E-4DA6-B9D4-C81E04DB2686"
 "26/03/2015","Rudík","Food","Lunch","None","Cash","CZK","-79,","","B75F54D5-0D5F-488B-AB99-41B1EAF15408"
 "26/03/2015","Rudík","Entertainment","Shows","None","Direct Debit","CZK","-125,","Hvezdarna ","C86AD26A-D09D-4E2E-BD22-3E278F5FDA38"
@@ -1251,8 +1233,7 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "08/05/2015","Rudík","Auto","Gas","None","Cash","CZK","-400,","","7B2BBBF7-D864-44ED-AFC4-21721F6788EF"
 "08/05/2015","Rudík","Food","Snack","None","Cash","CZK","-78,","","5FAE91C3-86B5-4B0A-BC44-3EAA8E302A8D"
 "09/05/2015","Rudík","Household","Groceries","None","Cash","CZK","-181,","","7BBF5A85-1AE2-439A-8789-B5BBFC672525"
-"10/05/2015","Rudík","Entertainment","Music","None","Direct Debit","CZK","-233,46","EUR 8.49, rate: 27.49850000
-","9695014D-F5A1-435F-9CDA-E568A5CEC33A"
+"10/05/2015","Rudík","Entertainment","Music","None","Direct Debit","CZK","-233,46","EUR 8.49, rate: 27.49850000","9695014D-F5A1-435F-9CDA-E568A5CEC33A"
 "11/05/2015","Rudík","Food","Snack","None","Cash","CZK","-35,","","0BE7F3AE-019C-460F-809E-6AFFD0FF2588"
 "11/05/2015","Rudík","Food","Lunch","None","Cash","CZK","-105,","","74A82D72-D293-4FF4-A994-293531537750"
 "11/05/2015","Rudík","Entertainment","Books","None","Cash","CZK","-727,","","37B130DD-7258-4672-A5D3-BAB6A12D5485"
@@ -1398,8 +1379,7 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "19/06/2015","Rudík","Transportation","Train","None","Cash","CZK","-210,","","8C6BA5A2-A9C6-43AA-A4D7-BC797DD8FDD1"
 "19/06/2015","Rudík","Entertainment","Booz","None","Cash","CZK","-50,","","CB4FC238-5FED-42DF-84DF-C679F810A3BA"
 "19/06/2015","Rudík","Vacation","Transport","None","Cash","CZK","-385,","","836D022E-1E5B-4FEB-8695-E51B3CBAE8DB"
-"19/06/2015","Rudík","Vacation","Other","None","Cash","CZK","-7 296,64","EUR 270.00, rate: 27.02460000
-","464FE598-56F0-4E42-8C2A-8DAF6F604855"
+"19/06/2015","Rudík","Vacation","Other","None","Cash","CZK","-7 296,64","EUR 270.00, rate: 27.02460000","464FE598-56F0-4E42-8C2A-8DAF6F604855"
 "20/06/2015","Rudík","Vacation","Hotels","None","Cash","CZK","-3 067,","","4ABC1D8E-865A-4E59-ACDE-0C2A19175E47"
 "21/06/2015","Rudík","Vacation","Transport","None","Cash","CZK","-882,","","9DA6A239-77B1-44C6-9126-E8738E5ED89B"
 "22/06/2015","Rudík","Vacation","Food","None","Cash","CZK","-266,","","9620743D-F7A7-41D1-A758-DF57B2B82388"
@@ -1517,15 +1497,11 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "25/07/2015","Rudík","Vacation","Other","None","Cash","CZK","-50,","","8685D77A-78C7-4177-AA1F-2633210B5BBB"
 "25/07/2015","Rudík","Auto","Gas","None","Cash","CZK","-450,","","2BAB2B2C-DC60-4093-BF50-9F0C7BFEF2B1"
 "25/07/2015","Rudík","Food","Snack","None","Cash","CZK","-75,","","1ADE7F74-3900-4F10-9CE7-CC7B7FF68557"
-"25/07/2015","Rudík","Vacation","Hotels","None","Cash","CZK","-494,97","EUR 18.00, rate: 27.49850000
-","E6584D8E-33E5-4BB3-8AAA-889E7A47B14C"
+"25/07/2015","Rudík","Vacation","Hotels","None","Cash","CZK","-494,97","EUR 18.00, rate: 27.49850000","E6584D8E-33E5-4BB3-8AAA-889E7A47B14C"
 "26/07/2015","Rudík","Food","Restaurant","None","Cash","CZK","-232,","","6B85D1B8-01A5-427A-9B62-04CF69797B21"
-"26/07/2015","Rudík","Household","Groceries","None","Cash","CZK","-67,57","EUR 2.50, rate: 27.02900000
-","7BC4A0EC-06F1-41C4-BBBD-2C719249E82B"
-"27/07/2015","Rudík","Personal","Gift","None","Cash","CZK","-256,82","EUR 9.50, rate: 27.03340000
-","499D0D2A-3969-45DB-9042-061E6B2B965D"
-"27/07/2015","Rudík","Food","Lunch","None","Cash","CZK","-297,36","EUR 11.00, rate: 27.03290000
-","342C657D-CB4B-4F87-993C-45BC35CE1CE3"
+"26/07/2015","Rudík","Household","Groceries","None","Cash","CZK","-67,57","EUR 2.50, rate: 27.02900000","7BC4A0EC-06F1-41C4-BBBD-2C719249E82B"
+"27/07/2015","Rudík","Personal","Gift","None","Cash","CZK","-256,82","EUR 9.50, rate: 27.03340000","499D0D2A-3969-45DB-9042-061E6B2B965D"
+"27/07/2015","Rudík","Food","Lunch","None","Cash","CZK","-297,36","EUR 11.00, rate: 27.03290000","342C657D-CB4B-4F87-993C-45BC35CE1CE3"
 "27/07/2015","Rudík","Auto","Gas","None","Cash","CZK","-546,","","814B8758-7299-4FE0-8A7D-760989069489"
 "28/07/2015","Rudík","Utilities","CellPhone","Vodafone","Direct Debit","CZK","-712,","","AC731477-A9F8-4E5A-BAA1-7ADC7511604B"
 "29/07/2015","Rudík","Personal","Gift","None","Cash","CZK","-47,","","AB0633E7-F7B1-4E74-B175-8369652A73E3"
@@ -1594,8 +1570,7 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "16/08/2015","Rudík","Food","Restaurant","None","Cash","CZK","-128,","","8EA6A079-916A-4B9F-AEE9-0E8B54922754"
 "16/08/2015","Rudík","Food","Snack","None","Cash","CZK","-75,","","11691A21-559F-4413-8AB7-480CBC41FFF3"
 "17/08/2015","Rudík","Food","Snack","None","Cash","CZK","-80,","","6CB3A607-9C7D-4A83-808D-6D6C02073308"
-"17/08/2015","Rudík","Entertainment","Apps","None","Cash","CZK","-80,8","EUR 2.99, rate: 27.02460000
-","3F10DEB6-6540-4F0C-8A45-D0C403469CF3"
+"17/08/2015","Rudík","Entertainment","Apps","None","Cash","CZK","-80,8","EUR 2.99, rate: 27.02460000","3F10DEB6-6540-4F0C-8A45-D0C403469CF3"
 "17/08/2015","Rudík","Home","Maintenance and Repair","None","Cash","CZK","-2 068,","Tools","EDA71AF6-D6C0-4824-A91B-F3850F7F0D05"
 "18/08/2015","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","00E42467-C95A-4D49-9529-4F36887FB321"
 "18/08/2015","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","5C0F559F-B751-44AD-85C7-F0767D7C0861"
@@ -1691,13 +1666,10 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "19/09/2015","Rudík","Entertainment","Books","None","Debit Card","CZK","-546,","Fotokniha poukaz","7A8E2ACF-18BF-4B83-B8D9-A00E7C714EE2"
 "19/09/2015","Rudík","Personal","Gift","None","Cash","CZK","-100,","","CE777EAD-0D8E-44BF-8799-E0DA04DE3DBB"
 "19/09/2015","Rudík","Entertainment","Booz","None","Cash","CZK","-100,","","955299D2-2C45-449F-B0BA-37B39E4A6334"
-"21/09/2015","Rudík","Food","Snack","None","Debit Card","CZK","-121,62","EUR 4.50, rate: 27.02620000
-","EB3A9455-A35D-4F2A-B478-42577049862E"
+"21/09/2015","Rudík","Food","Snack","None","Debit Card","CZK","-121,62","EUR 4.50, rate: 27.02620000","EB3A9455-A35D-4F2A-B478-42577049862E"
 "21/09/2015","Rudík","Food","Snack","None","Debit Card","CZK","-96,","","65531620-2B20-412A-91A8-95083B0E35C3"
-"21/09/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-1 351,31","EUR 50.00, rate: 27.02620000
-","2842774A-548D-4E16-86A5-DA2996FFFBBF"
-"22/09/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-1 083,66","EUR 40.00, rate: 27.09160000
-","1E6B989B-F76E-4B1E-8411-423A899DF683"
+"21/09/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-1 351,31","EUR 50.00, rate: 27.02620000","2842774A-548D-4E16-86A5-DA2996FFFBBF"
+"22/09/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-1 083,66","EUR 40.00, rate: 27.09160000","1E6B989B-F76E-4B1E-8411-423A899DF683"
 "25/09/2015","Rudík","Entertainment","Booz","None","Debit Card","CZK","-460,","","AB444119-0AA4-4E1C-AB09-02AB76C6DDC0"
 "26/09/2015","Rudík","Food","Restaurant","None","Debit Card","CZK","-120,","","0FC289A4-DFC9-4766-9B63-FAAD57B74181"
 "26/09/2015","Rudík","Food","Snack","None","Debit Card","CZK","-70,","","865499D9-103D-417E-B0A9-061BE7B9F9D4"
@@ -1753,9 +1725,7 @@ Tax","A2C5C3B5-9006-4CA4-B2CA-BD8C72338D51"
 "16/10/2015","Rudík","Food","Snack","None","Debit Card","CZK","-100,","","E4E578C7-E910-4CDC-8684-F5A7A5DD8D33"
 "18/10/2015","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","2DD45586-F808-4F91-80B9-3DA4A2451595"
 "18/10/2015","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","1BA36F27-78A3-4B1E-A901-B21BCBE165AA"
-"18/10/2015","Rudík","Utilities","Apps - Others","None","Debit Card","CZK","-676,55","Itunes match
-EUR 24.99, rate: 27.07300000
-","F8956516-B874-4971-AC11-A3397EBF499D"
+"18/10/2015","Rudík","Utilities","Apps - Others","None","Debit Card","CZK","-676,55","Itunes matchEUR 24.99, rate: 27.07300000","F8956516-B874-4971-AC11-A3397EBF499D"
 "18/10/2015","Rudík","Entertainment","Party","None","Cash","CZK","-570,","","4F0C7924-64E6-47D2-9BA8-C95B35BF5B84"
 "18/10/2015","Rudík","Auto","Other","None","Debit Card","CZK","-50,","","25E7BA8D-7905-4860-BB66-B009A5AE6436"
 "19/10/2015","Rudík","Entertainment","Booz","None","Debit Card","CZK","-103,","","8E2CBA37-EA8F-419F-9B51-8739B6118AF5"
@@ -1788,27 +1758,20 @@ EUR 24.99, rate: 27.07300000
 "30/10/2015","Rudík","Transportation","Train","None","Debit Card","CZK","-60,","","68050B32-B4E5-4078-99FE-BA7DF8B64F30"
 "31/10/2015","Rudík","Auto","Gas","None","Debit Card","CZK","-380,","","BA989C6C-8882-44D6-8662-52CFF640A49E"
 "31/10/2015","Rudík","Food","Restaurant","None","Debit Card","CZK","-360,","","744AFADC-9091-43F7-8459-47970A049AE5"
-"01/11/2015","Rudík","Entertainment","Booz","None","Debit Card","CZK","-376,43","EUR 13.90, rate: 27.08160000
-","CEAC5F3F-D9AE-47B3-91A9-DF383397B63E"
-"01/11/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-4 975,","EUR 180.00, rate: 27.08160000
-Bankomat","44C4229E-99F1-4CC2-B5B3-D878E2633DF7"
+"01/11/2015","Rudík","Entertainment","Booz","None","Debit Card","CZK","-376,43","EUR 13.90, rate: 27.08160000","CEAC5F3F-D9AE-47B3-91A9-DF383397B63E"
+"01/11/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-4 975,","EUR 180.00, rate: 27.08160000Bankomat","44C4229E-99F1-4CC2-B5B3-D878E2633DF7"
 "02/11/2015","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","A48EFEE1-7360-4C23-ACE1-5C0452B1F2D0"
-"03/11/2015","Rudík","Vacation","Food","None","Debit Card","CZK","-535,58","EUR 19.78, rate: 27.07700000
-","8F9E8C78-476D-41C1-ABE1-9F48F3727FA4"
-"03/11/2015","Rudík","Food","Restaurant","None","Debit Card","CZK","-378,68","EUR 14.00, rate: 27.04840000
-","B17D94A8-967B-4B6D-AB42-C9D7309FEA48"
-"09/11/2015","Rudík","Personal","Clothing","None","Debit Card","CZK","-909,","EUR 33.00, rate: 27.03750000
-Seimming trunks","5F2A4CAE-A28F-4596-9E1B-205219F34660"
-"11/11/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-2 434,36","EUR 90.00, rate: 27.04840000
-","9BFCDEC3-5C46-4F94-AABA-88470BCF027C"
+"03/11/2015","Rudík","Vacation","Food","None","Debit Card","CZK","-535,58","EUR 19.78, rate: 27.07700000","8F9E8C78-476D-41C1-ABE1-9F48F3727FA4"
+"03/11/2015","Rudík","Food","Restaurant","None","Debit Card","CZK","-378,68","EUR 14.00, rate: 27.04840000","B17D94A8-967B-4B6D-AB42-C9D7309FEA48"
+"09/11/2015","Rudík","Personal","Clothing","None","Debit Card","CZK","-909,","EUR 33.00, rate: 27.03750000Seimming trunks","5F2A4CAE-A28F-4596-9E1B-205219F34660"
+"11/11/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-2 434,36","EUR 90.00, rate: 27.04840000","9BFCDEC3-5C46-4F94-AABA-88470BCF027C"
 "12/11/2015","Rudík","Income","Rent MB","None","Account Transfer","CZK","3 000,","","F940ED9A-F87F-46EF-AF53-A17D4E852F07"
 "13/11/2015","Rudík","Income","Salary","None","Account Transfer","CZK","49 629,","","437D90B0-4790-4E44-A1E7-6514F7492404"
 "14/11/2015","Rudík","Auto","Other","None","Debit Card","CZK","-64,","","D641A6B9-34E9-4B08-BB14-9D2251F0065D"
 "15/11/2015","Rudík","Home","Mortgage","KB","Direct Debit","CZK","-7 603,","","4EBEB39A-5764-448D-89C0-40E2F78EE162"
 "15/11/2015","Rudík","Home","Home Improvement","None","Debit Card","CZK","-494,5","Aliexpress","0AEFD0B9-8932-472A-91EC-77D553701052"
 "15/11/2015","Rudík","Food","Snack","None","Debit Card","CZK","-313,","","FB229EF4-8A6C-4A02-AEB7-01B841E26381"
-"15/11/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-1 653,","EUR 60.00, rate: 27.04840000
-","49C26D2C-25EC-4D71-A7DC-B6A35F9AECEC"
+"15/11/2015","Rudík","Vacation","Other","None","Debit Card","CZK","-1 653,","EUR 60.00, rate: 27.04840000","49C26D2C-25EC-4D71-A7DC-B6A35F9AECEC"
 "15/11/2015","Rudík","Home","Services","None","Account Transfer","CZK","5 000,","Katka","12E9D150-1004-45B2-ACB9-996D10D953F9"
 "15/11/2015","Rudík","Home","Electricity","Eon","Direct Debit","CZK","-550,","Electricity","1DC5A94A-1414-4051-B644-2B33B052A7DE"
 "18/11/2015","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","6C62E4EB-D3B3-49E3-8147-75EC226299C8"
@@ -1846,8 +1809,7 @@ Seimming trunks","5F2A4CAE-A28F-4596-9E1B-205219F34660"
 "01/12/2015","Rudík","Entertainment","Party","None","Cash","CZK","-1 000,","Zaloha silvar","3EBA1301-182C-4248-BFE4-3E3F962DD152"
 "01/12/2015","Rudík","Food","Restaurant","None","Debit Card","CZK","-124,","","C10D554A-8CCF-462E-8F66-7524DA8CBFD2"
 "02/12/2015","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","06E39F38-BAB9-4B22-93F6-445BC2D98537"
-"02/12/2015","Rudík","Electronics","Phone","Aliexpress","Debit Card","CZK","-213,28","USD 10.78, rate: 19.78500000
-","39590A63-996E-45D6-975C-0D36D82650FD"
+"02/12/2015","Rudík","Electronics","Phone","Aliexpress","Debit Card","CZK","-213,28","USD 10.78, rate: 19.78500000","39590A63-996E-45D6-975C-0D36D82650FD"
 "02/12/2015","Rudík","Electronics","Phone","Apple Inc.","Debit Card","CZK","-22 900,","Iphone 6s","31F7289D-D03C-4B57-B2A6-77BAD170A570"
 "02/12/2015","Rudík","Home","Maintenance and Repair","Hornbach","Debit Card","CZK","-99,","","D830B65C-8451-4FE6-88AF-8A328920F650"
 "04/12/2015","Rudík","Food","Snack","None","Debit Card","CZK","-99,","","A46E01AE-93C1-456F-B609-866B18B26F3A"
@@ -1887,8 +1849,7 @@ Seimming trunks","5F2A4CAE-A28F-4596-9E1B-205219F34660"
 "15/12/2015","Rudík","Personal","Medical","None","Debit Card","CZK","-334,","Bepanten","BC958CF7-8C31-4DFB-9A91-DC12F16833D9"
 "15/12/2015","Rudík","Personal","Medical","None","Debit Card","CZK","-750,","Znamenka","CEE4C87A-9836-49FD-A6DB-95C30DB19056"
 "15/12/2015","Rudík","Personal","Other","None","Debit Card","CZK","-44,","Post","2BFF2491-D79B-4A88-9B87-BD4220890658"
-"15/12/2015","Rudík","Household","Groceries","None","Debit Card","CZK","-161,89","EUR 5.99, rate: 27.02590000
-","C348C484-1277-46D6-A4F3-B7FFB0DE24AB"
+"15/12/2015","Rudík","Household","Groceries","None","Debit Card","CZK","-161,89","EUR 5.99, rate: 27.02590000","C348C484-1277-46D6-A4F3-B7FFB0DE24AB"
 "16/12/2015","Rudík","Home","Services","None","Account Transfer","CZK","5 000,","Katka","D1C998A8-7F6A-418F-A98A-D4BE2D8F9565"
 "18/12/2015","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","FFD53A26-49E7-460F-A843-167CE9F24E79"
 "18/12/2015","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","1DB108A1-8815-40F5-A833-F8F7AB4B50CD"
@@ -2015,8 +1976,7 @@ Seimming trunks","5F2A4CAE-A28F-4596-9E1B-205219F34660"
 "30/01/2016","Rudík","Household","Groceries","Tesco","Debit Card","CZK","-96,","","B08F4DB1-674C-4C35-8340-E58075969345"
 "30/01/2016","Rudík","Home","Maintenance and Repair","Lidl","Debit Card","CZK","-172,","","597D5BBD-C633-4B3E-BAC4-825001434A04"
 "30/01/2016","Rudík","Household","Groceries","Lidl","Cash","CZK","-390,","","BD92F392-EE86-4495-8352-AFD361753F68"
-"31/01/2016","Rudík","Personal","Gift","Aliexpress","Debit Card","CZK","-673,54","USD 27.00, rate: 24.94600000
-","CF4D5BF8-D815-4E4C-9CF2-BBF0F048972F"
+"31/01/2016","Rudík","Personal","Gift","Aliexpress","Debit Card","CZK","-673,54","USD 27.00, rate: 24.94600000","CF4D5BF8-D815-4E4C-9CF2-BBF0F048972F"
 "01/02/2016","Rudík","Personal","Other","None","Debit Card","CZK","-200,","Katastr","FCE08565-3D9B-470E-8FD8-48067881A951"
 "01/02/2016","Rudík","Auto","Gas","None","Debit Card","CZK","-410,","","40CBFFD6-66F4-441F-BD1C-487285E9AA5E"
 "02/02/2016","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","EB8C0487-2FF4-495F-9682-CC3640D168FB"
@@ -2028,8 +1988,7 @@ Seimming trunks","5F2A4CAE-A28F-4596-9E1B-205219F34660"
 "05/02/2016","Rudík","Food","Restaurant","None","Debit Card","CZK","-260,","","5102189B-7046-4889-9B7D-3C50178E3F09"
 "05/02/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-90,","","23BDB376-18F2-4D0F-ACA8-C837C4EEE710"
 "05/02/2016","Rudík","Entertainment","Other","None","Debit Card","CZK","-45,","","EB92AB99-4B94-4729-A670-0AB2880C03DF"
-"06/02/2016","Rudík","Sport","Fees","None","Debit Card","CZK","-1 053,74","EUR 39.00, rate: 27.01910000
-","83E4F1D7-12C2-4AFD-B4B6-12B9F771DC9F"
+"06/02/2016","Rudík","Sport","Fees","None","Debit Card","CZK","-1 053,74","EUR 39.00, rate: 27.01910000","83E4F1D7-12C2-4AFD-B4B6-12B9F771DC9F"
 "06/02/2016","Rudík","Personal","Medical","None","Debit Card","CZK","-40,","Insurance","4D6DC4AF-7D0C-437E-A490-60B99EB87437"
 "06/02/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-160,","","1C452942-C0D7-45B0-991A-F42309523507"
 "06/02/2016","Rudík","Food","Snack","None","Debit Card","CZK","-70,","","625218F0-706B-4B7B-B8EF-E4FEDDFA8545"
@@ -2177,20 +2136,13 @@ Seimming trunks","5F2A4CAE-A28F-4596-9E1B-205219F34660"
 "26/03/2016","Rudík","Vacation","Food","Lidl","Debit Card","CZK","-308,","","8924A07F-912F-4E60-A608-3D3344E48322"
 "27/03/2016","Rudík","Personal","Clothing","None","Debit Card","CZK","-130,","","2344B634-180F-4698-BDC0-04C47873DB76"
 "27/03/2016","Rudík","Vacation","Food","Lidl","Cash","CZK","-107,","","6497B5FA-DBEF-4F32-8C05-E41A1DBD69D0"
-"27/03/2016","Rudík","Vacation","Food","None","Debit Card","CZK","-946,82","EUR 35.00, rate: 27.05190000
-EUR 35.00, rate: 27.01910000
-","3CA355D0-E13A-43D6-897E-702386A2348A"
-"27/03/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-62,14","EUR 2.30, rate: 27.01910000
-","453CF360-193B-4DAB-BB7A-7E6A7C235E84"
-"28/03/2016","Rudík","Vacation","Other","None","Debit Card","CZK","-59,44","EUR 2.20, rate: 27.01910000
-","ED9A0E64-1F1A-4C0D-8CDC-A3258185161D"
-"28/03/2016","Rudík","Vacation","Hotels","None","Debit Card","CZK","-1 163,28","EUR 43.00, rate: 27.05310000
-","40D05023-B1EC-477D-A4AC-423CBBFFA636"
-"28/03/2016","Rudík","Auto","Gas","None","Debit Card","CZK","-324,1","EUR 11.98, rate: 27.05310000
-","6CA27786-945F-4386-A5F5-59C501A24CBF"
+"27/03/2016","Rudík","Vacation","Food","None","Debit Card","CZK","-946,82","EUR 35.00, rate: 27.05190000 EUR 35.00, rate: 27.01910000","3CA355D0-E13A-43D6-897E-702386A2348A"
+"27/03/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-62,14","EUR 2.30, rate: 27.01910000","453CF360-193B-4DAB-BB7A-7E6A7C235E84"
+"28/03/2016","Rudík","Vacation","Other","None","Debit Card","CZK","-59,44","EUR 2.20, rate: 27.01910000","ED9A0E64-1F1A-4C0D-8CDC-A3258185161D"
+"28/03/2016","Rudík","Vacation","Hotels","None","Debit Card","CZK","-1 163,28","EUR 43.00, rate: 27.05310000","40D05023-B1EC-477D-A4AC-423CBBFFA636"
+"28/03/2016","Rudík","Auto","Gas","None","Debit Card","CZK","-324,1","EUR 11.98, rate: 27.05310000","6CA27786-945F-4386-A5F5-59C501A24CBF"
 "28/03/2016","Rudík","Home","Electricity","Eon","Direct Debit","CZK","1 229,","","C8268331-1997-4203-8F90-95E9D8618ADD"
-"28/03/2016","Rudík","Vacation","Food","None","Debit Card","CZK","-243,48","EUR 9.00, rate: 27.05310000
-","E1D61004-F9AC-43DE-955A-F2D351FAFCAD"
+"28/03/2016","Rudík","Vacation","Food","None","Debit Card","CZK","-243,48","EUR 9.00, rate: 27.05310000","E1D61004-F9AC-43DE-955A-F2D351FAFCAD"
 "29/03/2016","Rudík","Income","Photo","None","Debit Card","CZK","4 000,","","971829C2-A77E-49EE-85D2-EA14A78175CF"
 "29/03/2016","Rudík","Personal","Other","None","Debit Card","CZK","-1 000,","Katastr","4249BE4C-E87B-406C-9795-71575938D1DE"
 "29/03/2016","Rudík","Personal","Other","None","Debit Card","CZK","-60,","Czechpoint","94D01EFB-7AD2-47C6-BB90-17C3DAE643B6"
@@ -2382,8 +2334,7 @@ EUR 35.00, rate: 27.01910000
 "03/06/2016","Rudík","Food","Lunch","None","Debit Card","CZK","-140,","","9E011905-666B-4810-9D9B-51166D8531CD"
 "03/06/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-340,","","F2D78870-84FA-4433-BC9D-EF07A7272BF5"
 "04/06/2016","Rudík","Household","Groceries","Albert","Debit Card","CZK","-350,","","B6EAE036-7D2D-41B0-AF3C-A905900A70DD"
-"04/06/2016","Rudík","Entertainment","Games","None","Debit Card","CZK","-267,52","EUR 9.90, rate: 27.02210000
-","06B5939E-2ACE-4374-96E6-741100CFAC01"
+"04/06/2016","Rudík","Entertainment","Games","None","Debit Card","CZK","-267,52","EUR 9.90, rate: 27.02210000","06B5939E-2ACE-4374-96E6-741100CFAC01"
 "05/06/2016","Rudík","Auto","Gas","None","Debit Card","CZK","-370,","","1E7C6E1B-02B8-4BF1-9DA8-35F27AA5220C"
 "05/06/2016","Rudík","Food","Restaurant","None","Debit Card","CZK","-130,","","B9A992ED-79D7-4733-BA97-3CFB91499B5D"
 "05/06/2016","Rudík","Personal","Clothing","Decathlon","Debit Card","CZK","-730,","","1E83604F-8801-42FB-BD91-06A594DBA48C"
@@ -2416,10 +2367,7 @@ EUR 35.00, rate: 27.01910000
 "18/06/2016","Rudík","Entertainment","Other","None","Debit Card","CZK","-350,","","3F6E0606-8EE3-4CA8-B55C-F6A4D818DF8C"
 "18/06/2016","Rudík","Food","Restaurant","None","Debit Card","CZK","-200,","","EC893FBD-1244-4791-A6D1-8DECA0E2A9DC"
 "19/06/2016","Rudík","Entertainment","Movies","None","Debit Card","CZK","-80,","","B689C703-3A5A-4421-A628-84C8EC292C5B"
-"20/06/2016","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-271,91","Watches
-USD 10.90, rate: 24.94600000
-
-","88D07AAA-6F24-4822-9A86-ACC5DC5B25B5"
+"20/06/2016","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-271,91","Watches USD 10.90, rate: 24.94600000","88D07AAA-6F24-4822-9A86-ACC5DC5B25B5"
 "20/06/2016","Rudík","Household","Groceries","None","Debit Card","CZK","-67,","","7506AA61-E371-4E2D-BD6B-6C239D8AB3F1"
 "21/06/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-160,","","9D478943-6341-4FDD-9E49-96CEB58D4233"
 "23/06/2016","Rudík","Sport","Equipment","None","Debit Card","CZK","-298,","","C7737343-D18C-47F5-92FB-1A35F6F39006"
@@ -2453,26 +2401,18 @@ USD 10.90, rate: 24.94600000
 "01/07/2016","Rudík","Household","Supplies","Albert","Debit Card","CZK","-366,","","B6B4D462-2A24-49E5-97A6-C9AA8DFE7D62"
 "01/07/2016","Rudík","Vacation","","None","Debit Card","CZK","-9 890,","Majorka","9AEB7C48-330B-49F3-A1F9-EA1870F00110"
 "02/07/2016","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","AEAB74E1-5555-4F54-AA6A-B219A43F6B7A"
-"02/07/2016","Rudík","Personal","Clothing","Primark","Debit Card","CZK","-689,06","EUR 25.50, rate: 27.02210000
-","057B702D-2293-4588-8CE5-0283DF9CBEB3"
-"02/07/2016","Rudík","Food","Snack","None","Debit Card","CZK","-200,51","EUR 7.40, rate: 27.09610000
-","9B9B9A57-D824-4867-8776-B750056FC6CE"
+"02/07/2016","Rudík","Personal","Clothing","Primark","Debit Card","CZK","-689,06","EUR 25.50, rate: 27.02210000","057B702D-2293-4588-8CE5-0283DF9CBEB3"
+"02/07/2016","Rudík","Food","Snack","None","Debit Card","CZK","-200,51","EUR 7.40, rate: 27.09610000","9B9B9A57-D824-4867-8776-B750056FC6CE"
 "02/07/2016","Rudík","Household","Groceries","Albert","Debit Card","CZK","-412,","","24F199C8-C643-4389-8D3C-6740AFF6649D"
 "02/07/2016","Rudík","Personal","Clothing","Decathlon","Debit Card","CZK","-149,","Bryle","FAB234EF-DE45-4690-9C0C-D5B58C134903"
 "02/07/2016","Rudík","Personal","Clothing","Decathlon","Debit Card","CZK","-649,","Sand-ale","2C26FCB5-EA98-40C7-95AB-BEB836CEE73E"
-"02/07/2016","Rudík","Entertainment","Apps","Steam","Debit Card","CZK","-304,29","EUR 11.23, rate: 27.09610000
-","62E92677-047B-45AC-A290-5324045ADF86"
+"02/07/2016","Rudík","Entertainment","Apps","Steam","Debit Card","CZK","-304,29","EUR 11.23, rate: 27.09610000","62E92677-047B-45AC-A290-5324045ADF86"
 "03/07/2016","Rudík","Vacation","Other","None","Debit Card","CZK","-4 000,","Cash","E1896DD7-1809-4101-87C8-70C6C5D76F90"
-"06/07/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-3 359,92","EUR 124.00, rate: 27.09610000
-Car rental","3741CA4B-2A3A-4913-8B9B-07FA41D69755"
-"07/07/2016","Rudík","Personal","Clothing","None","Debit Card","CZK","-484,75","EUR 17.89, rate: 27.09610000
-Plavky","1F2200FD-535E-4AF1-B9D0-4ED818588A9A"
-"08/07/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-980,","EUR 35.00, rate: 28
-Gas","BD9E33F7-5A97-4364-B9BD-7E37CDBC2085"
-"08/07/2016","Rudík","Vacation","Other","None","Debit Card","CZK","-420,","EUR 15.00, rate: 28.00000000
-","A43A301A-5679-4281-BD93-6967274B59EE"
-"10/07/2016","Rudík","Personal","Gift","None","Debit Card","CZK","-417,2","EUR 14.90, rate: 28.00000000
-Jiri taxi","A7715C8C-9515-44E9-8BE0-79281305AEBF"
+"06/07/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-3 359,92","EUR 124.00, rate: 27.09610000 Car rental","3741CA4B-2A3A-4913-8B9B-07FA41D69755"
+"07/07/2016","Rudík","Personal","Clothing","None","Debit Card","CZK","-484,75","EUR 17.89, rate: 27.09610000 Plavky","1F2200FD-535E-4AF1-B9D0-4ED818588A9A"
+"08/07/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-980,","EUR 35.00, rate: 28 Gas","BD9E33F7-5A97-4364-B9BD-7E37CDBC2085"
+"08/07/2016","Rudík","Vacation","Other","None","Debit Card","CZK","-420,","EUR 15.00, rate: 28.00000000","A43A301A-5679-4281-BD93-6967274B59EE"
+"10/07/2016","Rudík","Personal","Gift","None","Debit Card","CZK","-417,2","EUR 14.90, rate: 28.00000000 Jiri taxi","A7715C8C-9515-44E9-8BE0-79281305AEBF"
 "11/07/2016","Rudík","Household","Groceries","Lidl","Cash","CZK","-646,","","40302DDB-5D47-4577-9F82-E89A44844DB9"
 "12/07/2016","Rudík","Home","Services","None","Debit Card","CZK","-128,","Dane mb","C1410D88-5763-4F35-AAB5-D423A44F7F90"
 "13/07/2016","Rudík","Income","Rent MB","None","Debit Card","CZK","1 436,","","8BD58E71-F061-4AD3-9037-161B2C2A3B0C"
@@ -2492,8 +2432,7 @@ Jiri taxi","A7715C8C-9515-44E9-8BE0-79281305AEBF"
 "17/07/2016","Rudík","Food","Snack","None","Debit Card","CZK","-110,","","7A8AA53B-E874-4F29-AAD2-DC60013120C6"
 "18/07/2016","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","BB227763-1FC9-4D13-BB32-7516EE9E8FC6"
 "18/07/2016","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","1BC63719-D73B-4037-A6E8-AABEF8646979"
-"18/07/2016","Rudík","Home","Home Improvement","Aliexpress","Debit Card","CZK","-373,69","USD 14.98, rate: 24.94600000
-","CEB3414E-E5FC-4374-8F15-A02DC77A581A"
+"18/07/2016","Rudík","Home","Home Improvement","Aliexpress","Debit Card","CZK","-373,69","USD 14.98, rate: 24.94600000","CEB3414E-E5FC-4374-8F15-A02DC77A581A"
 "18/07/2016","Rudík","Electronics","Other","None","Debit Card","CZK","-465,","","400AFACD-BB71-45A7-B1ED-C567C9AF028B"
 "19/07/2016","Rudík","Food","Snack","Albert","Debit Card","CZK","-140,","","41A70169-E16A-4369-ADC1-5D89EF78E778"
 "20/07/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-400,","","9BB3FD73-2EC0-4332-9A03-87385B95BDE8"
@@ -2505,14 +2444,12 @@ Jiri taxi","A7715C8C-9515-44E9-8BE0-79281305AEBF"
 "23/07/2016","Rudík","Food","Lunch","None","Debit Card","CZK","-90,","","0DA1EB69-C37C-4B21-9DE5-C36C52F1E94C"
 "23/07/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-50,","","11157F64-765B-44B7-945E-7F63C6D09FC5"
 "24/07/2016","Rudík","Food","Restaurant","None","Debit Card","CZK","-133,","","10BDAF78-80F9-4196-B5D5-9210844CAD82"
-"24/07/2016","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-660,82","USD 26.49, rate: 24.94600000
-","839C06EA-506C-4CC3-B9CD-05AB0FAD0B3D"
+"24/07/2016","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-660,82","USD 26.49, rate: 24.94600000","839C06EA-506C-4CC3-B9CD-05AB0FAD0B3D"
 "24/07/2016","Rudík","Household","Groceries","Tesco","Debit Card","CZK","-137,","","FA6EF1FE-03C5-47FE-9025-95A45A8D11FE"
 "26/07/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-85,","","852EC426-20CC-4741-B902-909A7CCAD465"
 "26/07/2016","Rudík","Sport","Fees","None","Debit Card","CZK","-100,","","B8F25DA8-3311-4A2B-BDDF-67C5DE334FEA"
 "26/07/2016","Rudík","Household","Groceries","None","Debit Card","CZK","-42,","","DB6462EC-A6BE-42BB-953F-F28A882CCA79"
-"26/07/2016","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-249,21","USD 9.99, rate: 24.94600000
-","1090F9F1-5C11-4FE9-9324-F7878F6DD726"
+"26/07/2016","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-249,21","USD 9.99, rate: 24.94600000","1090F9F1-5C11-4FE9-9324-F7878F6DD726"
 "28/07/2016","Rudík","Food","Snack","None","Debit Card","CZK","-129,","","104AD3FF-CA61-4B6B-9885-782DD9C7489D"
 "28/07/2016","Rudík","Entertainment","Books","None","Debit Card","CZK","-39,","","74DAEC1F-F2EF-4F65-AA8F-27ADC8C655AE"
 "28/07/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-199,","","5332B3A7-B642-4C3D-92C8-C4B1506C3072"
@@ -2559,14 +2496,12 @@ Jiri taxi","A7715C8C-9515-44E9-8BE0-79281305AEBF"
 "14/08/2016","Rudík","Electronics","Other","Amazon","Debit Card","CZK","-296,","Amazon cloud","CF9C934A-FB36-43E3-9426-7B3A651BB6EC"
 "15/08/2016","Rudík","Home","Mortgage","KB","Direct Debit","CZK","-7 603,","","5D28826B-C1A3-4330-9A4F-69B3F8CE614B"
 "15/08/2016","Rudík","Home","Mortgage","KB","Account Transfer","CZK","-973,","Mb","2533F0F5-D1A1-4E90-B4E5-CFADF999A523"
-"15/08/2016","Rudík","Home","Home Improvement","Aliexpress","Debit Card","CZK","-85,07","USD 3.41, rate: 24.94600000
-","B8B94AAA-7894-47C0-BC75-5206EC9F049A"
+"15/08/2016","Rudík","Home","Home Improvement","Aliexpress","Debit Card","CZK","-85,07","USD 3.41, rate: 24.94600000","B8B94AAA-7894-47C0-BC75-5206EC9F049A"
 "15/08/2016","Rudík","Household","Groceries","Albert","Debit Card","CZK","-137,","","37B1868A-3AE8-40CB-B1AA-C22EF57B24C3"
 "16/08/2016","Rudík","Home","Services","None","Account Transfer","CZK","5 000,","Katka","58FA248B-3478-45D5-B870-B02F9D2931BA"
 "16/08/2016","Rudík","Income","Rent MB","None","Debit Card","CZK","3 000,","","22C88FA7-2368-4BB7-80F9-8A688ACABF4C"
 "16/08/2016","Rudík","Vacation","Hotels","AirBnb","Debit Card","CZK","-2 267,","Roma","B924494F-15CC-486B-B8D7-AFBDBC71EA64"
-"16/08/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-76,","Cd brno-buda
-2000 katka","5B957371-7ADF-45AB-A55E-BA7F17CDEED6"
+"16/08/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-76,","Cd brno-buda 2000 katka","5B957371-7ADF-45AB-A55E-BA7F17CDEED6"
 "17/08/2016","Rudík","Food","Snack","None","Debit Card","CZK","-79,","","FB027D5E-A1DC-47CE-AA72-3E1BA74A3870"
 "18/08/2016","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","9FBDEF96-1971-4BBB-AA33-F61FCD076C6F"
 "18/08/2016","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","BA1ABB72-066F-42B2-94FC-1F4B24BDA1D1"
@@ -2665,9 +2600,7 @@ Jiri taxi","A7715C8C-9515-44E9-8BE0-79281305AEBF"
 "24/09/2016","Rudík","Vacation","Other","None","Debit Card","CZK","-8 000,","Cash","3C8B4F67-AE0C-42B2-9836-7EA7957A0910"
 "24/09/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-78,","","7710FF40-4A7D-4951-B38B-555B776FCE9C"
 "26/09/2016","Rudík","Utilities","CellPhone","Vodafone","Direct Debit","CZK","-537,","","559CAC1C-2010-4E31-BA29-699A1CF597B4"
-"02/10/2016","Rudík","Entertainment","Games","Apple Inc.","Debit Card","CZK","-161,59","EUR: € 5.98
-Exchange rate: 0.037008
-","30923B6D-B5D1-4917-9ABD-A4D4579DF66E"
+"02/10/2016","Rudík","Entertainment","Games","Apple Inc.","Debit Card","CZK","-161,59","EUR: € 5.98 Exchange rate: 0.037008","30923B6D-B5D1-4917-9ABD-A4D4579DF66E"
 "02/10/2016","Rudík","Vacation","Transport","None","Debit Card","CZK","-940,","","36C90E52-1446-4D49-8DAE-1C045D6BF99A"
 "02/10/2016","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","9729C523-6A43-4CB4-9020-8A9A9F0C0A43"
 "03/10/2016","Rudík","Household","Groceries","None","Debit Card","CZK","-250,","","90AE78CD-3DF1-4B70-823C-FEC718162A3E"
@@ -2709,9 +2642,7 @@ Exchange rate: 0.037008
 "18/10/2016","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","DD46555B-73B2-4F80-9521-551E453039E8"
 "18/10/2016","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","0B09CC91-3AFF-4E45-8E6E-7D8D7036561A"
 "18/10/2016","Rudík","Household","Groceries","Albert","Debit Card","CZK","-40,","","2F2D7029-6310-4639-9CBB-01CE1F39BAD0"
-"18/10/2016","Rudík","Personal","Clothing","None","Debit Card","CZK","-737,41","USD: US$ 30.00
-Exchange rate: 0.040683
-","4234336E-BAE7-4EDC-A0DD-0C1544077CA3"
+"18/10/2016","Rudík","Personal","Clothing","None","Debit Card","CZK","-737,41","USD: US$ 30.00Exchange rate: 0.040683","4234336E-BAE7-4EDC-A0DD-0C1544077CA3"
 "19/10/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-200,","","CAE3993B-F312-45AD-9F18-DCD4A027F3A5"
 "19/10/2016","Rudík","Personal","Clothing","Tesco","Debit Card","CZK","-468,","","EE68D806-6AF6-4B52-ABA8-34A33E434F43"
 "20/10/2016","Rudík","Vacation","Air Tickets","None","Debit Card","CZK","1 036,","Refund","B693D62F-63E0-4274-9B5E-5E39FDAD2AD4"
@@ -2725,10 +2656,7 @@ Exchange rate: 0.040683
 "22/10/2016","Rudík","Household","Groceries","Lidl","Cash","CZK","-550,","","AF17F4DB-A1CB-4222-9059-328982656AD6"
 "22/10/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-450,","","F4B87C25-57E5-431D-BE93-8B3B9973A19A"
 "22/10/2016","Rudík","Entertainment","Dance","None","Debit Card","CZK","-270,","","02B5148A-3860-480E-8000-1B740E5E118A"
-"23/10/2016","Rudík","Entertainment","Games","Apple Inc.","Debit Card","CZK","-540,43","EUR: € 20.00
-Exchange rate: 27.0215
-Deus ex
-","71F1C4BA-CADF-4493-9044-404AC355629E"
+"23/10/2016","Rudík","Entertainment","Games","Apple Inc.","Debit Card","CZK","-540,43","EUR: € 20.00 Exchange rate: 27.0215Deus ex","71F1C4BA-CADF-4493-9044-404AC355629E"
 "24/10/2016","Rudík","Income","Meal Tickets","None","Debit Card","CZK","280,","","81716997-6E29-4FFA-87D8-EC7BA34AE20A"
 "25/10/2016","Rudík","Personal","Clothing","None","Debit Card","CZK","-798,","Kopyto","631499D1-98AB-4CE6-9661-CD993DCEECF9"
 "26/10/2016","Rudík","Utilities","CellPhone","Vodafone","Direct Debit","CZK","-550,","","4278049C-C2F1-4F4E-B298-6F0CE8332087"
@@ -2794,9 +2722,7 @@ Deus ex
 "25/11/2016","Rudík","Personal","Clothing","None","Debit Card","CZK","-380,","","B047A824-04C7-44BE-81EC-F7672454DB7F"
 "25/11/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-90,","","3F346620-0BE2-4126-B2F7-3D3B55836931"
 "25/11/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-80,","","ABFDCE32-CF52-4FBA-9B7E-224AFAC2BC0E"
-"25/11/2016","Rudík","Entertainment","Games","None","Debit Card","CZK","-88,88","EUR: € 3.29
-Exchange rate: 27.0159
-","B88A4336-2710-4DA9-AF4F-36D5BACE1D16"
+"25/11/2016","Rudík","Entertainment","Games","None","Debit Card","CZK","-88,88","EUR: € 3.29 Exchange rate: 27.0159","B88A4336-2710-4DA9-AF4F-36D5BACE1D16"
 "26/11/2016","Rudík","Food","Snack","None","Debit Card","CZK","-100,","","9CC04CF4-7B96-474C-9D6C-352394768769"
 "27/11/2016","Rudík","Food","Restaurant","None","Debit Card","CZK","-624,","","3AA5EBBE-1444-4495-99C6-3650CF3F1731"
 "27/11/2016","Rudík","Home","Home Improvement","None","Debit Card","CZK","-70,","","28627773-F2E4-4ED0-886C-9489CBEB2446"
@@ -2890,17 +2816,13 @@ Exchange rate: 27.0159
 "23/12/2016","Rudík","Personal","Gift","Alza","Debit Card","CZK","-2 929,","","ED35A564-A92F-4392-A1D6-A7C1AD179339"
 "24/12/2016","Rudík","Personal","Gift","None","Debit Card","CZK","2 000,","Od katky","6AA02D77-4ACE-4AF4-A478-A77EA154E2AD"
 "24/12/2016","Rudík","Auto","Other","None","Debit Card","CZK","-45,","","553B8A4E-3F4B-42E9-B88D-E6EEB9F902BF"
-"24/12/2016","Rudík","Entertainment","Games","None","Debit Card","CZK","-97,02","EUR: € 3.59
-Exchange rate: 27.026
-","A166BAB6-CDB4-4C75-81CF-7C05E96DDEB6"
+"24/12/2016","Rudík","Entertainment","Games","None","Debit Card","CZK","-97,02","EUR: € 3.59 Exchange rate: 27.026","A166BAB6-CDB4-4C75-81CF-7C05E96DDEB6"
 "24/12/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-65,","","8F83DC3F-FC02-44B3-81C0-970E05A3D8A2"
 "24/12/2016","Rudík","Entertainment","Booz","None","Debit Card","CZK","-55,","","13D84FA6-9B27-4EA8-B2D9-E6BAAAB41549"
 "25/12/2016","Rudík","Food","Restaurant","None","Debit Card","CZK","-100,","","B4819BAE-9891-424B-B2EC-57B82FEBF25D"
 "25/12/2016","Rudík","Auto","Gas","None","Debit Card","CZK","-350,","","E28D90FF-1C09-41F4-8A9F-D484ED55D047"
 "25/12/2016","Rudík","Utilities","CellPhone","Vodafone","Direct Debit","CZK","-568,","","2F273B0D-DB71-4A13-B50F-9BF11CD432AE"
-"25/12/2016","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-168,91","EUR: € 6.25
-Exchange rate: 27.0253
-Mad max","0F9730C7-3042-413A-8519-64B149B095B7"
+"25/12/2016","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-168,91","EUR: € 6.25Exchange rate: 27.0253 Mad max","0F9730C7-3042-413A-8519-64B149B095B7"
 "25/12/2016","Rudík","Home","Home Improvement","None","Debit Card","CZK","-109,","Kytka","53FE2FB2-C9F6-494E-B08F-35134FC43E64"
 "25/12/2016","Rudík","Household","Groceries","Albert","Debit Card","CZK","-323,","","7BB9A2BD-2002-45F3-ABA6-C58FCE1870F6"
 "29/12/2016","Rudík","Home","Home Improvement","Hornbach","Debit Card","CZK","-338,","","295E9966-D422-43EA-9FCC-671D76DE5845"
@@ -3035,9 +2957,7 @@ Mad max","0F9730C7-3042-413A-8519-64B149B095B7"
 "22/02/2017","Rudík","Entertainment","Booz","None","Debit Card","CZK","-35,","","1AB27A8B-75CA-4968-8FD9-53FEB86A725B"
 "22/02/2017","Rudík","Auto","Gas","None","Debit Card","CZK","-460,","","D219A41F-B4AD-4565-AA5D-5190F755438D"
 "22/02/2017","Rudík","Entertainment","Other","None","Debit Card","CZK","-25,","","624BAB4A-7FFA-4511-B499-9926EF6330FF"
-"23/02/2017","Rudík","Entertainment","Games","None","Debit Card","CZK","-156,75","EUR: 5,80 €
-Exchange rate: 27.0253
-","7582FE12-48BC-4BA6-88AA-CEB377B36C66"
+"23/02/2017","Rudík","Entertainment","Games","None","Debit Card","CZK","-156,75","EUR: 5,80 € Exchange rate: 27.0253","7582FE12-48BC-4BA6-88AA-CEB377B36C66"
 "23/02/2017","Rudík","Food","Restaurant","None","Debit Card","CZK","-100,","","C134E6AB-CC6E-4B7A-9F24-D6F692DE18E4"
 "24/02/2017","Rudík","Electronics","Computer","Lidl","Debit Card","CZK","-400,","","1B6EA354-8C46-478F-A5D4-20505768099A"
 "24/02/2017","Rudík","Household","Groceries","Lidl","Cash","CZK","-387,","","3ABB5333-5BA1-4201-9E8C-F33B5FA85976"
@@ -3120,9 +3040,7 @@ Exchange rate: 27.0253
 "26/03/2017","Rudík","Household","Groceries","Albert","Debit Card","CZK","-898,","","D09701E2-94C5-44AB-B5C2-7F7C110C60B5"
 "26/03/2017","Rudík","Personal","Clothing","None","Debit Card","CZK","-1 790,","Blazek","17176B6E-6207-4BEF-BFD5-6564504C1EF3"
 "26/03/2017","Rudík","Vacation","Insurance","None","Debit Card","CZK","-390,","","5EE531C3-6F89-432B-B9AA-A44E54F5B4B8"
-"26/03/2017","Rudík","Vacation","Transport","None","Debit Card","CZK","-271,06","EUR: 10,00 €
-Exchange rate: 27.1061
-","67B5ED11-6E69-4E8F-B6D5-EAA73CE59813"
+"26/03/2017","Rudík","Vacation","Transport","None","Debit Card","CZK","-271,06","EUR: 10,00 € Exchange rate: 27.1061","67B5ED11-6E69-4E8F-B6D5-EAA73CE59813"
 "27/03/2017","Rudík","Utilities","CellPhone","Vodafone","Direct Debit","CZK","-585,","","96795C6A-6B9D-4C20-A4B8-FE026B672255"
 "27/03/2017","Rudík","Personal","Other","None","Debit Card","CZK","-637,","Fotky","28D7BFAF-6EC2-4981-AFF8-2697AC70E972"
 "27/03/2017","Rudík","Sport","Fees","None","Debit Card","CZK","-2 200,","Skipas","FAE497E4-FCFC-4FD8-AB45-677AFC330653"
@@ -3231,9 +3149,7 @@ Exchange rate: 27.1061
 "10/05/2017","Rudík","Food","Snack","None","Debit Card","CZK","-30,","","F588E417-0652-4E54-8F2D-829CD84B435D"
 "10/05/2017","Rudík","Household","Supplies","None","Debit Card","CZK","-25,","","664D276A-3773-4250-9224-B15F4241C602"
 "10/05/2017","Rudík","Auto","Insurance","None","Debit Card","CZK","-12 608,","Pokisteni","CDEB6FDB-B8B1-4A76-84E8-38612D6C1B1F"
-"10/05/2017","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-305,24","EUR: 11,49 €
-Exchange rate: 26.5659
-","39A0A240-C41C-4D6C-8643-A10357FBDF5F"
+"10/05/2017","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-305,24","EUR: 11,49 € Exchange rate: 26.5659","39A0A240-C41C-4D6C-8643-A10357FBDF5F"
 "11/05/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-85,","","EFFC1B89-3593-474F-9A29-71B406F98D15"
 "11/05/2017","Rudík","Food","Snack","None","Debit Card","CZK","-10,","","5DBF4A69-3499-4449-A482-84CA0A71B61F"
 "11/05/2017","Rudík","Personal","Medical","None","Debit Card","CZK","-73,","","78443848-7213-47AA-8590-7A1657BF366E"
@@ -3408,9 +3324,7 @@ Exchange rate: 26.5659
 "29/06/2017","Rudík","Food","Snack","None","Debit Card","CZK","-38,","","2F99CD89-D665-4EF1-9388-FBD2CA0E9902"
 "29/06/2017","Rudík","Food","Restaurant","None","Debit Card","CZK","-110,","","665E3BD1-7382-4861-8D30-52DB8A4D8472"
 "30/06/2017","Rudík","Sport","Fees","None","Debit Card","CZK","-100,","","0E5AE244-4731-4112-8450-2AE6EE509F7F"
-"30/06/2017","Rudík","Electronics","Other","Amazon","Debit Card","CZK","-620,81","USD: 27,00 US$
-Exchange rate: 22.9928
-Book","6E2B422D-92E4-442B-8DF5-0CDC07FCED96"
+"30/06/2017","Rudík","Electronics","Other","Amazon","Debit Card","CZK","-620,81","USD: 27,00 US$ Exchange rate: 22.9928 Book","6E2B422D-92E4-442B-8DF5-0CDC07FCED96"
 "30/06/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-275,","","32ED81DF-2685-42C9-B2D4-C9171326B77D"
 "30/06/2017","Rudík","Entertainment","Booz","None","Debit Card","CZK","-50,","","65E34B35-8B97-42C0-8398-33D52B1D7ED7"
 "30/06/2017","Rudík","Entertainment","Booz","None","Debit Card","CZK","-228,","","B1B569F8-3758-42AB-90D1-A19563604C5F"
@@ -3422,26 +3336,14 @@ Book","6E2B422D-92E4-442B-8DF5-0CDC07FCED96"
 "01/07/2017","Rudík","Vacation","Food","None","Debit Card","CZK","-430,","","F7F0C659-68AA-4A25-9737-392B69111336"
 "02/07/2017","Rudík","Vacation","Transport","None","Debit Card","CZK","-280,","Znamka","B0F8D87A-8A30-49D4-8AE7-FB8820A1289B"
 "02/07/2017","Rudík","Investments","Life Insurance","Aegon","Account Transfer","CZK","-1 150,","","86A09AF6-9FC8-4415-8F2F-AEFE29D1687B"
-"02/07/2017","Rudík","Vacation","Hotels","None","Debit Card","CZK","-6 266,52","EUR: 234,00 €
-Exchange rate: 26.78
-","3FFAD973-477A-4C9D-80A2-7B0DF7FBB4E1"
-"02/07/2017","Rudík","Auto","Gasoline","None","Debit Card","CZK","-975,33","EUR: 36,42 €
-Exchange rate: 26.78
-","E51AF2EC-7291-440B-B8DA-A9E260955E7A"
+"02/07/2017","Rudík","Vacation","Hotels","None","Debit Card","CZK","-6 266,52","EUR: 234,00 € Exchange rate: 26.78","3FFAD973-477A-4C9D-80A2-7B0DF7FBB4E1"
+"02/07/2017","Rudík","Auto","Gasoline","None","Debit Card","CZK","-975,33","EUR: 36,42 € Exchange rate: 26.78","E51AF2EC-7291-440B-B8DA-A9E260955E7A"
 "03/07/2017","Rudík","Vacation","Insurance","None","Debit Card","CZK","-164,","","683CEC4D-82C6-4821-ADD6-E01560610B37"
-"04/07/2017","Rudík","Vacation","Sightseeings","None","Debit Card","CZK","-305,06","EUR: 11,40 €
-Exchange rate: 26.76
-EUR: 11,40 €
-Exchange rate: 26.0965
-","287A68BC-2D4D-4E6C-BEA2-55B99EDCD66A"
-"04/07/2017","Rudík","Vacation","Food","None","Debit Card","CZK","-1 312,22","EUR: 49,00 €
-Exchange rate: 26.78
-","6B949275-5D44-4F1A-AEB2-C247C041364E"
+"04/07/2017","Rudík","Vacation","Sightseeings","None","Debit Card","CZK","-305,06","EUR: 11,40 € Exchange rate: 26.76 EUR: 11,40 € Exchange rate: 26.0965","287A68BC-2D4D-4E6C-BEA2-55B99EDCD66A"
+"04/07/2017","Rudík","Vacation","Food","None","Debit Card","CZK","-1 312,22","EUR: 49,00 € Exchange rate: 26.78","6B949275-5D44-4F1A-AEB2-C247C041364E"
 "05/07/2017","Rudík","Vacation","Hotels","None","Debit Card","CZK","-1 203,","","FD7A5D25-347B-458C-99FF-BAB3DC7A53AB"
 "06/07/2017","Rudík","Auto","Gasoline","Shell","Debit Card","CZK","-329,","","6582156F-7B79-47C2-808D-3EB6A723C89F"
-"06/07/2017","Rudík","Personal","Clothing","Primark","Debit Card","CZK","-615,94","EUR: 23,00 €
-Exchange rate: 26.78
-","913801CE-5E6C-4739-8510-1EEEAF433E5E"
+"06/07/2017","Rudík","Personal","Clothing","Primark","Debit Card","CZK","-615,94","EUR: 23,00 € Exchange rate: 26.78","913801CE-5E6C-4739-8510-1EEEAF433E5E"
 "06/07/2017","Rudík","Food","Restaurant","None","Debit Card","CZK","-338,","","7E3E74BE-736D-4335-952D-1EE8551AEFB5"
 "07/07/2017","Rudík","Food","Restaurant","N/A","Debit Card","CZK","-272,","","EEFD78A0-96A3-4F8B-AFA2-F66D027D35C0"
 "07/07/2017","Rudík","Home","Home Improvement","None","Debit Card","CZK","-308,","","97EFCEA4-0DA2-45CD-857A-40415CB8B703"
@@ -3582,9 +3484,7 @@ Exchange rate: 26.78
 "24/08/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-180,","","13459B22-D0B0-4B24-9FD3-27ED7460F0B9"
 "24/08/2017","Rudík","Entertainment","Booz","None","Debit Card","CZK","-88,","","8BE9677C-8ED8-4752-86FC-55FDD5FE7CE6"
 "25/08/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-146,","","91451E88-C3C3-4364-B0CF-9F2CDA68B04E"
-"25/08/2017","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-522,34","EUR: 20,00 €
-Exchange rate: 26.1168
-","06D2007B-9F2B-4842-8412-02FA57D7C58C"
+"25/08/2017","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-522,34","EUR: 20,00 € Exchange rate: 26.1168","06D2007B-9F2B-4842-8412-02FA57D7C58C"
 "25/08/2017","Rudík","Food","Restaurant","None","Debit Card","CZK","-280,","","A9924C94-C099-4738-A012-87BDC0F2181A"
 "26/08/2017","Rudík","Household","Groceries","Lidl","Cash","CZK","-470,","","B6835524-8BB1-436D-88D7-1A775FC7F068"
 "26/08/2017","Rudík","Sport","Equipment","Lidl","Debit Card","CZK","-250,","","C0E2C559-518F-43CB-A246-D3642C215970"
@@ -3697,9 +3597,7 @@ Exchange rate: 26.1168
 "09/10/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-98,","","14861116-E2BC-496F-93BC-6126E3222433"
 "09/10/2017","Rudík","Electronics","Other","Euronics","Debit Card","CZK","-150,","Baterky","BD5EE6DB-9E51-4BB4-88A9-D5621DE69438"
 "09/10/2017","Rudík","Personal","Baby","None","Debit Card","CZK","-309,","Cisteni","B7EA6A3F-2EAA-4163-A6BC-F8981372ACF0"
-"10/10/2017","Rudík","Personal","Gift","Aliexpress","Debit Card","CZK","-426,52","USD: 18,55 US$
-Exchange rate: 22.993
-","DFE6A6D8-EB4C-41DD-B356-4EB7C0A7482E"
+"10/10/2017","Rudík","Personal","Gift","Aliexpress","Debit Card","CZK","-426,52","USD: 18,55 US$ Exchange rate: 22.993","DFE6A6D8-EB4C-41DD-B356-4EB7C0A7482E"
 "10/10/2017","Rudík","Entertainment","Booz","None","Debit Card","CZK","-330,","","446AAC20-ED7B-4492-8BD7-79C42C1048A7"
 "10/10/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-140,","","7787D714-6682-4E3A-A166-B7A9DB568C9C"
 "10/10/2017","Rudík","Food","Snack","None","Debit Card","CZK","-34,","","7FC8AF70-23D0-4BFC-8EFD-D0E2B8951AD4"
@@ -3823,9 +3721,7 @@ Exchange rate: 22.993
 "22/11/2017","Rudík","Food","Snack","None","Debit Card","CZK","-21,","","6166C0DD-46E5-4602-BFDC-0DAB7E291C5C"
 "23/11/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-120,","","A06DC7A3-DD83-40FB-A66C-2C2387720FD8"
 "24/11/2017","Rudík","Food","Snack","None","Debit Card","CZK","-90,","","994E8803-CB5C-4481-AFA6-BF411F7D3BD5"
-"26/11/2017","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-164,08","EUR: 6,45 €
-Exchange rate: 25.4388
-","F2B93748-8108-4656-A089-E9467E91AAD0"
+"26/11/2017","Rudík","Entertainment","Games","Steam","Debit Card","CZK","-164,08","EUR: 6,45 € Exchange rate: 25.4388","F2B93748-8108-4656-A089-E9467E91AAD0"
 "26/11/2017","Rudík","Personal","Gift","None","Debit Card","CZK","-100,","","7717358B-37A0-434F-863C-FBFAF388388F"
 "27/11/2017","Rudík","Food","Lunch","None","Debit Card","CZK","-86,","","6AE6B9AA-D090-4A67-A274-AADE9BBC3E5E"
 "27/11/2017","Rudík","Food","Snack","None","Debit Card","CZK","-36,","","AE8314B7-03CE-4DA2-AA5D-EBD0C47E63E5"
@@ -3957,14 +3853,8 @@ Exchange rate: 25.4388
 "15/01/2018","Rudík","Home","Mortgage","KB","Direct Debit","CZK","-7 603,","","BC2E3E96-0EDD-4F73-AC30-5A6DF13429DF"
 "15/01/2018","Rudík","Food","Lunch","None","Debit Card","CZK","-150,","","5D153047-BD45-41DB-941E-3637A4C00CA3"
 "15/01/2018","Rudík","Household","Groceries","None","Debit Card","CZK","-100,","","C5AE757D-AECD-4845-B27E-542BB76E45D4"
-"16/01/2018","Rudík","Electronics","Phone","Aliexpress","Debit Card","CZK","-207,66","USD: 10,00 US$
-Exchange rate: 20.766
-USD: 32,00 US$
-Exchange rate: 20.766
-","9F76B1B8-6B56-430A-AAEB-39061FCD4CC6"
-"16/01/2018","Rudík","Electronics","Other","Ali","Debit Card","CZK","-456,74","USD: 22,00 US$
-Exchange rate: 20.7609
-","B3436067-C7E4-421B-987C-79791EE04989"
+"16/01/2018","Rudík","Electronics","Phone","Aliexpress","Debit Card","CZK","-207,66","USD: 10,00 US$ Exchange rate: 20.766 USD: 32,00 US$ Exchange rate: 20.766","9F76B1B8-6B56-430A-AAEB-39061FCD4CC6"
+"16/01/2018","Rudík","Electronics","Other","Ali","Debit Card","CZK","-456,74","USD: 22,00 US$ Exchange rate: 20.7609","B3436067-C7E4-421B-987C-79791EE04989"
 "16/01/2018","Rudík","Food","Lunch","None","Debit Card","CZK","-120,","","7F474FEB-537E-4982-9336-469B6DCF07CD"
 "16/01/2018","Rudík","Transportation","MHD","None","Debit Card","CZK","1 425,","Dotace brno","29884404-E8B6-4F01-B6B5-E20D9FD6C843"
 "16/01/2018","Rudík","Electronics","Phone","None","Debit Card","CZK","7 000,","","C2BC801A-889F-4C3B-AF66-DEEAE2847855"
@@ -3977,23 +3867,12 @@ Exchange rate: 20.7609
 "18/01/2018","Rudík","Food","Lunch","None","Debit Card","CZK","-125,","","4A5CFA3F-42C6-4A52-A1F3-BB09A8FD1156"
 "18/01/2018","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","E6946EF8-0443-406F-BDDA-9A89B1577C2B"
 "18/01/2018","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","47A084B6-85E4-4D5C-B7DB-B14BCFBCD4A2"
-"18/01/2018","Rudík","Electronics","Computer","Aliexpress","Debit Card","CZK","-468,","USD: 468,00 US$
-Exchange rate: 20.7364
-USD: 25,00 US$
-Exchange rate: 20.7364
-Baseqi
-","FAC48BC8-AC6C-4489-92C1-BB1E44C0BB45"
+"18/01/2018","Rudík","Electronics","Computer","Aliexpress","Debit Card","CZK","-468,","USD: 468,00 US$Exchange rate: 20.7364 USD: 25,00 US $Exchange rate: 20.7364 Baseqi","FAC48BC8-AC6C-4489-92C1-BB1E44C0BB45"
 "18/01/2018","Rudík","Income","Meal Tickets","None","Debit Card","CZK","825,","","9D2506E8-88D0-4DBF-98EE-041C72254E6C"
 "18/01/2018","Rudík","Vacation","Insurance","None","Debit Card","CZK","-154,","","FB332952-B0EA-4A56-A335-FE1A2100B10C"
-"19/01/2018","Rudík","Entertainment","Booz","None","Debit Card","CZK","-508,78","EUR: 20,00 €
-Exchange rate: 25.439
-","E40033E0-14B9-496D-AF7B-BC9B30657543"
-"20/01/2018","Rudík","Food","Restaurant","None","Debit Card","CZK","-508,78","EUR: 20,00 €
-Exchange rate: 25.439
-","C10D2BE3-F3F8-4509-8584-842B203FE2C1"
-"21/01/2018","Rudík","Vacation","Other","None","Debit Card","CZK","-1 017,56","EUR: 40,00 €
-Exchange rate: 25.439
-Spa","D10F6FED-D42C-44FC-BE83-772BB2A6EEB3"
+"19/01/2018","Rudík","Entertainment","Booz","None","Debit Card","CZK","-508,78","EUR: 20,00 € Exchange rate: 25.439","E40033E0-14B9-496D-AF7B-BC9B30657543"
+"20/01/2018","Rudík","Food","Restaurant","None","Debit Card","CZK","-508,78","EUR: 20,00 €Exchange rate: 25.439","C10D2BE3-F3F8-4509-8584-842B203FE2C1"
+"21/01/2018","Rudík","Vacation","Other","None","Debit Card","CZK","-1 017,56","EUR: 40,00 € Exchange rate: 25.439 Spa","D10F6FED-D42C-44FC-BE83-772BB2A6EEB3"
 "21/01/2018","Rudík","Food","Snack","None","Debit Card","CZK","-75,","","71D5B699-A2F7-4488-BBA9-AB3000C0829A"
 "22/01/2018","Rudík","Food","Snack","None","Debit Card","CZK","-42,","","D4619EFA-7BDB-45BF-9292-68B98EBB9168"
 "22/01/2018","Rudík","Entertainment","Other","None","Debit Card","CZK","-876,","Rc","A6DA1860-AD1C-42E7-AE2E-2B928E9DCA43"
@@ -4070,9 +3949,7 @@ Spa","D10F6FED-D42C-44FC-BE83-772BB2A6EEB3"
 "18/02/2018","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","6E87F341-61D2-484A-B1AC-EBB322071236"
 "18/02/2018","Rudík","Auto","Gasoline","Shell","Debit Card","CZK","-1 207,","","9081ACB4-8BF6-40FF-B7CD-1F706EE45BAD"
 "18/02/2018","Rudík","Household","Groceries","Lidl","Cash","CZK","-324,","","6787F4A1-6182-4706-9D77-80F4D9F554C2"
-"19/02/2018","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-408,31","USD: 20,00 US$
-Exchange rate: 20.4157
-","53A735EC-4810-4404-A3E3-054D71136168"
+"19/02/2018","Rudík","Personal","Clothing","Aliexpress","Debit Card","CZK","-408,31","USD: 20,00 US$ Exchange rate: 20.4157","53A735EC-4810-4404-A3E3-054D71136168"
 "19/02/2018","Rudík","Food","Lunch","None","Debit Card","CZK","-125,","","142144D3-A00B-454A-B089-34D76C99F87D"
 "19/02/2018","Rudík","Food","Snack","None","Debit Card","CZK","-17,","","33572516-9A17-4E5D-8B2A-3488B7CD8812"
 "19/02/2018","Rudík","Income","Meal Tickets","None","Debit Card","CZK","2 310,","","78496711-C488-45E3-8C9A-939CEBE3FFEE"
@@ -4100,11 +3977,3 @@ Exchange rate: 20.4157
 "01/03/2018","Rudík","Income","Rent MB","None","Debit Card","CZK","12 678,","","314E2F3E-37C1-4939-8617-2D867B726DA8"
 "01/03/2018","Rudík","Food","Lunch","None","Debit Card","CZK","-115,","","0DF982E8-552C-4F62-9FEC-02F644E3D2FC"
 "01/03/2018","Rudík","Food","Snack","None","Debit Card","CZK","-17,","","43BEA550-36CB-4327-9B4A-DE6185590CB2"
-"15/03/2018","Rudík","Auto","Loan","None","Debit Card","CZK","-1 712,","","F68DC2CC-10C9-4F02-AEDD-D8919112DC6F"
-"15/03/2018","Rudík","Home","Mortgage","KB","Direct Debit","CZK","-7 603,","","D41B0939-A9ED-4D44-BEE1-E46404331B24"
-"15/03/2018","Rudík","Investments","Life Insurance","Metlife","Account Transfer","CZK","-1 574,","","CC7C3921-F1F4-4401-8DF0-59E5B27BA803"
-"18/03/2018","Rudík","Investments","Life Insurance","AXA","Debit Card","CZK","-977,","","8E7B1600-8DF1-485E-ADFB-D7E900F55176"
-"18/03/2018","Rudík","Investments","Investments","Česká Spořitelna","Account Transfer","CZK","-3 000,","Cs realestate fund","FF8DF5CC-70D1-438B-AB40-739C286E7B8D"
-"18/03/2018","Rudík","Investments","Pension Fund","None","Account Transfer","CZK","-1 000,","","1F1E7799-D0B3-409C-AB65-9A8E7D0C1B8F"
-"18/03/2018","Rudík","Investments","Investments","Conseq","Account Transfer","CZK","-3 500,","","9375F462-46B6-4552-9E5E-3E958DB9B021"
-"18/03/2018","Rudík","Home","Services","None","Account Transfer","CZK","-4 281,","","CA2E5B81-4946-44C4-BA91-516F0A2797BC"
