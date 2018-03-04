@@ -17,21 +17,10 @@ public class ExpensesShell {
 
     public String find(@ShellOption String key) {
         RecordStatistics statistics = RecordStatistics.none();
-        if (isValidKey(key)) {
-            switch (key) {
-                case "cat":
-                    statistics = RecordStatistics.compute(load()).filterByCategoryName(key);
-                    break;
-                default:
 
-            }
-        }
         return statistics.toString();
     }
 
-    private boolean isValidKey(String key) {
-        return VALID_KEYS.contains(key);
-    }
 
     //TODO temporary
     public List<Expense> load() {

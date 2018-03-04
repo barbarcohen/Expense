@@ -57,7 +57,8 @@ public class ExpenseService implements IExpenseService {
         if (expense.getCategory() != null) {
             Category category = categoryDao.findOneByName(expense.getCategory().getName());
             logger.debug("Loading category: {}", category);
-            expense.on(category);
+            //TODO fix category
+            //expense.on(category);
         }
 
 

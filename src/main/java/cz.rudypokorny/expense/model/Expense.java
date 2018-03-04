@@ -2,6 +2,7 @@ package cz.rudypokorny.expense.model;
 
 import cz.rudypokorny.expense.entity.AccountAware;
 import cz.rudypokorny.expense.entity.Validable;
+import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 import cz.rudypokorny.util.DateUtil;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -11,9 +12,6 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
-/**
- * Created by Rudolf on 10/07/2017.
- */
 @Entity
 @Table
 public class Expense extends Auditable implements Serializable, Validable, AccountAware {
@@ -51,6 +49,9 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
     @Transient
     private String payment;
 
+    @Transient
+    private CategoryEnum categoryEnum;
+
     public static Expense newExpense(Double amount) {
         Expense expense = new Expense();
         expense.setAmount(Objects.requireNonNull(amount));
@@ -78,6 +79,12 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
 
     public Expense on(Category category) {
         this.category = category;
+        return this;
+    }
+
+    public Expense on(CategoryEnum categoryEnum) {
+        this.categoryEnum = categoryEnum;
+        this.category = categoryEnum.full();
         return this;
     }
 
@@ -139,10 +146,6 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
         return category;
     }
 
-    void setCategory(Category category) {
-        this.category = category;
-    }
-
     public Account getAccount() {
         return account;
     }
@@ -166,6 +169,10 @@ public class Expense extends Auditable implements Serializable, Validable, Accou
 
     public String getPayment() {
         return payment;
+    }
+
+    public CategoryEnum getCategoryEnum() {
+        return categoryEnum;
     }
 
     @Transient

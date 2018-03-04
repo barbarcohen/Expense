@@ -30,13 +30,13 @@ public class ExpenseItExportMapper implements RecordMapper<Expense, List<?>, CSV
     @Override
     public CSVFormat getConfig() {
         return CSVFormat.DEFAULT.withDelimiter(',').withQuoteMode(QuoteMode.ALL).withQuote('"')
-                .withHeader("Date", "Type", "Category", "Subcategory", "Vendor", "Payment", "Currency", "Amount", "Note", "ID");
+                .withHeader("Date", "Type", "Category", "Vendor", "Payment", "Currency", "Amount", "Note", "ID");
     }
 
     @Override
     public List<?> map(Expense expense) {
-        return Arrays.asList(convertDate(expense.getWhen()), expense.getAccount().getName(), expense.getCategory().getParent().getName(),
-                expense.getCategory().getName(), expense.getVendor(), expense.getPayment(), expense.getCurrency(), expense.getAmount(),
+        return Arrays.asList(convertDate(expense.getWhen()), expense.getAccount().getName(), expense.getCategory().getName(),
+                expense.getVendor(), expense.getPayment(), expense.getCurrency(), expense.getAmount(),
                 expense.getNote(), expense.getExtId());
     }
 

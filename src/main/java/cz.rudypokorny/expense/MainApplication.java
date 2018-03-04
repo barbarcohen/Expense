@@ -69,7 +69,7 @@ public class MainApplication {
                 //import all domain
                /* importService.importCategories(() -> {
                     return CategoryEnum.domain.stream().
-                            map(e -> Category.named(e.getSubCategory()).withParent(e.getCategory())).
+                            map(e -> Category.named(e.getSubCategory()).withParent(e.getName())).
                             collect(Collectors.toList());
                 });*/
 

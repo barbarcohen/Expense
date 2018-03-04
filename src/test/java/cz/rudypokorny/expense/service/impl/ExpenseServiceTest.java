@@ -130,7 +130,7 @@ public class ExpenseServiceTest {
             assertEquals(EXPECTED_AMOUNT, result.getAmount());
             assertEquals(EXPECTED_DATE_NOW, result.getWhen());
             assertEquals(expectedAccount, result.getAccountDetails());
-            assertNull(result.getCategory());
+            assertNull(result.getName());
         }
     */
     @Test

@@ -43,6 +43,7 @@ public class ImportService implements IImportService {
         Objects.requireNonNull(importSource, "ImportSource cannot be null.");
 
         //only not saved already
+        /**
         importSource.loadData().stream().
                 filter(input -> StreamSupport.stream(categoryDao.findAll().spliterator(), false).
                         noneMatch(s -> s.getName().equals(input.getName()))).
@@ -63,5 +64,6 @@ public class ImportService implements IImportService {
                         }
                     }
                 });
+         **/
     }
 }

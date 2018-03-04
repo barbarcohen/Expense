@@ -1,8 +1,11 @@
 package cz.rudypokorny.util;
 
+import com.google.common.collect.ImmutableMap;
 import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 import cz.rudypokorny.expense.tools.importexport.domain.CategoryMapping;
 import org.junit.Test;
+
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,32 +14,36 @@ import static org.junit.Assert.assertEquals;
  */
 public class MappingUtilTest {
 
+    final private static Map<String, CategoryEnum> CATEGORY_MAPPING = ImmutableMap.<String, CategoryEnum>builder()
+            .put("Household -> Groceries", CategoryEnum.FOOD_GLOCERIES)
+            .put("Sámoška-Potraviny a nápoje", CategoryEnum.FOOD_GLOCERIES)
+            .build();
 
     @Test
     public void getMappingForNotDefined() throws Exception {
-        CategoryEnum result = CategoryMapping.getMappingFor("dummy");
-        assertEquals(CategoryEnum.NOT_DEFINED, result);
+        CategoryEnum result = CategoryMapping.doTheMapping(CATEGORY_MAPPING, "dummy");
+        assertEquals(CategoryEnum.OTHERS, result);
     }
 
     @Test
     public void getMappingForEmptyString() throws Exception {
-        CategoryEnum result = CategoryMapping.getMappingFor("");
-        assertEquals(CategoryEnum.NOT_DEFINED, result);
+        CategoryEnum result = CategoryMapping.doTheMapping(CATEGORY_MAPPING, "");
+        assertEquals(CategoryEnum.OTHERS, result);
     }
 
     @Test
     public void getMappingForNull() throws Exception {
-        CategoryEnum result = CategoryMapping.getMappingFor(null);
-        assertEquals(CategoryEnum.NOT_DEFINED, result);
+        CategoryEnum result = CategoryMapping.doTheMapping(CATEGORY_MAPPING, null);
+        assertEquals(CategoryEnum.OTHERS, result);
     }
 
     @Test
     public void getMappingExisting() throws Exception {
-        CategoryEnum result = CategoryMapping.getMappingFor("Household -> Groceries");
-        assertEquals(CategoryEnum.HOUSEHOLD_GROCERIES, result);
+        CategoryEnum result = CategoryMapping.doTheMapping(CATEGORY_MAPPING, "Household -> Groceries");
+        assertEquals(CategoryEnum.FOOD_GLOCERIES, result);
 
-        result = CategoryMapping.getMappingFor("Sámoška-Potraviny a nápoje");
-        assertEquals(CategoryEnum.HOUSEHOLD_GROCERIES, result);
+        result = CategoryMapping.doTheMapping(CATEGORY_MAPPING, "Sámoška-Potraviny a nápoje");
+        assertEquals(CategoryEnum.FOOD_GLOCERIES, result);
     }
 
 }

@@ -31,7 +31,8 @@ public class CategoryDaoTest {
 
         Category parentCategory = testEntityManager.persist(Category.named(parentCategoryName));
 
-        Category category = testEntityManager.persist(Category.namedWithParent(categoryName, parentCategory));
+        //FIXME
+        Category category = null;//testEntityManager.persist(Category.namedWithParent(categoryName, parentCategory));
 
         testEntityManager.clear();
 

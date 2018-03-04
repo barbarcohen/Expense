@@ -1,10 +1,11 @@
 package cz.rudypokorny.expense.tools.importexport.importing.mappers;
 
+import com.google.common.collect.ImmutableMap;
+import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.tools.importexport.RecordMapper;
+import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 import cz.rudypokorny.expense.tools.importexport.domain.CategoryMapping;
-import cz.rudypokorny.expense.model.Account;
-import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.util.DateUtil;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -16,7 +17,10 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.Objects;
+
+import static cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum.*;
 
 /**
  * Created by Rudolf on 28/02/2018.
@@ -26,6 +30,95 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
     private static final String FILENAME = "source_rudik.csv";
     private static final DateTimeFormatter DATETIME_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final Logger logger = LoggerFactory.getLogger(RudikCSVRecordMapper.class);
+    //mapping rudy
+    final private static Map<String, CategoryEnum> RUDIK_MAPPING = ImmutableMap.<String, CategoryEnum>builder().
+            put("Investments -> Life Insurance", FINANCIAL_INSURANCES).
+            put("Investments -> Investments", INVESTMENTS_FINANCIAL).
+            put("Investments -> Pension Fund", INVESTMENTS_PENSION).
+
+            put("Home -> Home Improvement", HOUSING_FURNITURE).
+            put("Home -> Maintenance and Repair", HOUSING_REPAIRS).
+            put("Home -> Mortgage", HOUSING_MORTGAGE).
+            put("Home -> Loan", HOUSING_MORTGAGE).
+            put("Household -> Groceries", FOOD_GLOCERIES).
+            put("Home -> Services", HOUSING_SERVICES).
+            put("Home -> Insurance", HOUSING_INSURANCE).
+            put("Home -> Internet", INTERNET).
+            put("Utilities -> internet", INTERNET).
+            put("Household -> Supplies", HOUSING_GENERAL).
+            put("Home -> Electricity", HOUSING_ENERGY).
+            put("Home -> Garden", SHOPPING_HOME_GARDEN).
+
+            put("Entertainment -> Shows", LIFE_CULTURE).
+            put("Entertainment -> Booz", LIFE_PARTY).
+            put("Entertainment -> Movies", LIFE_CULTURE).
+            put("Entertainment -> Apps", SOFTWARE).
+            put("Entertainment -> Other", LIFE_ENTERTAINMENT_GENERAL).
+            put("Entertainment -> Games", SOFTWARE).
+            put("Entertainment -> Party", LIFE_PARTY).
+            put("Entertainment -> Music", LIFE_BOOKS_AUDIO).
+            put("Entertainment -> Books", LIFE_BOOKS_AUDIO).
+            put("Entertainment -> Dance", LIFE_ENTERTAINMENT_GENERAL).
+            put("Utilities -> Apps - Others", SOFTWARE).
+
+            put("Food -> Restaurant", FOOD_RESTAURANT).
+            put("Food -> Lunch", FOOD_WORK_LUNCH).
+            put("Food -> Snack", FOOD_SNACKS).
+            put("Food -> Dinner", FOOD_RESTAURANT).
+            put("Food -> Breakfast", FOOD_SNACKS).
+
+            put("Utilities -> CellPhone", PHONE).
+
+            put("Income -> Rent MB", INCOME_RENTAL).
+            put("Income -> Bonus", INCOME_WAGE_BONUS).
+            put("Income -> Meal Tickets", INCOME_COUPONS).
+            put("Income -> Salary", INCOME_WAGE).
+            put("Income -> Photo", INCOME_PHOTO).
+
+            put("Personal -> Self Improvement", LIFE_EDUCATION).
+            put("Personal -> Haircuts", LIFE_WELLNESS_BEAUTY).
+            put("Personal -> Clothing", SHOPPING_CLOTHES).
+            put("Personal -> Medical", LIFE_HEALCARE).
+            put("Personal -> Massage", LIFE_WELLNESS_BEAUTY).
+            put("Personal -> Gift", SHOPPING_GIFTS).
+            put("Personal -> Dental", LIFE_HEALCARE).
+            put("Personal -> Other", SHOPPING_FREE_TIME).
+            put("Personal -> Baby", SHOPPING_BABY).
+
+            put("Sport -> Fees", LIFE_SPORT).
+            put("Sport -> Equipment", LIFE_SPORT).
+
+            put("Transportation -> MHD", TRANSPORTATION_MHD).
+            put("Transportation -> Train", TRANSPORTATION).
+            put("Transportation -> Taxi/Cab", TRANSPORTATION).
+            put("Transportation -> Bus", TRANSPORTATION).
+
+            put("Electronics -> Camera", SHOPPING_CAMERA_ACCESSORIES).
+            put("Electronics -> Phone", SHOPPING_PHONE_ACCESSORIES).
+            put("Electronics -> Computer", PC).
+            put("Electronics -> Audio", SHOPPING_ELECTRONICS).
+            put("Electronics -> Other", SHOPPING_ELECTRONICS).
+            put("Electronics -> Game Consoles", SHOPPING_ELECTRONICS).
+
+            put("Auto -> Repair", VEHICLE_MAINTENANCE).
+            put("Auto -> Insurance", VEHICLE_INSURANCE).
+            put("Auto -> Gas", VEHICLE_FUEL).
+            put("Auto -> Other", FINANCIAL_FINES).
+            put("Auto -> Loan", VEHICLE_LOAN).
+            put("Auto -> Gasoline", VEHICLE_FUEL).
+            put("Auto -> Stuff", VEHICLE_GENERAL).
+
+            put("Vacation -> Hotels", LIFE_HOLIDAYS).
+            put("Vacation -> Sightseeings", LIFE_HOLIDAYS).
+            put("Vacation -> ", LIFE_HOLIDAYS).
+            put("Vacation -> Transport", TRANSPORTATION_VACATION).
+            put("Vacation -> Air Tickets", TRANSPORTATION_VACATION).
+            put("Vacation -> Insurance", FINANCIAL_INSURANCES).
+            put("Vacation -> Food", FOOD_SNACKS).
+            put("Vacation -> Other", LIFE_HOLIDAYS).
+            build();
+    public static final String DEFAULT_VENDOR = "None";
+    public static final String EMPTY_STRING = "";
     private final ZoneId timezone;
     private final Account ACCOUNT = Account.named("Rudík");
 
@@ -42,12 +135,12 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             String category = record.get(2);
             String note = StringUtils.trimToNull(record.get(8));
             ZonedDateTime date = LocalDate.parse(record.get(0), DATETIME_FORMAT).atStartOfDay(timezone);
-            String vendor = record.get(4);
+            String vendor = convertVendor(record.get(4));
             String currency = record.get(6);
             String extId = record.get(9);
             String payment = record.get(5);
 
-            Category convertedCategory = CategoryMapping.getMappingFor(category, subcategory).full();
+            CategoryEnum convertedCategory = CategoryMapping.doTheMapping(RUDIK_MAPPING, category + " -> " + subcategory);
             expense = Expense.newExpense(amount).
                     on(convertedCategory).
                     by(ACCOUNT).
@@ -82,4 +175,7 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
         return value.replaceAll(",", ".").replaceAll("[^\\d.-]", "");
     }
 
+    private String convertVendor (String vendor){
+        return DEFAULT_VENDOR.equals(vendor) ? EMPTY_STRING : vendor;
+    }
 }

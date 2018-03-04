@@ -6,104 +6,128 @@ import java.util.EnumSet;
 import java.util.Set;
 
 public enum CategoryEnum {
-    //technical domain
-    NOT_DEFINED("Not defined", "Unknown"),
-    TBD("TBD", "TBD sub"),
 
-    //real domain
-    HOUSEHOLD_GROCERIES("Household", "Groceries"),
-    HOUSEHOLD_MAINTENANCE_REPAIRS("Household", "Maintenance & Repairs"),
-    HOUSEHOLD_IMPROVEMENT("Household", "Furniture & Equipments"),
-    HOUSEHOLD_SUPPLIES("Household", "Supplies"),//drogerie
-    HOUSEHOLD_MORTGAGE("Household", "Mortgage"),
-    HOUSEHOLD_SERVICES_FEES("Household", "Services & Other fees"),
-    HOUSEHOLD_INSURANCE("Household", "Insurance"),
-    HOUSEHOLD_ELECTRICITY("Household", "Electricity"),
-    HOUSEHOLD_OTHER("Household", "Other"),
-    HOUSEHOLD_MEDICINE("Household", "Medicine"),
-    HOUSEHOLD_HEALTHCARE("Household", "Healthcare"),
-    HOUSEHOLD_GARDEN("Household", "Garden"),
-
-    FOOD_SWEETS("Meals", "Sweet & Salty"),
-    FOOD_SNACK("Meals", "Snack"),
-    FOOD_WORK_LUNCH("Meals", "Work lunch"),
-    FOOD_RESTAURANT("Meals", "Restaurant"),
-
-    ENTERTAINMENT_BOOKS("Entertainment", "Books & Magazines"),
-    ENTERTAINMENT_CULTURE("Entertainment", "Culture"),
-    ENTERTAINMENT_PARTY_PUB("Entertainment", "Party & Pub"),
-    ENTERTAINMENT_APPS_GAMES("Entertainment", "Apps & Games"),
-    ENTERTAINMENT_OTHER("Entertainment", "Other"),
-
-    WELLNESS_WELLNESS("Wellness", "Wellness"),
-    SPORT_EQUIPMENT("Sport", "Equipment"),
-    SPORT_FEES("Sport", "Fees"),
-
-    ELECTRONICS_CAMERA("Electronics", "Camera & photo stuff"),
-    ELECTRONICS_PHONE("Electronics", "Phone & phone stuff"),
-    ELECTRONICS_COMPUTER("Electronics", "Computer & computer stuff"),
-    ELECTRONICS_OTHER("Electronics", "Other"),
-
-    INVESTMENTS_INSURANCE("Investments", "Insurance"),
-    INVESTMENTS_INVESTMENTS("Investments", "Investments"),
-    INVESTMENTS_PENSION("Investments", "Pension"),
-
-    CAR_FUEL("Car", "Fuel"),
-    CAR_LOAN("Car", "Loan"),
-    CAR_INSURANCE("Car", "Insurance"),
-    CAR_FEES("Car", "Fees"),
-    CAR_REPAIRS_MAINTENANCE("Car", "Repairs & Maintenance"),
-    CAR_OTHER("Car", "Other"),
-
-    VACATION_FEES("Vacation", "Fees"),
-    VACATION_ACCOMMODATION("Vacation", "Accommodation"),
-    VACATION_TRANSPORTATION("Vacation", "Transportation"),
-    VACATION_FOOD("Vacation", "Food"),
-    VACATION_OTHER("Vacation", "Other"),
-
-    PERSONAL_GIFTS_CHRISTMAS("Personal", "Christmas gifts"),
-    PERSONAL_GIFTS("Personal", "Gifts"),
-    PERSONAL_OTHER("Personal", "Other"),
-    PERSONAL_TRANSPORTATION("Personal", "Transportation"),
-    PERSONAL_FEES("Personal", "Fees"),
-    PERSONAL_EDUCATION("Personal","Education"),
+    //CATEGORY
+    FOOD_SWEETS("Sweets & Salty"),
+    FOOD_SNACKS("Snacks"),
+    FOOD_GLOCERIES("Groceries"),
+    FOOD_RESTAURANT("Restaurant, fast-food"),
+    FOOD_DRINKS_GENERAL("General - Food & Drinks"),
+    FOOD_WORK_LUNCH("Work lunch"),
+    FOOD_BABY_FOOD("Baby food"),
 
 
-    FASHION_BOOTS("Fashion", "Boots"),
-    FASHION_ACCESSORIES("Fashion", "Accessories"),
-    FASHION_CLOTHES("Fashion", "Clothes"),
+    SHOPPING_GENERAL("General - Shopping"),
+    SHOPPING_CLOTHES("Clothes"),
+    SHOPPING_SHOES("Shoes"),
+    SHOPPING_GRUGSTORE("Drug-store, chemist"),
+    SHOPPING_ELECTRONICS("Electronics"),
+    SHOPPING_PHONE_ACCESSORIES("Phone & Accessories"),
+    SHOPPING_CAMERA_ACCESSORIES("Camera & Photo stuff"),
+    SHOPPING_FREE_TIME("Free time"),
+    SHOPPING_GIFTS("Gifts, joy"),
+    SHOPPING_CHRISTMAS_GIFTS("Christmas gifts"),
+    SHOPPING_HEALTH_BEAUTY("Health & Beauty"),
+    SHOPPING_HOME_GARDEN("Home, Garden"),
+    SHOPPING_JEWELS_ACCESSORIES("Jewels, accessories"),
+    SHOPPING_BABY("Baby"),
+    SHOPPING_BABY_CLOTHES("Baby clothes"),
+    SHOPPING_TOOLS("Stationery tools"),
 
-    BABY_FASHION("Baby", "Fashion"),
-    BABY_MEDICINE("Baby", "Care & Medicine"),
-    BABY_FOOD("Baby", "Food"),
-    BABY_STUFF("Baby", "Stuff"),
-    BABY_OTHER("Baby", "Other"),
+    HOUSING_GENERAL("General - Housing"),
+    HOUSING_FURNITURE("Improvements, furniture"),
+    HOUSING_ENERGY("Energy, utilities"),
+    HOUSING_REPAIRS("Maintenance, repairs"),
+    HOUSING_MORTGAGE("Mortgage"),
+    HOUSING_INSURANCE("Property insurance"),
+    HOUSING_RENT("Rent"),
+    HOUSING_SERVICES("Services"),
 
-    INCOME_SALARY("Income", "Salary"),
-    INCOME_OTHER("Income", "Other")
-    ;
+
+    TRANSPORTATION("General - Transportation"),
+    TRANSPORTATION_MHD("Public transport"),
+    TRANSPORTATION_VACATION("Vacation transport"),
+
+    VEHICLE_GENERAL("General - Vehicle"),
+    VEHICLE_LOAN("Loan"),
+    VEHICLE_FUEL("Fuel"),
+    VEHICLE_PARKING("Parking"),
+    VEHICLE_INSURANCE("Vehicle insurance"),
+    VEHICLE_MAINTENANCE("Vehicle maintenance"),
+
+    LIFE_ENTERTAINMENT_GENERAL("General - Life & Entertainment"),
+    LIFE_SPORT("Active sport, fitness"),
+    LIFE_PARTY("Party"),
+    LIFE_BOOKS_AUDIO("Books, audio, subscriptions"),
+    LIFE_CULTURE("Culture, sport events"),
+    LIFE_EDUCATION("Education, development"),
+    LIFE_HEALCARE("Health care, doctor"),
+    LIFE_HEALCARE_BABY("Health care baby"),
 
 
-    public static Set<CategoryEnum> categories = EnumSet.complementOf(EnumSet.of(NOT_DEFINED, TBD));
+    LIFE_WELLNESS_BEAUTY("Wellness, beauty"),
+    LIFE_HOLIDAYS("Holiday, trips, hotels"),
 
-    private String category;
+    PC("General - Communication, PC"),
+    INTERNET("Internet"),
+    PHONE("Phone, mobile phone"),
+    POSTAL("Postal services"),
+    SOFTWARE("Software, apps, games"),
+
+    FINANCIAL_EXPENSES("General - Financial expenses"),
+    FINANCIAL_ADVISORY("Advisory"),
+    FINANCIAL_FEES("Charges, Fees"),
+    FINANCIAL_CHILD("Child Support"),
+    FINANCIAL_FINES("Fines"),
+    FINANCIAL_INSURANCES("Insurances"),
+    FINANCIAL_LOANS("Loan, interests"),
+    FINANCIAL_TAXES("Taxes"),
+
+    INVESTMENTS_GENERAL("General - Investments"),
+    INVESTMENTS__COLLECTIONS("Collections"),
+    INVESTMENTS_FINANCIAL("Financial investments"),
+    INVESTMENTS_REALTY("Realty"),
+    INVESTMENTS_PENSION("Pension"),
+    INVESTMENTS_VEHICLES("Vehicles, chattels"),
+    INVESTMENTS_OTHERS("Investments - Others"),
+
+    INCOME_GENERAL("General - Income"),
+    INCOME_CHILD_SUPPORT("Child Support"),
+    INCOME_COUPONS("Checks, coupons"),
+    INCOME_GRANTS("Dues & grants"),
+    INCOME_GIFTS("Gifts"),
+    INCOME_INTERESTS("Interest, dividends"),
+    INCOME_LENDING("Lending, renting"),
+    INCOME_LOTTERY("Lottery, gambling"),
+    INCOME_TAX_REFUNDS("Refunds (tax, purchase)"),
+    INCOME_RENTAL("Rental income"),
+    INCOME_SALE("Sale"),
+    INCOME_WAGE("Wage, invoices"),
+
+    INCOME_WAGE_BONUS("Wage bonus"),
+    INCOME_PHOTO("Photo"),
+
+    OTHERS("General - Others");
+
+    private static String SPLIT = "-||-";
+    private String name;
     private String subCategory;
 
 
-    CategoryEnum(String category, String subCategory) {
-        this.category = category;
-        this.subCategory = subCategory;
+    CategoryEnum(String name) {
+        this.name = name;
     }
 
-    public String getCategory() {
-        return category;
+    public static Set<CategoryEnum> incomes() {
+        return EnumSet.of(INCOME_GENERAL, INCOME_CHILD_SUPPORT, INCOME_COUPONS, INCOME_GRANTS, INCOME_GIFTS,
+                INCOME_TAX_REFUNDS, INCOME_INTERESTS, INCOME_LENDING, INCOME_LOTTERY, INCOME_RENTAL, INCOME_SALE, INCOME_WAGE);
     }
 
-    public String getSubCategory() {
-        return subCategory;
+    public String getName() {
+        return name;
     }
 
-    public Category full(){
-        return Category.namedWithParent(subCategory, Category.named(category));
+    public Category full() {
+        return Category.named(name);
     }
 }

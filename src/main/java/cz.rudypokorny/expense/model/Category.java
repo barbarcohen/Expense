@@ -21,12 +21,6 @@ public class Category implements Serializable, Validable {
     @Column(unique = true)
     private String name;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    private Category parent;
-
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
-    private List<Category> children;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
     private List<Expense> expenses;
 
@@ -34,21 +28,6 @@ public class Category implements Serializable, Validable {
         Category category = new Category();
         category.name = name;
         return category;
-    }
-
-    public static Category namedWithParent(String name, Category parent) {
-        Category category = new Category();
-        category.name = name;
-        category.parent = parent;
-        return category;
-    }
-
-    public Category withParent(String name) {
-        if (name != null) {
-            Category parent = Category.named(name);
-            this.parent = parent;
-        }
-        return this;
     }
 
     public Long getId() {
@@ -67,19 +46,6 @@ public class Category implements Serializable, Validable {
         this.name = name;
     }
 
-    public Category getParent() {
-        return parent;
-    }
-
-    void setParent(Category parent) {
-        this.parent = parent;
-    }
-
-
-    public List<Category> getChildren() {
-        return children;
-    }
-
     @Transient
     public boolean isValid() {
         return !StringUtils.isEmpty(name);
@@ -89,7 +55,6 @@ public class Category implements Serializable, Validable {
     public String toString() {
         return "Category{" +
                 "name='" + name + '\'' +
-                ", parent=" + parent +
                 '}';
     }
 
@@ -102,18 +67,13 @@ public class Category implements Serializable, Validable {
 
         if (id != null ? !id.equals(category.id) : category.id != null) return false;
         if (!name.equals(category.name)) return false;
-        if (parent != null ? !parent.equals(category.parent) : category.parent != null) return false;
-        if (children != null ? !children.equals(category.children) : category.children != null) return false;
         return expenses != null ? expenses.equals(category.expenses) : category.expenses == null;
-
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + name.hashCode();
-        result = 31 * result + (parent != null ? parent.hashCode() : 0);
-        result = 31 * result + (children != null ? children.hashCode() : 0);
         result = 31 * result + (expenses != null ? expenses.hashCode() : 0);
         return result;
     }

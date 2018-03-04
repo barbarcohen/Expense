@@ -57,13 +57,9 @@ public class RecordStatistics {
 
 
     public RecordStatistics filterByCategory(CategoryEnum categoryEnum) {
-        return ret(expenses.stream().filter(expense -> categoryEnum.full().equals(expense.getCategory())).collect(Collectors.toList()));
+        return ret(expenses.stream().filter(expense -> expense.getCategoryEnum().equals(categoryEnum)).collect(Collectors.toList()));
     }
 
-
-    public RecordStatistics filterByCategoryName(String categoryName) {
-        return ret(expenses.stream().filter(expense -> checkCategory(expense.getCategory(), categoryName)).collect(Collectors.toList()));
-    }
 
     public RecordStatistics filterByAccount(Account account) {
         //TODO optional
@@ -75,7 +71,7 @@ public class RecordStatistics {
     }
 
     private boolean checkCategory(Category category, String name) {
-        return category.getParent().getName().equalsIgnoreCase(name) || category.getName().equalsIgnoreCase(name);
+        return category.getName().equalsIgnoreCase(name);
     }
 
     @Override
