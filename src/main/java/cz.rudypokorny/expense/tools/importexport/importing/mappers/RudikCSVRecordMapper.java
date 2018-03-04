@@ -40,7 +40,7 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             put("Home -> Maintenance and Repair", HOUSING_REPAIRS).
             put("Home -> Mortgage", HOUSING_MORTGAGE).
             put("Home -> Loan", HOUSING_MORTGAGE).
-            put("Household -> Groceries", FOOD_GLOCERIES).
+            put("Household -> Groceries", FOOD_GROCERIES).
             put("Home -> Services", HOUSING_SERVICES).
             put("Home -> Insurance", HOUSING_INSURANCE).
             put("Home -> Internet", INTERNET).

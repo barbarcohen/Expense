@@ -27,22 +27,12 @@ public class CategoryDaoTest {
     @Test
     public void testCategoryWithNullParent() {
         String categoryName = "dishfsdhf hsdfj hsjghsdhg ";
-        String parentCategoryName = "dishfsdhf hsdfj hsjsdflksdogk sg ghsdhg ";
-
-        Category parentCategory = testEntityManager.persist(Category.named(parentCategoryName));
-
-        //FIXME
-        Category category = null;//testEntityManager.persist(Category.namedWithParent(categoryName, parentCategory));
+        Category expectedCategory = testEntityManager.persist(Category.named(categoryName));
 
         testEntityManager.clear();
 
-        ArrayList<Category> categories = (ArrayList<Category>) categoryDao.findByParentIsNull();
-        assertEquals(1, categories.size());
-        assertEquals(parentCategory.getName(), categories.get(0).getName());
-
-        categories = (ArrayList<Category>) categoryDao.findByParentName(parentCategory.getName());
-        assertEquals(1, categories.size());
-        assertEquals(category.getName(), categories.get(0).getName());
+        Category actualCategory =  categoryDao.findOneByName(categoryName);
+        assertEquals(expectedCategory.getName(), actualCategory.getName());
     }
 
 

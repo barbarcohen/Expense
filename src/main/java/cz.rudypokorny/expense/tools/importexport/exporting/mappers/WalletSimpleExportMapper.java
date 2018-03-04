@@ -29,13 +29,13 @@ public class WalletSimpleExportMapper implements RecordMapper<Expense, List<?>, 
     //account;category;currency;amount;ref_currency_amount;type;payment_type;payment_type_local;note;date;gps_latitude;gps_longitude;gps_accuracy_in_meters;warranty_in_month;transfer;payee;labels;envelope_id;custom_category
     @Override
     public CSVFormat getConfig() {
-        return CSVFormat.DEFAULT.withDelimiter(';').withQuoteMode(QuoteMode.ALL).withQuote('"').withHeader("category", "currency", "expense", "income", "date", "payee");
+        return CSVFormat.DEFAULT.withDelimiter(';').withQuoteMode(QuoteMode.ALL).withQuote('"').withHeader("category", "currency", "expense", "income", "date", "payee", "note");
     }
 
     @Override
     public List<?> map(Expense expense) {
         return Arrays.asList(expense.getCategory().getName(), expense.getCurrency(), getExpense(expense.getAmount()), getIncome(expense.getAmount()),
-                convertDate(expense.getWhen()), expense.getVendor());
+                convertDate(expense.getWhen()), expense.getVendor(), expense.getNote());
     }
 
     @Override

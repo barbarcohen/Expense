@@ -1,10 +1,10 @@
 package cz.rudypokorny.expense.tools.statistics;
 
 import cz.rudypokorny.expense.model.Account;
-import cz.rudypokorny.expense.model.Category;
 import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 
+import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -47,31 +47,34 @@ public class RecordStatistics {
 
     public ZonedDateTime from() {
         if (from == null) {
-            //TODO extract to static constant
+            //TODO extract sorter to static constant
             from = expenses.stream().sorted((o1, o2) -> o1.getWhen().compareTo(o2.getWhen())).map(Expense::getWhen).findFirst().orElse(null);
         }
         return from;
     }
 
-    //TODO to()
+    public ZonedDateTime to() {
+        if (to == null) {
+            //TODO extract to static constant
+            to = expenses.stream().sorted((o1, o2) -> o2.getWhen().compareTo(o1.getWhen())).map(Expense::getWhen).findFirst().orElse(null);
+        }
+        return to;
+    }
 
 
     public RecordStatistics filterByCategory(CategoryEnum categoryEnum) {
         return ret(expenses.stream().filter(expense -> expense.getCategoryEnum().equals(categoryEnum)).collect(Collectors.toList()));
     }
 
+    public RecordStatistics filterByDates(Instant from, Instant to) {
+        return ret(expenses.stream()
+                .filter(e -> isGreaterEqualThan(e, from) && isLessEqualThan(e, to))
+                .collect(Collectors.toList()));
+    }
 
     public RecordStatistics filterByAccount(Account account) {
-        //TODO optional
+        //todo optional
         return ret(expenses.stream().filter(expense -> account.equals(expense.getAccount())).collect(Collectors.toList()));
-    }
-
-    private RecordStatistics ret(List<Expense> results) {
-        return new RecordStatistics(results);
-    }
-
-    private boolean checkCategory(Category category, String name) {
-        return category.getName().equalsIgnoreCase(name);
     }
 
     @Override
@@ -82,5 +85,23 @@ public class RecordStatistics {
 
         //TODO print
         return buff.toString();
+    }
+
+    private RecordStatistics ret(List<Expense> results) {
+        return new RecordStatistics(results);
+    }
+
+    private boolean isLessEqualThan(Expense expense, Instant instant){
+        if(instant == null){
+            return true;
+        }
+        return instant.compareTo(expense.getWhen().toInstant()) != -1;
+    }
+
+    private boolean isGreaterEqualThan(Expense expense, Instant instant){
+        if(instant == null){
+            return true;
+        }
+        return instant.compareTo(expense.getWhen().toInstant()) != 1;
     }
 }

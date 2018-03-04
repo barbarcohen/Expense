@@ -43,7 +43,7 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
     //mapping katka
     final private static Map<String, CategoryEnum> KATIK_CATEGORY_MAPPING = ImmutableMap.<String, CategoryEnum>builder().
             put("Volný čas-kino,koncert..", LIFE_CULTURE).
-            put("K+R", FOOD_GLOCERIES).
+            put("K+R", FOOD_GROCERIES).
             put("drogerie", SHOPPING_HEALTH_BEAUTY).
             put("lékárna", SHOPPING_GRUGSTORE).//jenom kata
             put("Kavárna", FOOD_SNACKS).
@@ -68,7 +68,7 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             put("Polsko nákupy společné", LIFE_HOLIDAYS).
             put("Polsko nákupy mé", LIFE_HOLIDAYS).
             put("pokuty", FINANCIAL_FINES).
-            put("Sámoška-Potraviny a nápoje", FOOD_GLOCERIES).
+            put("Sámoška-Potraviny a nápoje", FOOD_GROCERIES).
             put("Income-Salary", INCOME_WAGE).
             put("Income-Other", INCOME_CHILD_SUPPORT).
             build();

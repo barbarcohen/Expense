@@ -43,27 +43,14 @@ public class ImportService implements IImportService {
         Objects.requireNonNull(importSource, "ImportSource cannot be null.");
 
         //only not saved already
-        /**
         importSource.loadData().stream().
                 filter(input -> StreamSupport.stream(categoryDao.findAll().spliterator(), false).
                         noneMatch(s -> s.getName().equals(input.getName()))).
                 forEach(c -> {
-                    if (c.getParent() == null) {
-                        categoryDao.save(c);
-                        logger.debug("Importing {}.", c);
-                    } else {
-                        Category parent = categoryDao.findOneByName(c.getParent().getName());
-                        if (parent == null) {
-                            categoryDao.save(c.getParent());
-                            categoryDao.save(c);
-                            logger.debug("Importing {}.", c);
-                        } else {
-                            Category cat = Category.namedWithParent(c.getName(), parent);
-                            categoryDao.save(cat);
-                            logger.debug("Importing {}.", cat);
-                        }
-                    }
+                    categoryDao.save(c);
+                    logger.debug("Importing {}.", c);
+
                 });
-         **/
+
     }
 }

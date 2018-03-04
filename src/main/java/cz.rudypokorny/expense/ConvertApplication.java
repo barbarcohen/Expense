@@ -1,13 +1,16 @@
 package cz.rudypokorny.expense;
 
 import cz.rudypokorny.expense.model.Expense;
-import cz.rudypokorny.expense.tools.importexport.exporting.CSVExporter;
-import cz.rudypokorny.expense.tools.importexport.exporting.mappers.WalletSimpleExportMapper;
+import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 import cz.rudypokorny.expense.tools.importexport.importing.CSVImporter;
 import cz.rudypokorny.expense.tools.importexport.importing.mappers.KatikCSVRecordMapper;
 import cz.rudypokorny.expense.tools.importexport.importing.mappers.RudikCSVRecordMapper;
+import cz.rudypokorny.expense.tools.statistics.RecordStatistics;
+import cz.rudypokorny.util.DateUtil;
 
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -23,10 +26,19 @@ public class ConvertApplication {
         //new CSVExporter(new ExpenseItExportMapper("target/Expenses-rudik")).export(expenseListRudy);
         //new CSVExporter(new ExpenseItExportMapper("target/Expenses-katik")).export(expenseListKatik);
         //new CSVExporter(new ExpenseItExportMapper("target/Expenses-all")).export(all);
-        new CSVExporter(new WalletSimpleExportMapper("target/Wallet-Katik")).export(expenseListKatik);
-        new CSVExporter(new WalletSimpleExportMapper("target/Wallet-Rudik")).export(expenseListRudy);
+        //new CSVExporter(new WalletSimpleExportMapper("target/Wallet-Katik")).export(expenseListKatik);
+        //new CSVExporter(new WalletSimpleExportMapper("target/Wallet-Rudik")).export(expenseListRudy);
 
-        //System.out.println(RecordStatistics.compute(all).filterByCategory(CategoryEnum.INCOME_OTHER).toString());
+        expenseListKatik.addAll(expenseListRudy);
+
+        RecordStatistics rec = RecordStatistics.compute(expenseListKatik)
+                .filterByCategory(CategoryEnum.VEHICLE_FUEL)
+                .filterByDates(ZonedDateTime.of(2017,1,1,1,0,0,0, DateUtil.getCurrentTimeZone()).toInstant(),
+                        ZonedDateTime.of(2018,1,1,1,0,0,0, DateUtil.getCurrentTimeZone()).toInstant());
+        System.out.println("From: "+rec.from());
+        System.out.println("To: "+rec.to());
+        System.out.println("Avg: "+rec.average());
+        System.out.println(rec.sum());
     }
 
 }

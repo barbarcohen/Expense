@@ -64,25 +64,4 @@ public class ImportServiceIntegrationTest {
         assertEquals("abc", abc.getName());
     }
 
-    //TODO FIXME
-    /**
-    @Test
-    public void testImportCategoriesWithParents() {
-
-        importService.importCategories(() -> {
-            return Arrays.asList(Category.named("abc").withParent("def"), Category.named("def"));
-        });
-        testEntityManager.clear();
-
-        Category abc = categoryDao.findOneByName("abc");
-        assertNotNull(abc);
-        assertEquals("abc", abc.getName());
-        assertEquals("def", abc.getParent().getName());
-
-        Category def = categoryDao.findOneByName("def");
-        assertNotNull(def);
-        assertEquals("def", def.getName());
-        assertEquals("abc", def.getChildren().get(0).getName());
-    }
-     **/
 }

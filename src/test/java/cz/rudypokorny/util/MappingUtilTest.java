@@ -15,8 +15,8 @@ import static org.junit.Assert.assertEquals;
 public class MappingUtilTest {
 
     final private static Map<String, CategoryEnum> CATEGORY_MAPPING = ImmutableMap.<String, CategoryEnum>builder()
-            .put("Household -> Groceries", CategoryEnum.FOOD_GLOCERIES)
-            .put("Sámoška-Potraviny a nápoje", CategoryEnum.FOOD_GLOCERIES)
+            .put("Household -> Groceries", CategoryEnum.FOOD_GROCERIES)
+            .put("Sámoška-Potraviny a nápoje", CategoryEnum.FOOD_GROCERIES)
             .build();
 
     @Test
@@ -40,10 +40,10 @@ public class MappingUtilTest {
     @Test
     public void getMappingExisting() throws Exception {
         CategoryEnum result = CategoryMapping.doTheMapping(CATEGORY_MAPPING, "Household -> Groceries");
-        assertEquals(CategoryEnum.FOOD_GLOCERIES, result);
+        assertEquals(CategoryEnum.FOOD_GROCERIES, result);
 
         result = CategoryMapping.doTheMapping(CATEGORY_MAPPING, "Sámoška-Potraviny a nápoje");
-        assertEquals(CategoryEnum.FOOD_GLOCERIES, result);
+        assertEquals(CategoryEnum.FOOD_GROCERIES, result);
     }
 
 }
