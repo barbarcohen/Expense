@@ -41,7 +41,7 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             put("Home -> Mortgage", HOUSING_MORTGAGE).
             put("Home -> Loan", HOUSING_MORTGAGE).
             put("Household -> Groceries", FOOD_GROCERIES).
-            put("Home -> Services", HOUSING_SERVICES).
+            put("Home -> Services", HOUSING_ENERGY).
             put("Home -> Insurance", HOUSING_INSURANCE).
             put("Home -> Internet", INTERNET).
             put("Utilities -> internet", INTERNET).
@@ -53,12 +53,12 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             put("Entertainment -> Booz", LIFE_PARTY).
             put("Entertainment -> Movies", LIFE_CULTURE).
             put("Entertainment -> Apps", SOFTWARE).
-            put("Entertainment -> Other", LIFE_ENTERTAINMENT_GENERAL).
+            put("Entertainment -> Other", LIFE_CULTURE).
             put("Entertainment -> Games", SOFTWARE).
             put("Entertainment -> Party", LIFE_PARTY).
             put("Entertainment -> Music", LIFE_BOOKS_AUDIO).
             put("Entertainment -> Books", LIFE_BOOKS_AUDIO).
-            put("Entertainment -> Dance", LIFE_ENTERTAINMENT_GENERAL).
+            put("Entertainment -> Dance", LIFE_CULTURE).
             put("Utilities -> Apps - Others", SOFTWARE).
 
             put("Food -> Restaurant", FOOD_RESTAURANT).
@@ -70,10 +70,10 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             put("Utilities -> CellPhone", PHONE).
 
             put("Income -> Rent MB", INCOME_RENTAL).
-            put("Income -> Bonus", INCOME_WAGE_BONUS).
+            put("Income -> Bonus", INCOME_WAGE).
             put("Income -> Meal Tickets", INCOME_COUPONS).
             put("Income -> Salary", INCOME_WAGE).
-            put("Income -> Photo", INCOME_PHOTO).
+            put("Income -> Photo", INCOME_OTHER).
 
             put("Personal -> Self Improvement", LIFE_EDUCATION).
             put("Personal -> Haircuts", LIFE_WELLNESS_BEAUTY).
@@ -111,8 +111,8 @@ public class RudikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             put("Vacation -> Hotels", LIFE_HOLIDAYS).
             put("Vacation -> Sightseeings", LIFE_HOLIDAYS).
             put("Vacation -> ", LIFE_HOLIDAYS).
-            put("Vacation -> Transport", TRANSPORTATION_VACATION).
-            put("Vacation -> Air Tickets", TRANSPORTATION_VACATION).
+            put("Vacation -> Transport", LIFE_HOLIDAYS).
+            put("Vacation -> Air Tickets", LIFE_HOLIDAYS).
             put("Vacation -> Insurance", FINANCIAL_INSURANCES).
             put("Vacation -> Food", FOOD_SNACKS).
             put("Vacation -> Other", LIFE_HOLIDAYS).

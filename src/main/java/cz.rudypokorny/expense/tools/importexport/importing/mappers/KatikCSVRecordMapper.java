@@ -70,7 +70,7 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
             put("pokuty", FINANCIAL_FINES).
             put("Sámoška-Potraviny a nápoje", FOOD_GROCERIES).
             put("Income-Salary", INCOME_WAGE).
-            put("Income-Other", INCOME_CHILD_SUPPORT).
+            put("Income-Other", INCOME_OTHER).
             build();
 
     public KatikCSVRecordMapper() {
@@ -220,7 +220,7 @@ public class KatikCSVRecordMapper implements RecordMapper<CSVRecord, Expense, CS
         } else if (note.is("Mallorca", "Ubytování Krumlov", "Oběd Krkonoše", "Silvestr", "Atc Merkur, stan")) {
             category = LIFE_HOLIDAYS;
         } else if (note.is("Letenky", "Vlaky", "Nafta Jirka", "Buš Vídeň", "Hradec")) {
-            category = TRANSPORTATION_VACATION;
+            category = LIFE_HOLIDAYS;
         } else if (note.is("Svatba kafe")) {
             category = FOOD_SNACKS;
         } else if (note.is("Svatba nákup pití", "Svatba vysluzky", "Jídlo na párty", "Jídlo sklípek", "U kiky")) {

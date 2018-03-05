@@ -11,22 +11,23 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class RecordStatistics {
+public class ExpensesStatistics {
 
+    private static final String NEWLINE = System.getProperty("line.separator");
     private final List<Expense> expenses;
     private ZonedDateTime from;
     private ZonedDateTime to;
 
-    private RecordStatistics(List<Expense> expenses) {
+    private ExpensesStatistics(List<Expense> expenses) {
         this.expenses = Objects.requireNonNull(Collections.unmodifiableList(expenses), "'expenses' cannot be null");
     }
 
-    public static RecordStatistics none() {
-        return new RecordStatistics(Collections.emptyList());
+    public static ExpensesStatistics none() {
+        return new ExpensesStatistics(Collections.emptyList());
     }
 
-    public static RecordStatistics compute(List<Expense> expenses) {
-        return new RecordStatistics(expenses);
+    public static ExpensesStatistics compute(List<Expense> expenses) {
+        return new ExpensesStatistics(expenses);
     }
 
     public List<Expense> records() {
@@ -61,18 +62,24 @@ public class RecordStatistics {
         return to;
     }
 
+    public ExpensesStatistics filterExpenses() {
+        return ret(expenses.stream().filter(expense -> expense.getAmount() < 0).collect(Collectors.toList()));
+    }
+    public ExpensesStatistics filterIncome() {
+        return ret(expenses.stream().filter(expense -> expense.getAmount() > 0).collect(Collectors.toList()));
+    }
 
-    public RecordStatistics filterByCategory(CategoryEnum categoryEnum) {
+    public ExpensesStatistics filterByCategory(CategoryEnum categoryEnum) {
         return ret(expenses.stream().filter(expense -> expense.getCategoryEnum().equals(categoryEnum)).collect(Collectors.toList()));
     }
 
-    public RecordStatistics filterByDates(Instant from, Instant to) {
+    public ExpensesStatistics filterByDates(Instant from, Instant to) {
         return ret(expenses.stream()
                 .filter(e -> isGreaterEqualThan(e, from) && isLessEqualThan(e, to))
                 .collect(Collectors.toList()));
     }
 
-    public RecordStatistics filterByAccount(Account account) {
+    public ExpensesStatistics filterByAccount(Account account) {
         //todo optional
         return ret(expenses.stream().filter(expense -> account.equals(expense.getAccount())).collect(Collectors.toList()));
     }
@@ -80,26 +87,30 @@ public class RecordStatistics {
     @Override
     public String toString() {
         StringBuffer buff = new StringBuffer();
-        buff.append("RecordStatistics \\n").append("Sum: ").append(sum()).append("Items found: ").append(count())
-                .append("Found records").append("/n").append(records());
+        buff.append("RecordStatistics").append(NEWLINE)
+                .append("Number of records: ").append(count()).append(NEWLINE)
+                .append("From: ").append(from()).append(NEWLINE)
+                .append("To: ").append(to()).append(NEWLINE)
+                .append("Sum: ").append(sum()).append(NEWLINE)
+                .append("Item average: ").append(average()).append(NEWLINE);
 
         //TODO print
         return buff.toString();
     }
 
-    private RecordStatistics ret(List<Expense> results) {
-        return new RecordStatistics(results);
+    private ExpensesStatistics ret(List<Expense> results) {
+        return new ExpensesStatistics(results);
     }
 
-    private boolean isLessEqualThan(Expense expense, Instant instant){
-        if(instant == null){
+    private boolean isLessEqualThan(Expense expense, Instant instant) {
+        if (instant == null) {
             return true;
         }
         return instant.compareTo(expense.getWhen().toInstant()) != -1;
     }
 
-    private boolean isGreaterEqualThan(Expense expense, Instant instant){
-        if(instant == null){
+    private boolean isGreaterEqualThan(Expense expense, Instant instant) {
+        if (instant == null) {
             return true;
         }
         return instant.compareTo(expense.getWhen().toInstant()) != 1;

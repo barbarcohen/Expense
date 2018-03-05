@@ -11,7 +11,7 @@ public enum CategoryEnum {
     FOOD_SWEETS("Sweets & Salty"),
     FOOD_SNACKS("Snacks"),
     FOOD_GROCERIES("Groceries"),
-    FOOD_RESTAURANT("Restaurant, fast-food"),
+    FOOD_RESTAURANT("Restaurant"),
     FOOD_DRINKS_GENERAL("Food & Drinks"),
     FOOD_WORK_LUNCH("Work lunch"),
     FOOD_BABY_FOOD("Baby food"),
@@ -25,37 +25,33 @@ public enum CategoryEnum {
     SHOPPING_PHONE_ACCESSORIES("Phone & Accessories"),
     SHOPPING_CAMERA_ACCESSORIES("Camera & Photo stuff"),
     SHOPPING_FREE_TIME("Free time"),
-    SHOPPING_GIFTS("Dárky, radosti"),
+    SHOPPING_GIFTS("Gifts"),
     SHOPPING_CHRISTMAS_GIFTS("Christmas gifts"),
     SHOPPING_HEALTH_BEAUTY("Health & Beauty"),
     SHOPPING_HOME_GARDEN("Home, Garden"),
     SHOPPING_JEWELS_ACCESSORIES("Jewels, accessories"),
     SHOPPING_BABY("Baby"),
     SHOPPING_BABY_CLOTHES("Baby clothes"),
-    SHOPPING_TOOLS("Stationery tools"),
 
     HOUSING_GENERAL("General - Housing"),
-    HOUSING_FURNITURE("Improvements, furniture"),
-    HOUSING_ENERGY("Energy, utilities"),
-    HOUSING_REPAIRS("Maintenance & repairs"),
+    HOUSING_FURNITURE("Housing  improvements"),
+    HOUSING_ENERGY("Housing energy, services"),
+    HOUSING_REPAIRS("Housing repairs"),
     HOUSING_MORTGAGE("Mortgage"),
     HOUSING_INSURANCE("Property insurance"),
     HOUSING_RENT("Rent"),
-    HOUSING_SERVICES("Services"),
-
 
     TRANSPORTATION("General - Transportation"),
     TRANSPORTATION_MHD("Public transport"),
-    TRANSPORTATION_VACATION("Vacation transport"),
 
-    VEHICLE_GENERAL("General - Vehicle"),
+    VEHICLE_GENERAL("Vehicle"),
     VEHICLE_LOAN("Loan"),
     VEHICLE_FUEL("Fuel"),
     VEHICLE_PARKING("Parking"),
     VEHICLE_INSURANCE("Vehicle insurance"),
     VEHICLE_MAINTENANCE("Vehicle maintenance"),
 
-    LIFE_ENTERTAINMENT_GENERAL("General - Life & Entertainment"),
+    LIFE_ENTERTAINMENT_GENERAL("Entertainment"),
     LIFE_SPORT("Active sport, fitness"),
     LIFE_PARTY("Party"),
     LIFE_BOOKS_AUDIO("Books, audio, subscriptions"),
@@ -68,7 +64,7 @@ public enum CategoryEnum {
     LIFE_WELLNESS_BEAUTY("Wellness, beauty"),
     LIFE_HOLIDAYS("Holiday, trips, hotels"),
 
-    PC("General - Communication, PC"),
+    PC("Computer & Accessories"),
     INTERNET("Internet"),
     PHONE("Phone, mobile phone"),
     POSTAL("Postal services"),
@@ -93,19 +89,11 @@ public enum CategoryEnum {
 
     INCOME_GENERAL("General - Income"),
     INCOME_CHILD_SUPPORT("Child Support"),
-    INCOME_COUPONS("Checks, coupons"),
-    INCOME_GRANTS("Dues & grants"),
-    INCOME_GIFTS("Gifts"),
-    INCOME_INTERESTS("Interest, dividends"),
-    INCOME_LENDING("Lending, renting"),
-    INCOME_LOTTERY("Lottery, gambling"),
-    INCOME_TAX_REFUNDS("Refunds (tax, purchase)"),
+    INCOME_COUPONS("Coupons"),
     INCOME_RENTAL("Rental income"),
-    INCOME_SALE("Sale"),
-    INCOME_WAGE("Wage, invoices"),
+    INCOME_WAGE("Wage"),
 
-    INCOME_WAGE_BONUS("Wage bonus"),
-    INCOME_PHOTO("Photo"),
+    INCOME_OTHER("Other income"),
 
     OTHERS("General - Others");
 
@@ -119,8 +107,7 @@ public enum CategoryEnum {
     }
 
     public static Set<CategoryEnum> incomes() {
-        return EnumSet.of(INCOME_GENERAL, INCOME_CHILD_SUPPORT, INCOME_COUPONS, INCOME_GRANTS, INCOME_GIFTS,
-                INCOME_TAX_REFUNDS, INCOME_INTERESTS, INCOME_LENDING, INCOME_LOTTERY, INCOME_RENTAL, INCOME_SALE, INCOME_WAGE);
+        return EnumSet.of(INCOME_GENERAL, INCOME_CHILD_SUPPORT, INCOME_COUPONS, INCOME_RENTAL, INCOME_WAGE, INCOME_OTHER);
     }
 
     public String getName() {
