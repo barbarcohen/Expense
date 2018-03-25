@@ -1,6 +1,7 @@
 package cz.rudypokorny.expense;
 
 import cz.rudypokorny.expense.model.Expense;
+import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 import cz.rudypokorny.expense.tools.importexport.importing.CSVImporter;
 import cz.rudypokorny.expense.tools.importexport.importing.mappers.KatikCSVRecordMapper;
 import cz.rudypokorny.expense.tools.importexport.importing.mappers.RudikCSVRecordMapper;
@@ -21,6 +22,7 @@ public class Statistics {
 
 
         ExpensesStatistics rec = ExpensesStatistics.compute(expenseListKatik)
+
                 .filterExpenses();
 
         System.out.println(rec);

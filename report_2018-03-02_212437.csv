@@ -1,0 +1,4 @@
+account;category;currency;amount;ref_currency_amount;type;payment_type;payment_type_local;note;date;gps_latitude;gps_longitude;gps_accuracy_in_meters;warranty_in_month;transfer;payee;labels;envelope_id;custom_category
+Rudík;Mortgage;CZK;500.00;500.00;Income;DEBIT_CARD;Debit card;Poznamka;2018-03-02 21:21:41;;;;0;false;Albert;;3001;false
+Kátik;Gifts, joy;CZK;-123.45;-123.45;Expenses;CASH;Cash;Popis;2018-03-02 18:31:48;49.17629;16.55581;13;24;false;;Ok;2007;false
+Rudík;Food & Drinks;CZK;-1000.00;-1000.00;Expenses;CASH;Cash;;2018-03-02 10:22:31;;;;0;false;;;1003;false

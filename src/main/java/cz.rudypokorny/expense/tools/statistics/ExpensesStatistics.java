@@ -4,17 +4,25 @@ import cz.rudypokorny.expense.model.Account;
 import cz.rudypokorny.expense.model.Expense;
 import cz.rudypokorny.expense.tools.importexport.domain.CategoryEnum;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.time.Instant;
 import java.time.ZonedDateTime;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ExpensesStatistics {
 
+    public static final String SPACE = " ";
     private static final String NEWLINE = System.getProperty("line.separator");
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    private static final Comparator<Expense> DATE_COMPARATOR = Comparator.comparing((Expense expense) -> expense.getWhen());
+    private static final NumberFormat AMOUNT_FORMATTER = new DecimalFormat("#,###.00");
+    private static final String CURRENCY = "CZK";
+    private static final String EMPTY = "";
     private final List<Expense> expenses;
+    private Set<CategoryEnum> categories;
     private ZonedDateTime from;
     private ZonedDateTime to;
 
@@ -48,23 +56,29 @@ public class ExpensesStatistics {
 
     public ZonedDateTime from() {
         if (from == null) {
-            //TODO extract sorter to static constant
-            from = expenses.stream().sorted((o1, o2) -> o1.getWhen().compareTo(o2.getWhen())).map(Expense::getWhen).findFirst().orElse(null);
+            from = expenses.stream().sorted(DATE_COMPARATOR).map(Expense::getWhen).findFirst().orElse(null);
         }
         return from;
     }
 
     public ZonedDateTime to() {
         if (to == null) {
-            //TODO extract to static constant
-            to = expenses.stream().sorted((o1, o2) -> o2.getWhen().compareTo(o1.getWhen())).map(Expense::getWhen).findFirst().orElse(null);
+            to = expenses.stream().sorted(DATE_COMPARATOR.reversed()).map(Expense::getWhen).findFirst().orElse(null);
         }
         return to;
+    }
+
+    public Set<CategoryEnum> categories() {
+        if (categories == null) {
+            categories = expenses.stream().map(expense -> expense.getCategoryEnum()).distinct().collect(Collectors.toSet());
+        }
+        return categories;
     }
 
     public ExpensesStatistics filterExpenses() {
         return ret(expenses.stream().filter(expense -> expense.getAmount() < 0).collect(Collectors.toList()));
     }
+
     public ExpensesStatistics filterIncome() {
         return ret(expenses.stream().filter(expense -> expense.getAmount() > 0).collect(Collectors.toList()));
     }
@@ -89,12 +103,11 @@ public class ExpensesStatistics {
         StringBuffer buff = new StringBuffer();
         buff.append("RecordStatistics").append(NEWLINE)
                 .append("Number of records: ").append(count()).append(NEWLINE)
-                .append("From: ").append(from()).append(NEWLINE)
-                .append("To: ").append(to()).append(NEWLINE)
-                .append("Sum: ").append(sum()).append(NEWLINE)
-                .append("Item average: ").append(average()).append(NEWLINE);
-
-        //TODO print
+                .append("From: ").append(formatDate(from())).append(NEWLINE)
+                .append("To: ").append(formatDate(to())).append(NEWLINE)
+                .append("Sum: ").append(formatAmount(sum())).append(NEWLINE)
+                .append("Categories: ").append(formatCategories(categories())).append(NEWLINE)
+                .append("Item average: ").append(formatAmount(average())).append(NEWLINE);
         return buff.toString();
     }
 
@@ -114,5 +127,26 @@ public class ExpensesStatistics {
             return true;
         }
         return instant.compareTo(expense.getWhen().toInstant()) != 1;
+    }
+
+    private String formatDate(ZonedDateTime date) {
+        if (date != null) {
+            return DATE_FORMATTER.format(date);
+        }
+        return EMPTY;
+    }
+
+    private String formatAmount(Double amount) {
+        if (amount != null) {
+            return AMOUNT_FORMATTER.format(amount) + SPACE + CURRENCY;
+        }
+        return EMPTY;
+    }
+
+    private String formatCategories(Set<CategoryEnum> categories) {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(NEWLINE).append("============").append(NEWLINE);
+        categories.stream().forEach(e -> buffer.append(e).append(NEWLINE));
+        return buffer.toString();
     }
 }
